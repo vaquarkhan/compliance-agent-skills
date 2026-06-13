@@ -1,0 +1,82 @@
+{
+  "name": "compliance-agent-skills",
+  "displayName": "Compliance Agent Skills",
+  "description": "Install USA compliance skill packs (HIPAA, PCI-DSS, SOC 2), starter packs, MCP templates, and runnable examples into a VS Code workspace.",
+  "version": "1.0.0",
+  "publisher": "vaquarkhan",
+  "license": "MIT",
+  "homepage": "https://github.com/vaquarkhan/compliance-agent-skills",
+  "bugs": {
+    "url": "https://github.com/vaquarkhan/compliance-agent-skills/issues"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "extensionKind": ["workspace"],
+  "categories": ["Other"],
+  "galleryBanner": {
+    "color": "#1B4332",
+    "theme": "dark"
+  },
+  "keywords": [
+    "compliance",
+    "hipaa",
+    "pci-dss",
+    "soc2",
+    "agent-skills",
+    "audit",
+    "phi",
+    "presidio",
+    "mcp",
+    "security"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vaquarkhan/compliance-agent-skills.git"
+  },
+  "main": "./extension.js",
+  "files": [
+    "extension.js",
+    "install-manifest.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "complianceAgentSkills.installFullToolkit",
+        "title": "Compliance Agent Skills: Install Full Toolkit"
+      },
+      {
+        "command": "complianceAgentSkills.installCorePack",
+        "title": "Compliance Agent Skills: Install Core Pack"
+      },
+      {
+        "command": "complianceAgentSkills.installAgentAdapters",
+        "title": "Compliance Agent Skills: Install Agent Adapters"
+      },
+      {
+        "command": "complianceAgentSkills.installStarterPack",
+        "title": "Compliance Agent Skills: Install Starter Pack"
+      },
+      {
+        "command": "complianceAgentSkills.installMcpTemplates",
+        "title": "Compliance Agent Skills: Install MCP Templates"
+      },
+      {
+        "command": "complianceAgentSkills.scaffoldRunnableExample",
+        "title": "Compliance Agent Skills: Scaffold Runnable Example"
+      }
+    ],
+    "configuration": {
+      "title": "Compliance Agent Skills",
+      "properties": {
+        "complianceAgentSkills.rawBaseUrl": {
+          "type": "string",
+          "default": "https://raw.githubusercontent.com/vaquarkhan/compliance-agent-skills/main",
+          "description": "Raw GitHub base URL used when local extension assets are not available."
+        }
+      }
+    }
+  }
+}

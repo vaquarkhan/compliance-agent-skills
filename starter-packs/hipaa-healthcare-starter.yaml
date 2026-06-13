@@ -1,0 +1,52 @@
+# HIPAA Healthcare Starter Pack
+id: hipaa-healthcare-starter
+version: "1.0.0"
+description: |
+  Curated bundle for covered entities and business associates implementing
+  HIPAA Security Rule controls with LLM agent and MCP integrations.
+frameworks:
+  - HIPAA-Security-Rule
+  - HIPAA-Breach-Notification
+
+skills:
+  - using-compliance-agent-skills
+  - hipaa-technical-safeguards
+  - hipaa-phi-redaction-pipeline
+  - hipaa-baa-vendor-assessment
+  - breach-incident-response
+  - audit-logging-integrity
+
+templates:
+  - templates/hipaa-phi-flow-diagram.yaml
+  - templates/breach-notification-plan.yaml
+  - templates/compliance-control-matrix.yaml
+  - templates/audit-evidence-manifest.yaml
+
+presets:
+  - presets/healthcare-hipaa/PRESET.md
+
+references:
+  - references/hipaa-security-rule-checklist.md
+  - references/phi-redaction-patterns.md
+
+mcp_servers:
+  - presidio
+  - postgres
+  - slack
+
+hooks:
+  - phi-redaction-guard
+  - session-start
+
+lifecycle:
+  recommended_sequence:
+    - /scope
+    - /audit
+    - /evidence
+    - /report
+
+examples:
+  - examples/hipaa-phi-redaction/
+
+agent_entry: agent.py
+redaction_gate: redaction.py

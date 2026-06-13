@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres"],
+      "env": {
+        "POSTGRES_CONNECTION_STRING": "${POSTGRES_EVIDENCE_RO_URL}"
+      },
+      "metadata": {
+        "compliance_use": "Read-only evidence queries and access review exports",
+        "frameworks": ["HIPAA", "SOC2-CC6", "PCI-Req10"],
+        "restrictions": [
+          "Use read-only database role",
+          "Enable row-level security for ePHI tables",
+          "No INSERT/UPDATE/DELETE tools in production audits"
+        ]
+      }
+    }
+  }
+}

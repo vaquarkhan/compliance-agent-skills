@@ -1,0 +1,16 @@
+Patient Record — SYNTHETIC TEST DATA ONLY
+
+Name: Jane Example
+Date of Birth: 03/22/1975
+SSN: 987-65-4321
+Phone: (555) 867-5309
+Email: jane.example@testhealth.local
+MRN: TEST-MRN-00042
+
+Chief Complaint: Follow-up for Type 2 diabetes management.
+
+Notes: Patient Jane Example reported improved glucose readings since last visit on 01/10/2026.
+Prescription sent to Example Pharmacy, 123 Main St, Springfield. Contact patient at (555) 867-5309
+if lab results from 03/01/2026 require adjustment.
+
+Provider: Dr. Alan Sample, NPI 1234567890

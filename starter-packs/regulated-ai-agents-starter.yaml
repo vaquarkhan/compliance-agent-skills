@@ -1,0 +1,69 @@
+# Regulated AI Agents Starter Pack
+id: regulated-ai-agents-starter
+version: "1.0.0"
+description: |
+  Cross-framework bundle for organizations deploying AI agents and MCP servers
+  under HIPAA, PCI-DSS, and/or SOC 2 obligations simultaneously.
+frameworks:
+  - HIPAA-Security-Rule
+  - PCI-DSS-v4.0
+  - SOC2-TSC-2017
+
+skills:
+  - using-compliance-agent-skills
+  - hipaa-phi-redaction-pipeline
+  - mcp-compliance-integration
+  - compliance-as-code-governance
+  - vendor-third-party-risk
+  - access-control-identity-audit
+  - audit-logging-integrity
+  - breach-incident-response
+
+templates:
+  - templates/hipaa-phi-flow-diagram.yaml
+  - templates/compliance-control-matrix.yaml
+  - templates/vendor-risk-assessment.yaml
+  - templates/incident-runbook.md
+
+presets:
+  - presets/healthcare-hipaa/PRESET.md
+  - presets/saas-soc2-type2/PRESET.md
+  - presets/aws-compliance/PRESET.md
+
+references:
+  - references/mcp-compliance-patterns.md
+  - references/phi-redaction-patterns.md
+  - references/compliance-as-code-patterns.md
+
+mcp_servers:
+  - presidio
+  - playwright
+  - postgres
+  - github
+  - slack
+  - terraform
+
+hooks:
+  - session-start
+  - phi-redaction-guard
+  - audit-mode
+
+core_files:
+  - agent.py
+  - redaction.py
+
+agents:
+  - agents/compliance-architect.md
+
+lifecycle:
+  recommended_sequence:
+    - /scope
+    - /audit
+    - /evidence
+    - /remediate
+    - /report
+
+examples:
+  - examples/hipaa-phi-redaction/
+  - examples/pci-checkout-audit/
+  - examples/soc2-evidence-bundle/

@@ -1,0 +1,38 @@
+---
+description: Enforce deterministic audit behavior — no invented controls, cite authoritative sources, emit traceable artifacts.
+globs:
+alwaysApply: true
+---
+
+# Deterministic Audit
+
+## Rules
+
+1. **Never invent** CFR sections, PCI requirement numbers, or TSC control IDs.
+2. **Cite sources** when stating requirements (e.g., "PCI-DSS v4.0 Req 6.4.3", "45 CFR §164.312(b)", "SOC 2 CC7.2").
+3. **Load the matching skill** before deep audit work — see `30-framework-routing.mdc`.
+4. **Emit artifacts** with engagement ID, UTC timestamps, and SHA-256 hashes for evidence files.
+5. **Record gaps** as findings with severity, control ID, observation, recommendation, owner, due date.
+
+## Finding format
+
+```yaml
+id: FIND-001
+severity: HIGH  # CRITICAL | HIGH | MEDIUM | LOW | INFO
+control_id: PCI-6.4.3
+observation: "Third-party script lacks authorization record"
+recommendation: "Document business justification and link change ticket"
+owner: ""
+due_date: null
+status: open
+```
+
+## Anti-patterns
+
+- "You are fully compliant" without evidence
+- Generic security advice unrelated to scoped frameworks
+- Skipping `/scope` on multi-system engagements
+
+## Templates
+
+Use scaffolds in `templates/` — do not freehand evidence manifests.

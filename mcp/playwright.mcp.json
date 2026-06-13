@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"],
+      "env": {
+        "PLAYWRIGHT_MCP_HEADLESS": "true"
+      },
+      "metadata": {
+        "compliance_use": "PCI-DSS Req 6.4.3 payment-page script inventory and DOM snapshots",
+        "frameworks": ["PCI-DSS-v4.0", "SOC2-CC8.1"],
+        "restrictions": [
+          "Read-only audit mode — do not submit payment forms",
+          "Never enter real PAN/CVV in browser automation"
+        ]
+      }
+    }
+  }
+}

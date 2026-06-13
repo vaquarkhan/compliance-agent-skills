@@ -1,0 +1,3 @@
+# Evidence artifacts for SOC 2 bundle example (synthetic — no real customer data)
+
+Control CC6.1 — logical access policy excerpt for demonstration purposes only.

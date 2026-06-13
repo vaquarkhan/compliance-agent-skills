@@ -1,0 +1,26 @@
+# ISO 27001 Statement of Applicability — Template
+schema_version: "1.0"
+organization: ""
+isms_scope: ""
+assessment_date: ""
+assessor: ""
+
+controls:
+  - id: A.5.1
+    title: Policies for information security
+    applicable: true
+    justification: ""
+    implementation_status: implemented  # not_implemented | partial | implemented
+    evidence_ref: ""
+    owner: ""
+  - id: A.8.24
+    title: Use of cryptography
+    applicable: true
+    justification: "ePHI/CHD encryption in transit and at rest"
+    implementation_status: partial
+    evidence_ref: ""
+    owner: ""
+
+gaps: []
+approver: ""
+approval_date: ""

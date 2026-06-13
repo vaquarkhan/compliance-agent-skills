@@ -1,0 +1,57 @@
+# SOC 2 SaaS Starter Pack
+id: soc2-saas-starter
+version: "1.0.0"
+description: |
+  Starter bundle for SaaS organizations pursuing SOC 2 Type II with
+  agent platform and MCP infrastructure in scope.
+frameworks:
+  - SOC2-TSC-2017
+
+trust_services_categories:
+  - Security
+  - Availability
+  - Confidentiality
+
+skills:
+  - using-compliance-agent-skills
+  - soc2-trust-services-criteria
+  - soc2-evidence-collection
+  - soc2-ccm-continuous-monitoring
+  - access-control-identity-audit
+  - vendor-third-party-risk
+  - compliance-as-code-governance
+
+templates:
+  - templates/soc2-control-evidence.yaml
+  - templates/audit-evidence-manifest.yaml
+  - templates/vendor-risk-assessment.yaml
+  - templates/compliance-control-matrix.yaml
+
+presets:
+  - presets/saas-soc2-type2/PRESET.md
+
+references:
+  - references/soc2-trust-services-checklist.md
+  - references/compliance-as-code-patterns.md
+
+mcp_servers:
+  - github
+  - postgres
+  - slack
+  - terraform
+
+hooks:
+  - audit-mode
+  - session-start
+
+lifecycle:
+  recommended_sequence:
+    - /scope
+    - /audit
+    - /evidence
+    - /report
+
+examples:
+  - examples/soc2-evidence-bundle/
+
+agent_entry: agent.py

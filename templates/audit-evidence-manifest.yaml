@@ -1,0 +1,59 @@
+# Audit Evidence Manifest
+# Package artifacts with integrity hashes for SOC 2 / PCI / HIPAA auditors
+schema_version: "1.0"
+bundle:
+  id: "EVD-2026-001"
+  engagement_id: "ENG-2026-001"
+  title: "Q2 2026 Control Evidence Bundle"
+  created_at: "2026-06-13T00:00:00Z"
+  created_by: "compliance-agent-skills"
+  framework: SOC2-TSC
+  period:
+    start: "2026-04-01"
+    end: "2026-06-30"
+  classification: confidential
+  retention_years: 7
+
+integrity:
+  manifest_algorithm: sha256
+  bundle_hash: ""  # computed after all artifacts listed
+
+artifacts:
+  - id: "art-001"
+    path: "evidence/iam-access-review-2026-Q2.pdf"
+    sha256: ""
+    control_ids: [CC6.2, CC6.3]
+    description: "Quarterly IAM access certification export"
+    collected_at: null
+    collector: ""
+    source_system: "Okta"
+
+  - id: "art-002"
+    path: "evidence/waf-config-2026-06-01.json"
+    sha256: ""
+    control_ids: [CC6.6, CC6.7]
+    description: "WAF rule baseline export"
+    collected_at: null
+    collector: ""
+    source_system: "AWS WAF"
+
+  - id: "art-003"
+    path: "evidence/change-tickets-sample.csv"
+    sha256: ""
+    control_ids: [CC8.1]
+    description: "Sample of approved production changes"
+    collected_at: null
+    collector: ""
+    source_system: "Jira"
+
+chain_of_custody:
+  - action: created
+    actor: ""
+    timestamp: null
+    notes: "Initial manifest scaffold"
+
+auditor_handoff:
+  recipient: ""
+  method: secure_portal  # secure_portal | encrypted_media | in_person
+  date: null
+  acknowledgment_received: false

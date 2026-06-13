@@ -1,0 +1,159 @@
+{
+  "raw_base_url": "https://raw.githubusercontent.com/vaquarkhan/compliance-agent-skills/main",
+  "core_files": [
+    "AGENTS.md",
+    "CLAUDE.md",
+    "skills-index.md",
+    "registry/assets.json",
+    "templates/compliance-control-matrix.yaml",
+    "templates/audit-evidence-manifest.yaml",
+    "templates/breach-notification-plan.yaml",
+    "templates/vendor-risk-assessment.yaml",
+    "templates/pci-script-baseline.yaml",
+    "templates/hipaa-phi-flow-diagram.yaml",
+    "templates/soc2-control-evidence.yaml",
+    "templates/incident-runbook.md",
+    "templates/iso27001-statement-of-applicability.yaml",
+    "templates/nist-csf-profile.yaml",
+    "templates/dsar-request-log.yaml",
+    "requirements.txt",
+    "requirements-proof.txt",
+    "agent.py",
+    "redaction.py",
+    "docs/getting-started.md",
+    "scripts/install.sh",
+    "scripts/install.ps1",
+    "scripts/install_toolkit.py",
+    "scripts/validate-skills.py",
+    "scripts/validate-assets.py",
+    "scripts/validate-plugin-manifest.py",
+    "scripts/sync-install-manifest.py",
+    "scripts/validate-evidence-manifest.py",
+    "scripts/hook_runner.py",
+    "hooks/README.md",
+    "hooks/hooks.json",
+    "hooks/session-start.sh",
+    "hooks/session-start.ps1",
+    "hooks/phi-redaction-guard.sh",
+    "hooks/phi-redaction-guard.ps1",
+    "hooks/audit-mode.sh",
+    "hooks/release-guard.sh"
+  ],
+  "skill_files": [
+    "skills/using-compliance-agent-skills/SKILL.md",
+    "skills/hipaa-technical-safeguards/SKILL.md",
+    "skills/hipaa-phi-redaction-pipeline/SKILL.md",
+    "skills/hipaa-baa-vendor-assessment/SKILL.md",
+    "skills/pci-dss-script-audit/SKILL.md",
+    "skills/pci-dss-network-segmentation/SKILL.md",
+    "skills/soc2-trust-services-criteria/SKILL.md",
+    "skills/soc2-evidence-collection/SKILL.md",
+    "skills/soc2-ccm-continuous-monitoring/SKILL.md",
+    "skills/access-control-identity-audit/SKILL.md",
+    "skills/audit-logging-integrity/SKILL.md",
+    "skills/breach-incident-response/SKILL.md",
+    "skills/compliance-as-code-governance/SKILL.md",
+    "skills/mcp-compliance-integration/SKILL.md",
+    "skills/vendor-third-party-risk/SKILL.md",
+    "skills/iso27001-annex-a-controls/SKILL.md",
+    "skills/nist-csf-2-assessment/SKILL.md",
+    "skills/ccpa-cpra-privacy-rights/SKILL.md",
+    "skills/pci-dss-encryption-key-management/SKILL.md",
+    "skills/hipaa-privacy-minimum-necessary/SKILL.md"
+  ],
+  "agent_adapters": {
+    "Cursor": [
+      ".cursor/rules/00-compliance-agent-core.mdc",
+      ".cursor/rules/10-deterministic-audit.mdc",
+      ".cursor/rules/20-phi-redaction-first.mdc",
+      ".cursor/rules/30-framework-routing.mdc"
+    ],
+    "Claude": [
+      ".claude/commands/scope.md",
+      ".claude/commands/audit.md",
+      ".claude/commands/evidence.md",
+      ".claude/commands/remediate.md",
+      ".claude/commands/report.md",
+      "AGENTS.md",
+      "CLAUDE.md"
+    ],
+    "Copilot": [
+      ".github/copilot-instructions.md",
+      "AGENTS.md"
+    ]
+  },
+  "starter_packs": {
+    "HIPAA Healthcare": [
+      "starter-packs/hipaa-healthcare-starter.yaml",
+      "templates/hipaa-phi-flow-diagram.yaml",
+      "templates/breach-notification-plan.yaml",
+      "templates/incident-runbook.md",
+      "AGENTS.md",
+      "skills-index.md"
+    ],
+    "PCI-DSS Ecommerce": [
+      "starter-packs/pci-dss-ecommerce-starter.yaml",
+      "templates/pci-script-baseline.yaml",
+      "templates/audit-evidence-manifest.yaml",
+      "references/pci-dss-v4-checklist.md",
+      "AGENTS.md",
+      "skills-index.md"
+    ],
+    "SOC2 SaaS": [
+      "starter-packs/soc2-saas-starter.yaml",
+      "templates/soc2-control-evidence.yaml",
+      "templates/audit-evidence-manifest.yaml",
+      "references/soc2-trust-services-checklist.md",
+      "AGENTS.md",
+      "skills-index.md"
+    ],
+    "Regulated AI Agents": [
+      "starter-packs/regulated-ai-agents-starter.yaml",
+      "templates/compliance-control-matrix.yaml",
+      "templates/vendor-risk-assessment.yaml",
+      "references/mcp-compliance-patterns.md",
+      "references/phi-redaction-patterns.md",
+      "AGENTS.md",
+      "skills-index.md"
+    ]
+  },
+  "mcp_templates": {
+    "Playwright": ["mcp/playwright.mcp.json"],
+    "Postgres": ["mcp/postgres.mcp.json"],
+    "Presidio": ["mcp/presidio.mcp.json"],
+    "Slack": ["mcp/slack.mcp.json"],
+    "GitHub": ["mcp/github.mcp.json"],
+    "Terraform": ["mcp/terraform.mcp.json"]
+  },
+  "runnable_examples": {
+    "PCI Checkout Audit": [
+      "examples/pci-checkout-audit/README.md",
+      "examples/pci-checkout-audit/Makefile",
+      "examples/pci-checkout-audit/config/baseline.yaml",
+      "examples/pci-checkout-audit/audit_scripts.py",
+      "scripts/validate-skills.py"
+    ],
+    "HIPAA PHI Redaction": [
+      "examples/hipaa-phi-redaction/README.md",
+      "examples/hipaa-phi-redaction/sample_phi.txt",
+      "examples/hipaa-phi-redaction/run_redaction.py",
+      "redaction.py",
+      "requirements.txt"
+    ],
+    "SOC2 Evidence Bundle": [
+      "examples/soc2-evidence-bundle/README.md",
+      "examples/soc2-evidence-bundle/evidence-manifest.yaml",
+      "examples/soc2-evidence-bundle/hash_evidence.py",
+      "scripts/validate-evidence-manifest.py",
+      "templates/audit-evidence-manifest.yaml"
+    ]
+  },
+  "full_toolkit_extra": [
+    "presets/",
+    "references/",
+    "agents/",
+    "examples/",
+    "skills/",
+    "mcp/README.md"
+  ]
+}

@@ -1,0 +1,58 @@
+# PCI-DSS v4.0 Payment-Page Script Baseline
+# Requirements 6.4.3 and 11.6.1
+schema_version: "1.0"
+baseline:
+  id: "PCI-SCRIPT-2026-001"
+  merchant_name: ""
+  assessment_date: "2026-06-13"
+  assessor: ""
+  pages:
+    - url: "https://example.com/checkout"
+      environment: production
+      cde_connected: true
+
+requirement_6_4_3:
+  script_inventory:
+    - script_url: "https://cdn.example.com/checkout.js"
+      inline: false
+      first_party: true
+      business_justification: "Checkout form validation"
+      authorization_record: "CHG-1234"
+      integrity_mechanism: SRI  # SRI | CSP | hash_file
+      integrity_value: "sha384-..."
+      last_reviewed: "2026-06-01"
+    - script_url: "https://thirdparty.example/analytics.js"
+      inline: false
+      first_party: false
+      business_justification: "Fraud scoring — review for scope"
+      authorization_record: ""
+      integrity_mechanism: CSP
+      integrity_value: ""
+      last_reviewed: null
+      finding: "Missing authorization record"
+
+  inline_scripts: []
+  change_management:
+    ticket_system: "Jira"
+    approval_required: true
+
+requirement_11_6_1:
+  monitoring:
+    frequency: weekly
+    last_run: null
+    checks:
+      - type: script_hash_delta
+        status: not_run
+      - type: security_headers_delta
+        headers: [Content-Security-Policy, Strict-Transport-Security]
+        status: not_run
+    alerting:
+      channel: "security-alerts@example.com"
+      sla_hours: 24
+
+findings: []
+evidence_paths: []
+
+sign_off:
+  qsa_reviewer: { name: "", date: null }
+  merchant_rep: { name: "", date: null }

@@ -1,0 +1,73 @@
+# SOC 2 Control Evidence Worksheet
+# Maps TSC criteria to test procedures and evidence artifacts
+schema_version: "1.0"
+worksheet:
+  id: "SOC2-EVD-2026-001"
+  service_organization: ""
+  audit_type: Type2
+  period:
+    start: "2026-01-01"
+    end: "2026-12-31"
+  trust_services_categories:
+    - Security
+    - Availability
+    - Confidentiality
+
+controls:
+  - tsc_id: CC6.1
+    title: "Logical access security"
+    control_description: |
+      The entity implements logical access security software, infrastructure, and architectures
+      over protected information assets to protect them from security events.
+    test_procedure: |
+      Inspect IAM policy exports; sample 25 users for role assignment vs job function;
+      verify MFA enforcement for privileged accounts.
+    sample_size: 25
+    population: "All production IAM users"
+    evidence:
+      - artifact_id: art-001
+        description: "IAM policy export"
+        status: pending
+    test_result: not_tested  # pass | fail | not_tested
+    exceptions: []
+    tester: ""
+    test_date: null
+
+  - tsc_id: CC7.2
+    title: "Security event monitoring"
+    control_description: |
+      The entity monitors system components and the operation of those components
+      for anomalies indicative of malicious acts, natural disasters, and errors.
+    test_procedure: |
+      Inspect SIEM alert rules for agent/MCP events; verify log sources onboarded;
+      sample 10 alerts for timely triage.
+    sample_size: 10
+    population: "Security alerts Q2 2026"
+    evidence: []
+    test_result: not_tested
+    exceptions: []
+    tester: ""
+    test_date: null
+
+  - tsc_id: CC8.1
+    title: "Change management"
+    control_description: |
+      The entity authorizes, designs, develops, configures, documents, tests,
+      approves, and implements changes to infrastructure, data, software, and procedures.
+    test_procedure: |
+      Sample 25 production changes; verify ticket, approval, test evidence, deployment record.
+    sample_size: 25
+    population: "Production deployments"
+    evidence: []
+    test_result: not_tested
+    exceptions: []
+    tester: ""
+    test_date: null
+
+summary:
+  total_controls: 3
+  passed: 0
+  failed: 0
+  not_tested: 3
+
+auditor_notes: ""

@@ -1,0 +1,31 @@
+# NIST CSF 2.0 Profile — Template
+schema_version: "1.0"
+organization: ""
+profile_date: ""
+
+current_tier:
+  govern: Partial
+  identify: Partial
+  protect: Partial
+  detect: Partial
+  respond: Partial
+  recover: Partial
+
+target_tier:
+  govern: Repeatable
+  identify: Repeatable
+  protect: Repeatable
+  detect: Repeatable
+  respond: Repeatable
+  recover: Repeatable
+
+subcategory_status:
+  - id: GV.OC-01
+    function: Govern
+    current: partial
+    target: implemented
+    gap: ""
+    owner: ""
+    due_date: ""
+
+priority_gaps: []

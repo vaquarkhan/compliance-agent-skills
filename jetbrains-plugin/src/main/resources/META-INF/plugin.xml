@@ -1,0 +1,49 @@
+<idea-plugin>
+    <id>com.complianceagent.skills</id>
+    <name>Compliance Agent Skills</name>
+    <vendor email="support@vaquarkhan.github.io" url="https://github.com/vaquarkhan/compliance-agent-skills">vaquarkhan</vendor>
+    <description><![CDATA[
+        Install USA compliance skill packs (HIPAA, PCI-DSS, SOC 2), agent adapters,
+        starter packs, MCP templates, and runnable examples into JetBrains IDE workspaces.
+        <ul>
+            <li>Install the full toolkit or a smaller starter surface</li>
+            <li>Add agent adapters for Claude, Copilot, Gemini, Kiro, Codex, OpenCode, and Windsurf-style workflows</li>
+            <li>Scaffold runnable examples and MCP templates directly into the current project</li>
+        </ul>
+    ]]></description>
+    <change-notes><![CDATA[
+        Initial release with HIPAA, PCI-DSS, and SOC 2 compliance skill pack installers.
+    ]]></change-notes>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <actions>
+        <group id="ComplianceAgentSkills.InstallGroup" text="Compliance Agent Skills" popup="true">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <action id="ComplianceAgentSkills.InstallFullToolkit"
+                    class="com.complianceagent.skills.InstallFullToolkitAction"
+                    text="Install Full Toolkit"
+                    description="Install the full compliance agent skills toolkit"/>
+            <action id="ComplianceAgentSkills.InstallCorePack"
+                    class="com.complianceagent.skills.InstallCorePackAction"
+                    text="Install Core Pack"
+                    description="Install core compliance agent skills files"/>
+            <action id="ComplianceAgentSkills.InstallAgentAdapters"
+                    class="com.complianceagent.skills.InstallAgentAdaptersAction"
+                    text="Install Agent Adapters"
+                    description="Install agent-specific adapter files"/>
+            <action id="ComplianceAgentSkills.InstallStarterPack"
+                    class="com.complianceagent.skills.InstallStarterPackAction"
+                    text="Install Starter Pack"
+                    description="Install a HIPAA, PCI-DSS, SOC 2, or Regulated AI starter pack"/>
+            <action id="ComplianceAgentSkills.InstallMcpTemplates"
+                    class="com.complianceagent.skills.InstallMcpTemplatesAction"
+                    text="Install MCP Templates"
+                    description="Install MCP server configuration templates"/>
+            <action id="ComplianceAgentSkills.ScaffoldRunnableExample"
+                    class="com.complianceagent.skills.ScaffoldRunnableExampleAction"
+                    text="Scaffold Runnable Example"
+                    description="Scaffold a runnable compliance audit example"/>
+        </group>
+    </actions>
+</idea-plugin>

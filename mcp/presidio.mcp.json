@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "presidio": {
+      "command": "python",
+      "args": ["-m", "presidio_mcp_server"],
+      "env": {
+        "PRESIDIO_SCORE_THRESHOLD": "0.35",
+        "PRESIDIO_LANGUAGE": "en",
+        "PRESIDIO_ENTITY_TYPES": "PERSON,PHONE_NUMBER,EMAIL_ADDRESS,US_SSN,US_DRIVER_LICENSE,MEDICAL_LICENSE,DATE_TIME,LOCATION"
+      },
+      "metadata": {
+        "compliance_use": "Custom Presidio MCP bridge for extended PHI entity detection",
+        "frameworks": ["HIPAA-Security-Rule"],
+        "note": "Template — implement presidio_mcp_server module or use container image",
+        "restrictions": [
+          "Run inside VPC with no external egress",
+          "Do not log detected entity values",
+          "Complement redaction.py — do not replace upstream gate"
+        ]
+      }
+    }
+  }
+}

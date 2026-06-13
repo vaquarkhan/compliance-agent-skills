@@ -1,0 +1,38 @@
+---
+description: PHI redaction first — Presidio gate, token handling, and minimum necessary LLM access for HIPAA workflows.
+globs:
+alwaysApply: true
+---
+
+# PHI Redaction First
+
+## Upstream gate
+
+`redaction.py` + Presidio analyze all user prompts before `agent.py` sends text to the model.
+
+## Token handling
+
+- Masked tokens like `<PERSON_1>` are **intentional** — do not guess original values.
+- Deanonymization is restricted to authorized downstream delivery via `deanonymize_response` tool.
+- Between engagements, assume a fresh redaction session (`reset_session()`).
+
+## Entity coverage
+
+Default types include PERSON, US_SSN, PHONE_NUMBER, EMAIL_ADDRESS, MEDICAL_LICENSE, DATE_TIME, CREDIT_CARD, and others — see `DEFAULT_ENTITY_TYPES` in `redaction.py`.
+
+## Hooks
+
+`COMPLIANCE_PHI_REDACTION=required` — session hooks block work if Presidio unavailable.
+
+## Skill
+
+For pipeline tuning: `hipaa-phi-redaction-pipeline`  
+Reference: `references/phi-redaction-patterns.md`
+
+## PCI note
+
+Credit card entity detection helps prevent accidental PAN in prompts — **never** process PAN in LLM workflows regardless of redaction.
+
+## Minimum necessary
+
+Scope LLM access to redacted, minimum-necessary text. Prefer structured queries over full clinical notes.

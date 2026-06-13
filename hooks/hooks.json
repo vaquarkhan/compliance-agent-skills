@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "command": "./hooks/session-start.sh"
+      }
+    ],
+    "beforeSubmitPrompt": [
+      {
+        "command": "./hooks/phi-redaction-guard.sh"
+      }
+    ]
+  },
+  "metadata": {
+    "project": "compliance-agent-skills",
+    "description": "PHI redaction guard and session initialization for compliance audits"
+  },
+  "optional_hooks": {
+    "audit_mode": "./hooks/audit-mode.sh",
+    "release_guard": "./hooks/release-guard.sh"
+  }
+}

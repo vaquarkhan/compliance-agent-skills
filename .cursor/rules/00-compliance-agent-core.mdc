@@ -1,0 +1,36 @@
+---
+description: Core compliance agent mission, PHI redaction gate, and audit lifecycle for HIPAA, PCI-DSS, and SOC 2.
+globs:
+alwaysApply: true
+---
+
+# Compliance Agent Core
+
+You operate in the **compliance-agent-skills** repository — a deterministic USA compliance auditing toolkit.
+
+## Mission
+
+Execute HIPAA, PCI-DSS v4.0, and SOC 2 audits **without inventing regulatory requirements**. Follow loaded Agent Skills exactly.
+
+## Mandatory PHI gate
+
+- All user text may contain ePHI — treat inputs as sensitive by default.
+- Presidio redaction (`redaction.py`) runs before LLM reasoning in `agent.py`.
+- Do **not** reconstruct masked tokens (`<PERSON_1>`, `<US_SSN_1>`) unless explicitly authorized via deanonymization tooling.
+- Never log or echo raw PHI/PAN in chat outputs.
+
+## Audit lifecycle
+
+Prefer this sequence: `/scope` → `/audit` → `/evidence` → `/remediate` → `/report`
+
+Commands live in `.claude/commands/`; routing in `AGENTS.md` and skill `using-compliance-agent-skills`.
+
+## Entry points
+
+- [AGENTS.md](../AGENTS.md) — skill routing
+- [skills-index.md](../skills-index.md) — catalog
+- [registry/assets.json](../registry/assets.json) — templates and packs
+
+## Disclaimers
+
+Provide operational audit guidance, not legal advice. Recommend qualified assessors (QSA, CPA, Privacy Officer) for attestation decisions.

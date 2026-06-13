@@ -1,0 +1,56 @@
+name: Validate and Package
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install proof dependencies
+        run: pip install -r requirements-proof.txt
+
+      - name: Validate skills
+        run: python scripts/validate-skills.py
+
+      - name: Validate assets registry
+        run: python scripts/validate-assets.py
+
+      - name: Validate plugin manifest
+        run: python scripts/validate-plugin-manifest.py
+
+      - name: Validate evidence manifest example
+        run: python scripts/validate-evidence-manifest.py
+
+  package-vscode:
+    runs-on: ubuntu-latest
+    needs: validate
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install vsce
+        run: npm install -g @vscode/vsce
+
+      - name: Package VS Code extension
+        working-directory: vscode-extension
+        run: vsce package --no-dependencies
+
+      - name: Upload VSIX artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: compliance-agent-skills-vsix
+          path: vscode-extension/*.vsix

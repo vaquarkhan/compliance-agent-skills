@@ -1,0 +1,5 @@
+# Synthetic IAM export sample for SOC 2 evidence demo
+
+user_id,role,mfa_enabled,last_login
+audit-bot,read-only,true,2026-06-01T00:00:00Z
+admin-svc,admin,true,2026-06-10T12:00:00Z

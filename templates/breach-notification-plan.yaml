@@ -1,0 +1,67 @@
+# Breach Notification Plan
+# HIPAA Breach Notification Rule (45 CFR §164.400–414) + HITECH + state overlays
+schema_version: "1.0"
+plan:
+  id: "BNP-2026-001"
+  organization: ""
+  effective_date: "2026-06-13"
+  owner: "Privacy Officer"
+  backup_owner: "Security Lead"
+  review_cycle_days: 90
+
+trigger_criteria:
+  hipaa:
+    - "Unauthorized acquisition, access, use, or disclosure of unsecured PHI"
+    - "Compromise to security or privacy of PHI per four-factor risk assessment"
+  agent_specific:
+    - "Raw ePHI sent to LLM without Presidio redaction"
+    - "MCP tool exfiltration of database rows containing PHI"
+    - "Prompt logging with reversible deanonymization leak"
+
+four_factor_assessment:
+  factors:
+    - id: nature_extent
+      question: "Who accessed PHI and how much was involved?"
+    - id: unauthorized_person
+      question: "Was the recipient obligated to protect PHI?"
+    - id: acquisition
+      question: "Was PHI actually acquired or viewed?"
+    - id: mitigation
+      question: "Were risks mitigated (encryption, recovery)?"
+  documentation_path: "incidents/{incident_id}/risk-assessment.md"
+
+notification_timelines:
+  individuals:
+    deadline_days: 60
+    method: [written_letter, email_if_authorized]
+  hhs_ocr:
+    threshold_individuals: 500
+    deadline: "within 60 days; annual if <500"
+  media:
+    threshold_individuals: 500
+    geography: "state or jurisdiction"
+  business_associates:
+    notify_covered_entity_hours: 24
+
+roles:
+  incident_commander: ""
+  privacy_officer: ""
+  legal_counsel: ""
+  communications: ""
+  forensics: ""
+
+templates:
+  individual_notice: "templates/notices/individual-breach-notice.md"
+  hhs_submission: "templates/notices/hhs-breach-report.yaml"
+  media_statement: "templates/notices/media-statement.md"
+
+evidence_to_preserve:
+  - "Agent session logs (redacted)"
+  - "MCP access logs"
+  - "Presidio redaction audit trail"
+  - "SIEM alerts and ticket timeline"
+
+post_incident:
+  - "Root cause analysis within 14 days"
+  - "Update hipaa-phi-redaction-pipeline controls"
+  - "Tabletop exercise within 90 days"

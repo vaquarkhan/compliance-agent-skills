@@ -1,0 +1,38 @@
+---
+description: Route tasks to HIPAA, PCI-DSS v4.0, or SOC 2 skills based on user intent and presets.
+globs:
+alwaysApply: true
+---
+
+# Framework Routing
+
+## When intent is unclear
+
+Load **`using-compliance-agent-skills`** first.
+
+## Routing table
+
+| Signals | Primary skill | Preset |
+| --- | --- | --- |
+| ePHI, BAA, Security Rule | `hipaa-technical-safeguards` | `healthcare-hipaa` |
+| Presidio, redaction pipeline | `hipaa-phi-redaction-pipeline` | `healthcare-hipaa` |
+| LLM vendor BAA | `hipaa-baa-vendor-assessment` | `healthcare-hipaa` |
+| Checkout scripts, Req 6.4.3 | `pci-dss-script-audit` | `fintech-pci-dss` |
+| CDE, firewall, segmentation | `pci-dss-network-segmentation` | `fintech-pci-dss` |
+| TSC mapping, SOC 2 scope | `soc2-trust-services-criteria` | `saas-soc2-type2` |
+| Evidence binder | `soc2-evidence-collection` | `saas-soc2-type2` |
+| CCM, drift dashboards | `soc2-ccm-continuous-monitoring` | `saas-soc2-type2` |
+| IAM, MFA, RBAC | `access-control-identity-audit` | any |
+| Logs, SIEM, Req 10 | `audit-logging-integrity` | any |
+| Breach, incident | `breach-incident-response` | `healthcare-hipaa` |
+| Vendor SOC reports | `vendor-third-party-risk` | any |
+| OPA, Terraform, CI gates | `compliance-as-code-governance` | cloud presets |
+| MCP OAuth, tool scope | `mcp-compliance-integration` | `regulated-ai-agents` |
+
+## Cloud presets
+
+AWS / Azure / GCP presets add cloud-specific control mappings — combine with framework skills.
+
+## One primary skill per thread
+
+Add secondary skills only when scope requires (see routing matrix in `using-compliance-agent-skills`).

@@ -1,0 +1,67 @@
+# Compliance Control Matrix
+# Cross-framework mapping for HIPAA, PCI-DSS v4.0, and SOC 2 TSC
+schema_version: "1.0"
+engagement:
+  id: "ENG-2026-001"
+  name: "Annual compliance control matrix"
+  owner: "Compliance Engineering"
+  approver: ""
+  created_at: "2026-06-13T00:00:00Z"
+  frameworks:
+    - HIPAA-Security-Rule
+    - PCI-DSS-v4.0
+    - SOC2-TSC-2017
+
+systems_in_scope:
+  - id: "sys-llm-gateway"
+    name: "LLM Agent Gateway"
+    data_classes: [ePHI, confidential]
+  - id: "sys-checkout"
+    name: "E-commerce Checkout"
+    data_classes: [CHD, PII]
+
+controls:
+  - id: "AC-01"
+    title: "Unique user identification and least privilege"
+    mappings:
+      hipaa: "45 CFR §164.312(a)(1)"
+      pci_dss: "Req 7.2, 8.2"
+      soc2: "CC6.1, CC6.2"
+    implementation_status: partial  # not_implemented | partial | implemented | not_applicable
+    evidence_refs: []
+    last_tested: null
+    tester: null
+    gaps: []
+    notes: ""
+
+  - id: "AU-01"
+    title: "Audit logging and log integrity"
+    mappings:
+      hipaa: "45 CFR §164.312(b)"
+      pci_dss: "Req 10.2, 10.3"
+      soc2: "CC7.2, CC7.3"
+    implementation_status: not_implemented
+    evidence_refs: []
+    last_tested: null
+    tester: null
+    gaps:
+      - "Agent MCP tool calls not centralized in SIEM"
+    notes: ""
+
+  - id: "SC-01"
+    title: "Transmission security / encryption in transit"
+    mappings:
+      hipaa: "45 CFR §164.312(e)(1)"
+      pci_dss: "Req 4.2"
+      soc2: "CC6.7"
+    implementation_status: implemented
+    evidence_refs:
+      - "evidence/tls-config-export.json"
+    last_tested: "2026-06-01"
+    tester: "security@example.com"
+    gaps: []
+    notes: "TLS 1.2+ enforced on all public endpoints"
+
+sign_off:
+  compliance_lead: { name: "", date: null }
+  engineering_lead: { name: "", date: null }

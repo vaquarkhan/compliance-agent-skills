@@ -1,0 +1,69 @@
+# Vendor Risk Assessment
+# Third-party / subprocessor review for HIPAA, PCI, SOC 2 programs
+schema_version: "1.0"
+assessment:
+  id: "VRA-2026-001"
+  vendor:
+    name: ""
+    legal_name: ""
+    website: ""
+    services: []
+    data_accessed: []  # ePHI, CHD, PII, metadata_only
+    subprocessors_disclosed: false
+  requestor: ""
+  assessor: ""
+  created_at: "2026-06-13T00:00:00Z"
+  review_type: initial  # initial | annual | trigger_event
+
+inherent_risk:
+  score: null  # 1-5
+  factors:
+    data_sensitivity: null
+    system_access: null  # none | read | write | admin
+    integration_depth: null
+    geographic_processing: []
+
+compliance_artifacts:
+  soc2_type2:
+    received: false
+    report_date: null
+    exceptions_noted: []
+  iso27001: false
+  pci_aoc: false
+  hipaa_baa:
+    executed: false
+    path: ""
+    gaps: []
+
+questionnaire:
+  sections:
+    - id: security
+      weight: 0.35
+      responses: {}
+    - id: privacy
+      weight: 0.25
+      responses: {}
+    - id: availability
+      weight: 0.20
+      responses: {}
+    - id: incident_response
+      weight: 0.20
+      responses: {}
+
+residual_risk:
+  score: null
+  rating: null  # low | medium | high | critical
+  compensating_controls: []
+
+decision:
+  status: pending  # approved | conditional | rejected | pending
+  approver: ""
+  approval_date: null
+  conditions: []
+  re_review_date: null
+
+monitoring:
+  continuous_signals:
+    - "Security advisory RSS"
+    - "Subprocessor change notifications"
+  review_frequency_days: 365

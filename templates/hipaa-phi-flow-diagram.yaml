@@ -1,0 +1,72 @@
+# HIPAA ePHI Data Flow Diagram (structured)
+# Supports Security Rule documentation and BAA scoping
+schema_version: "1.0"
+diagram:
+  id: "PHI-FLOW-2026-001"
+  organization: ""
+  created_at: "2026-06-13T00:00:00Z"
+  author: "Privacy/Security Officer"
+  version: "1.0"
+
+boundaries:
+  - id: "bnd-internal"
+    name: "Corporate network / VPC"
+    trust_level: internal
+  - id: "bnd-cloud-llm"
+    name: "LLM provider (Business Associate)"
+    trust_level: external_baa_required
+
+data_stores:
+  - id: "ds-ehr"
+    name: "EHR Database"
+    contains_ephi: true
+    encryption_at_rest: AES-256
+  - id: "ds-agent-logs"
+    name: "Agent prompt logs"
+    contains_ephi: false
+    notes: "Presidio-redacted before persistence"
+
+flows:
+  - id: "flow-001"
+    from: "ds-ehr"
+    to: "agent-gateway"
+    data_elements: [MRN, diagnosis, free_text_notes]
+    transport: TLS_1_3
+    safeguards:
+      - "Minimum necessary query filter"
+      - "Presidio redaction before LLM (redaction.py)"
+    baa_required: false
+
+  - id: "flow-002"
+    from: "agent-gateway"
+    to: "bnd-cloud-llm"
+    data_elements: [tokenized_phi_only]
+    transport: TLS_1_3
+    safeguards:
+      - "No raw ePHI — masked tokens only"
+      - "Azure OpenAI with BAA"
+    baa_required: true
+    baa_id: "BAA-OPENAI-2025"
+
+  - id: "flow-003"
+    from: "agent-gateway"
+    to: "ds-agent-logs"
+    data_elements: [redacted_prompts, tool_calls]
+    transport: internal
+    safeguards:
+      - "Log integrity (CC7.2)"
+      - "90-day retention"
+    baa_required: false
+
+mcp_integrations:
+  - server: presidio
+    purpose: "Entity detection pre-flight"
+    ephi_access: detect_only
+  - server: postgres
+    purpose: "Read-only clinical summaries"
+    ephi_access: query_with_row_filter
+
+gaps: []
+review:
+  next_review_date: "2026-09-13"
+  approver: ""

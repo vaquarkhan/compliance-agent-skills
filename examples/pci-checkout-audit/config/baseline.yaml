@@ -1,0 +1,31 @@
+# PCI Checkout Script Baseline — Example (Req 6.4.3 / 11.6.1)
+baseline_id: PCI-CHECKOUT-EXAMPLE-001
+target_url: https://example.com/checkout
+merchant_name: Example Merchant (Demo)
+assessment_date: "2026-06-13"
+
+scripts:
+  - script_id: a1b2c3d4e5f67890
+    type: external
+    src_url: https://cdn.example.com/checkout.js
+    integrity_algorithm: sha256
+    integrity_value: sha256:0000000000000000000000000000000000000000000000000000000000000001
+    authorization_record: CHG-EXAMPLE-001
+    business_justification: Checkout form validation — first-party bundle
+  - script_id: f9e8d7c6b5a43210
+    type: external
+    src_url: https://js.stripe.com/v3/
+    integrity_algorithm: sha256
+    integrity_value: sha256:0000000000000000000000000000000000000000000000000000000000000002
+    authorization_record: CHG-EXAMPLE-002
+    business_justification: Payment processor SDK — PCI-validated provider
+
+requirement_11_6_1:
+  monitoring:
+    frequency: weekly
+    checks:
+      - type: script_hash_delta
+      - type: security_headers_delta
+        headers:
+          - Content-Security-Policy
+          - Strict-Transport-Security

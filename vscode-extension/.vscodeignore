@@ -1,0 +1,7 @@
+*
+!.gitignore
+!LICENSE
+!README.md
+!extension.js
+!install-manifest.json
+!package.json

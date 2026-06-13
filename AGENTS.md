@@ -1,0 +1,86 @@
+# AGENTS.md — Compliance Agent Entry Point
+
+This file is the **primary routing document** for AI coding agents working in this repository. Read it before loading any skill.
+
+## Mission
+
+Execute **deterministic USA compliance audits** for HIPAA, PCI-DSS v4.0, SOC 2, ISO 27001, NIST CSF 2.0, and CCPA/CPRA without inventing regulatory requirements. All user-provided text passes through **PHI redaction** (`redaction.py`) before LLM reasoning.
+
+## Mandatory rules
+
+1. **Load skills progressively** — use `using-compliance-agent-skills` for routing; then load exactly one primary framework skill per audit thread.
+2. **Never reconstruct redacted tokens** (`<PERSON_1>`, `<US_SSN_1>`) unless using the authorized `deanonymize_response` tool in `agent.py`.
+3. **Cite authoritative sources** — CFR, PCI-DSS v4.0, AICPA TSC. Do not fabricate requirement numbers.
+4. **Emit auditable artifacts** — scope JSON, evidence manifests with SHA-256 hashes, remediation trackers.
+5. **Respect lifecycle order** when possible: `/scope` → `/audit` → `/evidence` → `/remediate` → `/report`.
+
+## Skill routing
+
+| Signal in user request | Primary skill |
+| --- | --- |
+| Broad / unclear framework | `using-compliance-agent-skills` |
+| PHI, ePHI, BAA, Security Rule | `hipaa-technical-safeguards`, `hipaa-phi-redaction-pipeline`, or `hipaa-baa-vendor-assessment` |
+| Payment scripts, checkout, Req 6.4.3 | `pci-dss-script-audit` |
+| CDE, firewall, segmentation | `pci-dss-network-segmentation` |
+| TSC mapping, SOC 2 scope | `soc2-trust-services-criteria` |
+| Audit binder, screenshots | `soc2-evidence-collection` |
+| Continuous monitoring | `soc2-ccm-continuous-monitoring` |
+| IAM, MFA, RBAC | `access-control-identity-audit` |
+| Logs, SIEM, Req 10 | `audit-logging-integrity` |
+| Breach, incident notification | `breach-incident-response` |
+| Vendor SOC reports | `vendor-third-party-risk` |
+| OPA, Terraform, policy-as-code | `compliance-as-code-governance` |
+| MCP server hardening | `mcp-compliance-integration` |
+| ISO 27001 Annex A / SoA | `iso27001-annex-a-controls` |
+| NIST CSF 2.0 gap assessment | `nist-csf-2-assessment` |
+| CCPA/CPRA, DSAR, California privacy | `ccpa-cpra-privacy-rights` |
+| PCI encryption, PAN, key management | `pci-dss-encryption-key-management` |
+| HIPAA minimum necessary / de-id | `hipaa-privacy-minimum-necessary` |
+
+Full catalog: [skills-index.md](skills-index.md).
+
+## Presets
+
+Apply a preset when the user names an industry or cloud:
+
+| Preset | Path |
+| --- | --- |
+| Healthcare HIPAA | `presets/healthcare-hipaa/PRESET.md` |
+| Fintech PCI-DSS | `presets/fintech-pci-dss/PRESET.md` |
+| SaaS SOC 2 Type II | `presets/saas-soc2-type2/PRESET.md` |
+| AWS | `presets/aws-compliance/PRESET.md` |
+| Azure | `presets/azure-compliance/PRESET.md` |
+| GCP | `presets/gcp-compliance/PRESET.md` |
+
+## Persona agents
+
+For role-play or multi-agent workflows, see `agents/`:
+
+- `compliance-architect.md` — cross-framework design
+- `hipaa-privacy-officer.md` — HIPAA Privacy/Security Rule focus
+- `pci-qsa-reviewer.md` — PCI-DSS v4.0 QSA-style review
+- `soc2-auditor.md` — TSC evidence and testing
+
+## MCP servers
+
+Configure from `mcp/` before technical audits requiring browser, database, or IaC access. See `mcp/README.md`.
+
+## Key files
+
+| File | Role |
+| --- | --- |
+| `agent.py` | Pydantic AI agent + skills capability |
+| `redaction.py` | Presidio PHI gate |
+| `registry/assets.json` | Templates, packs, examples index |
+| `templates/` | YAML/MD artifact scaffolds |
+| `hooks/hooks.json` | Session PHI guard, audit mode |
+
+## Validation
+
+Before committing skill or asset changes:
+
+```bash
+python scripts/validate-skills.py
+python scripts/validate-assets.py
+python scripts/validate-plugin-manifest.py
+```

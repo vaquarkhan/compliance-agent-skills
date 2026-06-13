@@ -1,0 +1,51 @@
+# PCI-DSS E-commerce Starter Pack
+id: pci-dss-ecommerce-starter
+version: "1.0.0"
+description: |
+  Starter bundle for merchants auditing payment-page scripts (Req 6.4.3 / 11.6.1),
+  CDE segmentation, and logging controls for agent-assisted QSA workflows.
+frameworks:
+  - PCI-DSS-v4.0
+
+skills:
+  - using-compliance-agent-skills
+  - pci-dss-script-audit
+  - pci-dss-network-segmentation
+  - access-control-identity-audit
+  - audit-logging-integrity
+  - mcp-compliance-integration
+
+templates:
+  - templates/pci-script-baseline.yaml
+  - templates/compliance-control-matrix.yaml
+  - templates/audit-evidence-manifest.yaml
+  - templates/incident-runbook.md
+
+presets:
+  - presets/fintech-pci-dss/PRESET.md
+
+references:
+  - references/pci-dss-v4-checklist.md
+  - references/mcp-compliance-patterns.md
+
+mcp_servers:
+  - playwright
+  - github
+  - terraform
+
+hooks:
+  - audit-mode
+  - release-guard
+
+lifecycle:
+  recommended_sequence:
+    - /scope
+    - /audit
+    - /evidence
+    - /remediate
+    - /report
+
+examples:
+  - examples/pci-checkout-audit/
+
+agent_entry: agent.py

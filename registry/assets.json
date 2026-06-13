@@ -1,0 +1,244 @@
+{
+  "schema_version": "1.0.0",
+  "project": "compliance-agent-skills",
+  "version": "1.0.0",
+  "frameworks": ["HIPAA", "PCI-DSS-v4.0", "SOC2-TSC"],
+  "templates": [
+    {
+      "id": "compliance-control-matrix",
+      "path": "templates/compliance-control-matrix.yaml",
+      "description": "Cross-framework control mapping matrix with evidence links"
+    },
+    {
+      "id": "audit-evidence-manifest",
+      "path": "templates/audit-evidence-manifest.yaml",
+      "description": "SHA-256 hashed evidence bundle manifest for auditors"
+    },
+    {
+      "id": "breach-notification-plan",
+      "path": "templates/breach-notification-plan.yaml",
+      "description": "HIPAA/HITECH breach notification workflow template"
+    },
+    {
+      "id": "vendor-risk-assessment",
+      "path": "templates/vendor-risk-assessment.yaml",
+      "description": "Third-party vendor risk questionnaire and scoring"
+    },
+    {
+      "id": "pci-script-baseline",
+      "path": "templates/pci-script-baseline.yaml",
+      "description": "PCI-DSS Req 6.4.3 payment-page script inventory baseline"
+    },
+    {
+      "id": "hipaa-phi-flow-diagram",
+      "path": "templates/hipaa-phi-flow-diagram.yaml",
+      "description": "ePHI data flow diagram scaffold for Security Rule documentation"
+    },
+    {
+      "id": "soc2-control-evidence",
+      "path": "templates/soc2-control-evidence.yaml",
+      "description": "SOC 2 TSC control-to-evidence mapping worksheet"
+    },
+    {
+      "id": "incident-runbook",
+      "path": "templates/incident-runbook.md",
+      "description": "Security incident response runbook (Markdown)"
+    },
+    {
+      "id": "iso27001-statement-of-applicability",
+      "path": "templates/iso27001-statement-of-applicability.yaml",
+      "description": "ISO 27001:2022 Statement of Applicability scaffold"
+    },
+    {
+      "id": "nist-csf-profile",
+      "path": "templates/nist-csf-profile.yaml",
+      "description": "NIST CSF 2.0 Current/Target Profile worksheet"
+    },
+    {
+      "id": "dsar-request-log",
+      "path": "templates/dsar-request-log.yaml",
+      "description": "CCPA/CPRA DSAR intake and response log"
+    }
+  ],
+  "starter_packs": [
+    {
+      "id": "hipaa-healthcare",
+      "path": "starter-packs/hipaa-healthcare-starter.yaml",
+      "frameworks": ["HIPAA"],
+      "skills": [
+        "using-compliance-agent-skills",
+        "hipaa-technical-safeguards",
+        "hipaa-phi-redaction-pipeline",
+        "hipaa-baa-vendor-assessment",
+        "breach-incident-response"
+      ]
+    },
+    {
+      "id": "pci-dss-ecommerce",
+      "path": "starter-packs/pci-dss-ecommerce-starter.yaml",
+      "frameworks": ["PCI-DSS-v4.0"],
+      "skills": [
+        "using-compliance-agent-skills",
+        "pci-dss-script-audit",
+        "pci-dss-network-segmentation",
+        "access-control-identity-audit",
+        "audit-logging-integrity"
+      ]
+    },
+    {
+      "id": "soc2-saas",
+      "path": "starter-packs/soc2-saas-starter.yaml",
+      "frameworks": ["SOC2-TSC"],
+      "skills": [
+        "using-compliance-agent-skills",
+        "soc2-trust-services-criteria",
+        "soc2-evidence-collection",
+        "soc2-ccm-continuous-monitoring",
+        "access-control-identity-audit"
+      ]
+    },
+    {
+      "id": "regulated-ai-agents",
+      "path": "starter-packs/regulated-ai-agents-starter.yaml",
+      "frameworks": ["HIPAA", "PCI-DSS-v4.0", "SOC2-TSC"],
+      "skills": [
+        "using-compliance-agent-skills",
+        "hipaa-phi-redaction-pipeline",
+        "mcp-compliance-integration",
+        "compliance-as-code-governance",
+        "vendor-third-party-risk"
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "pci-checkout-audit",
+      "path": "examples/pci-checkout-audit/",
+      "description": "PCI Req 6.4.3 checkout script baseline audit example"
+    },
+    {
+      "id": "hipaa-phi-redaction",
+      "path": "examples/hipaa-phi-redaction/",
+      "description": "Presidio redaction demo on synthetic PHI"
+    },
+    {
+      "id": "soc2-evidence-bundle",
+      "path": "examples/soc2-evidence-bundle/",
+      "description": "SOC 2 evidence manifest packaging example"
+    }
+  ],
+  "mcp_templates": [
+    {
+      "id": "playwright",
+      "path": "mcp/playwright.mcp.json",
+      "server": "@playwright/mcp",
+      "use_case": "Payment-page DOM and script audits"
+    },
+    {
+      "id": "postgres",
+      "path": "mcp/postgres.mcp.json",
+      "server": "postgres-mcp",
+      "use_case": "Evidence queries and access review exports"
+    },
+    {
+      "id": "presidio",
+      "path": "mcp/presidio.mcp.json",
+      "server": "presidio-mcp-custom",
+      "use_case": "DLP entity detection MCP bridge"
+    },
+    {
+      "id": "slack",
+      "path": "mcp/slack.mcp.json",
+      "server": "slack-mcp",
+      "use_case": "Incident and audit notifications"
+    },
+    {
+      "id": "github",
+      "path": "mcp/github.mcp.json",
+      "server": "github-mcp",
+      "use_case": "Change management evidence"
+    },
+    {
+      "id": "terraform",
+      "path": "mcp/terraform.mcp.json",
+      "server": "terraform-mcp",
+      "use_case": "IaC drift and compliance scanning"
+    }
+  ],
+  "install_surfaces": [
+    {
+      "id": "cursor",
+      "paths": [".cursor/rules/", "hooks/hooks.json", "mcp/"],
+      "bootstrap_flag": "--target cursor"
+    },
+    {
+      "id": "claude",
+      "paths": [".claude/commands/", "CLAUDE.md", "skills/"],
+      "bootstrap_flag": "--target claude"
+    },
+    {
+      "id": "vscode",
+      "paths": ["vscode-extension/", ".github/copilot-instructions.md"],
+      "bootstrap_flag": "--target vscode"
+    },
+    {
+      "id": "jetbrains",
+      "paths": ["jetbrains-plugin/"],
+      "bootstrap_flag": "--target jetbrains"
+    },
+    {
+      "id": "python-agent",
+      "paths": ["agent.py", "redaction.py", "skills/", "requirements.txt"],
+      "bootstrap_flag": "--target python"
+    }
+  ],
+  "plugin_packages": [
+    {
+      "id": "vscode-extension",
+      "path": "vscode-extension/package.json",
+      "name": "compliance-agent-skills",
+      "type": "vscode"
+    },
+    {
+      "id": "jetbrains-plugin",
+      "path": "jetbrains-plugin/build.gradle.kts",
+      "name": "compliance-agent-skills",
+      "type": "jetbrains"
+    }
+  ],
+  "presets": [
+    "presets/healthcare-hipaa/PRESET.md",
+    "presets/fintech-pci-dss/PRESET.md",
+    "presets/saas-soc2-type2/PRESET.md",
+    "presets/aws-compliance/PRESET.md",
+    "presets/azure-compliance/PRESET.md",
+    "presets/gcp-compliance/PRESET.md"
+  ],
+  "references": [
+    "references/hipaa-security-rule-checklist.md",
+    "references/pci-dss-v4-checklist.md",
+    "references/soc2-trust-services-checklist.md",
+    "references/mcp-compliance-patterns.md",
+    "references/phi-redaction-patterns.md",
+    "references/compliance-as-code-patterns.md",
+    "references/iso27001-annex-a-checklist.md",
+    "references/nist-csf-2-checklist.md",
+    "references/ccpa-cpra-checklist.md"
+  ],
+  "agents": [
+    "agents/compliance-architect.md",
+    "agents/hipaa-privacy-officer.md",
+    "agents/pci-qsa-reviewer.md",
+    "agents/soc2-auditor.md"
+  ],
+  "core_scripts": [
+    "scripts/install_toolkit.py",
+    "scripts/install.sh",
+    "scripts/install.ps1",
+    "scripts/validate-skills.py",
+    "scripts/validate-assets.py",
+    "scripts/validate-plugin-manifest.py",
+    "scripts/validate-evidence-manifest.py",
+    "scripts/hook_runner.py"
+  ]
+}

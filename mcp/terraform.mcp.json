@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "terraform": {
+      "command": "npx",
+      "args": ["-y", "terraform-mcp-server"],
+      "env": {
+        "TF_STATE_BACKEND": "${TF_STATE_BACKEND}",
+        "TF_WORKSPACE": "compliance-audit-readonly"
+      },
+      "metadata": {
+        "compliance_use": "IaC drift detection and compliance-as-code evidence",
+        "frameworks": ["SOC2-CC7", "PCI-Req1", "HIPAA"],
+        "note": "Use read-only workspace; deny apply in audit mode",
+        "restrictions": [
+          "No terraform apply without break-glass approval",
+          "State backend access via read-only IAM role",
+          "Evidence exports hashed in audit-evidence-manifest"
+        ]
+      }
+    }
+  }
+}

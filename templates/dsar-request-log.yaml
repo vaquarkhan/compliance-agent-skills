@@ -1,0 +1,21 @@
+# CCPA/CPRA DSAR Request Log — Template
+schema_version: "1.0"
+organization: ""
+
+requests:
+  - request_id: DSAR-2026-001
+    received_at: "2026-06-13T00:00:00Z"
+    request_type: delete  # know | delete | correct | opt_out_sale | limit_sensitive
+    consumer_verified: false
+    status: open  # open | in_progress | completed | denied | extended
+    due_date: "2026-07-28"
+    assigned_to: ""
+    systems_searched: []
+    outcome: ""
+    denial_reason: ""
+    notes: ""
+
+metrics:
+  total_received_ytd: 0
+  completed_within_45_days: 0
+  denied: 0
