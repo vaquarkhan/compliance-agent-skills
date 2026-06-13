@@ -1,0 +1,45 @@
+# COPPA parental consent and notice tracker
+
+operator_name: ""
+service_name: ""
+assessment_date: ""
+
+applicability:
+  child_directed: false
+  mixed_audience: false
+  actual_knowledge_procedure: ""
+
+direct_notice:
+  parent_notice_url: ""
+  types_of_pi_collected: []
+  third_parties_disclosed: []
+  parent_rights_summary: ""
+  last_updated: ""
+
+verifiable_parental_consent:
+  required: true
+  method: ""  # credit_card | signed_form | video_id | safe_harbor | other
+  consent_log_retention_years: 3
+
+service_providers:
+  - name: ""
+    pi_processed: []
+    written_agreement: false
+    training_prohibited: true
+    deletion_on_request: true
+
+retention:
+  session_log_ttl_days: 0
+  automated_deletion: false
+  parent_deletion_sla_days: 30
+
+security:
+  encryption_in_transit: true
+  admin_mfa: true
+  redaction_before_llm: true
+  deanonymize_enabled: false
+
+restricted:
+  targeted_ads: false
+  push_notifications: false
+  precise_geolocation: false

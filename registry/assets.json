@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
   "project": "compliance-agent-skills",
-  "version": "1.4.0",
-  "frameworks": ["HIPAA", "HITECH", "PCI-DSS-v4.0", "SOC2-TSC", "ISO27001", "NIST-CSF-2.0", "CCPA-CPRA", "US-State-Privacy", "GDPR", "FedRAMP", "SOX", "CMMC", "GLBA"],
+  "version": "1.5.0",
+  "frameworks": ["HIPAA", "HITECH", "PCI-DSS-v4.0", "SOC2-TSC", "ISO27001", "NIST-CSF-2.0", "NIST-AI-RMF", "FERPA", "COPPA", "CCPA-CPRA", "US-State-Privacy", "GDPR", "FedRAMP", "SOX", "CMMC", "GLBA"],
   "templates": [
     {
       "id": "compliance-control-matrix",
@@ -88,6 +88,21 @@
       "id": "gdpr-ropa-template",
       "path": "templates/gdpr-ropa-template.yaml",
       "description": "GDPR Article 30 Record of Processing Activities scaffold"
+    },
+    {
+      "id": "nist-ai-rmf-profile",
+      "path": "templates/nist-ai-rmf-profile.yaml",
+      "description": "NIST AI RMF 1.0 GOVERN/MAP/MEASURE/MANAGE profile"
+    },
+    {
+      "id": "ferpa-school-official",
+      "path": "templates/ferpa-school-official.yaml",
+      "description": "FERPA school official DPA and LEI matrix"
+    },
+    {
+      "id": "coppa-parental-consent",
+      "path": "templates/coppa-parental-consent.yaml",
+      "description": "COPPA direct notice and verifiable parental consent tracker"
     }
   ],
   "starter_packs": [
@@ -167,6 +182,19 @@
         "breach-incident-response",
         "hipaa-phi-redaction-pipeline",
         "vendor-third-party-risk"
+      ]
+    },
+    {
+      "id": "edtech-youth-privacy",
+      "path": "starter-packs/edtech-youth-privacy-starter.yaml",
+      "frameworks": ["NIST-AI-RMF", "FERPA", "COPPA"],
+      "skills": [
+        "using-compliance-agent-skills",
+        "nist-ai-rmf-governance",
+        "ferpa-education-records",
+        "coppa-children-privacy",
+        "hipaa-phi-redaction-pipeline",
+        "mcp-compliance-integration"
       ]
     }
   ],
@@ -274,7 +302,8 @@
     "presets/azure-compliance/PRESET.md",
     "presets/gcp-compliance/PRESET.md",
     "presets/financial-services-glba/PRESET.md",
-    "presets/multinational-privacy/PRESET.md"
+    "presets/multinational-privacy/PRESET.md",
+    "presets/edtech-youth-privacy/PRESET.md"
   ],
   "references": [
     "references/hipaa-security-rule-checklist.md",
@@ -292,7 +321,10 @@
     "references/glba-ffiec-checklist.md",
     "references/hitech-breach-checklist.md",
     "references/us-state-privacy-matrix.md",
-    "references/gdpr-article-checklist.md"
+    "references/gdpr-article-checklist.md",
+    "references/nist-ai-rmf-checklist.md",
+    "references/ferpa-checklist.md",
+    "references/coppa-checklist.md"
   ],
   "agents": [
     "agents/compliance-architect.md",
@@ -305,7 +337,10 @@
     "agents/glba-compliance-officer.md",
     "agents/hitech-breach-coordinator.md",
     "agents/state-privacy-analyst.md",
-    "agents/gdpr-dpo-advisor.md"
+    "agents/gdpr-dpo-advisor.md",
+    "agents/nist-ai-rmf-assessor.md",
+    "agents/ferpa-compliance-officer.md",
+    "agents/coppa-privacy-officer.md"
   ],
   "core_scripts": [
     "scripts/install_toolkit.py",

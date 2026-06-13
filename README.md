@@ -9,13 +9,13 @@
 [![HIPAA](https://img.shields.io/badge/HIPAA-Security%20Rule-green.svg)](#hipaa)
 [![PCI-DSS](https://img.shields.io/badge/PCI--DSS-v4.0-red.svg)](#pci-dss)
 [![SOC 2](https://img.shields.io/badge/SOC%202-TSC-purple.svg)](#soc-2)
-[![Skills](https://img.shields.io/badge/skills-27-orange.svg)](skills-index.md)
+[![Skills](https://img.shields.io/badge/skills-30-orange.svg)](skills-index.md)
 
 **Deterministic USA compliance auditing for AI agents** — progressive-disclosure Agent Skills, a Presidio PHI redaction gate, MCP integrations, and IDE plugins for HIPAA, HITECH, PCI-DSS v4.0, SOC 2, ISO 27001, NIST CSF 2.0, CCPA/CPRA, US state privacy laws, GDPR, FedRAMP, SOX, CMMC, and GLBA/FFIEC workflows.
 
 > **Disclaimer:** This repository provides operational audit patterns and automation templates. It is **not legal advice** and does not replace a Qualified Security Assessor (QSA), HIPAA Privacy Officer, or licensed CPA for SOC 2 attestation.
 
-**Coverage:** 27 skills across HIPAA, PCI-DSS, SOC 2, FedRAMP, CMMC, GLBA, SOX, privacy (CCPA + US states + GDPR), and cross-cutting agent controls. See [docs/coverage-roadmap.md](docs/coverage-roadmap.md) for USA gaps and Phase 5 priorities (NIST AI RMF, FERPA, COPPA, NY DFS 500, etc.).
+**Coverage:** 30 skills across HIPAA, PCI-DSS, SOC 2, FedRAMP, CMMC, GLBA, SOX, privacy, NIST AI RMF, FERPA, COPPA, and cross-cutting agent controls. See [docs/coverage-roadmap.md](docs/coverage-roadmap.md) for remaining USA gaps (NY DFS 500, FISMA, etc.).
 
 ---
 
@@ -29,7 +29,7 @@ LLM agents can accelerate compliance work, but they must not:
 
 compliance-agent-skills addresses this with:
 
-1. **27 specialized skills** with explicit triggers, anti-patterns, and output artifacts
+1. **30 specialized skills** with explicit triggers, anti-patterns, and output artifacts
 2. **Mandatory PHI redaction** (`redaction.py`) before any user text reaches the model
 3. **Audit lifecycle commands** — `/scope`, `/audit`, `/evidence`, `/remediate`, `/report`
 4. **MCP templates** for Playwright DOM audits, Postgres evidence queries, Presidio DLP, Slack notifications, GitHub change tracking, and Terraform drift
@@ -171,7 +171,7 @@ Example engagement flow:
 
 ## Skills catalog
 
-27 skills organized by framework. Full catalog: [skills-index.md](skills-index.md).
+30 skills organized by framework. Full catalog: [skills-index.md](skills-index.md).
 
 | Group | Skills |
 | --- | --- |
@@ -182,6 +182,9 @@ Example engagement flow:
 | **SOC 2** | `soc2-trust-services-criteria`, `soc2-evidence-collection`, `soc2-ccm-continuous-monitoring` |
 | **ISO 27001** | `iso27001-annex-a-controls` |
 | **NIST CSF 2.0** | `nist-csf-2-assessment` |
+| **NIST AI RMF** | `nist-ai-rmf-governance` |
+| **FERPA** | `ferpa-education-records` |
+| **COPPA** | `coppa-children-privacy` |
 | **CCPA / CPRA** | `ccpa-cpra-privacy-rights` |
 | **US state privacy** | `us-state-privacy-laws` |
 | **GDPR** | `gdpr-us-multinational` |
@@ -266,7 +269,30 @@ GLBA Safeguards and Privacy Rules, FFIEC IT handbook alignment for financial ins
 
 **Related skill:** `glba-ffiec-financial-privacy`  
 **Preset:** [presets/financial-services-glba/PRESET.md](presets/financial-services-glba/PRESET.md)  
-**Starter pack:** `starter-packs/enterprise-regulated-starter.yaml`
+**Starter pack:** [starter-packs/multinational-privacy-starter.yaml](starter-packs/multinational-privacy-starter.yaml)
+
+### NIST AI RMF
+
+Trustworthy AI governance (GOVERN, MAP, MEASURE, MANAGE) for LLM agents and MCP toolchains.
+
+**Related skill:** `nist-ai-rmf-governance`  
+**Template:** [templates/nist-ai-rmf-profile.yaml](templates/nist-ai-rmf-profile.yaml)
+
+### FERPA
+
+Student education records, school official DPAs, and legitimate educational interest for EdTech agents.
+
+**Related skill:** `ferpa-education-records`  
+**Template:** [templates/ferpa-school-official.yaml](templates/ferpa-school-official.yaml)
+
+### COPPA
+
+FTC children's privacy — verifiable parental consent and service provider rules for under-13 users.
+
+**Related skill:** `coppa-children-privacy`  
+**Template:** [templates/coppa-parental-consent.yaml](templates/coppa-parental-consent.yaml)  
+**Preset:** [presets/edtech-youth-privacy/PRESET.md](presets/edtech-youth-privacy/PRESET.md)  
+**Starter pack:** [starter-packs/edtech-youth-privacy-starter.yaml](starter-packs/edtech-youth-privacy-starter.yaml)
 
 ### HITECH
 
@@ -300,7 +326,7 @@ compliance-agent-skills/
 ├── agent.py                 # Pydantic AI entry + SkillsCapability
 ├── redaction.py             # Presidio PHI redaction gate
 ├── requirements.txt
-├── skills/                  # 27 Agent Skills (SKILL.md each)
+├── skills/                  # 30 Agent Skills (SKILL.md each)
 ├── presets/                 # Framework + cloud presets
 ├── starter-packs/           # Curated skill + template bundles
 ├── templates/               # YAML/MD audit artifacts

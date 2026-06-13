@@ -22,6 +22,9 @@
     "templates/hitech-breach-workbook.yaml",
     "templates/state-privacy-assessment.yaml",
     "templates/gdpr-ropa-template.yaml",
+    "templates/nist-ai-rmf-profile.yaml",
+    "templates/ferpa-school-official.yaml",
+    "templates/coppa-parental-consent.yaml",
     "requirements.txt",
     "requirements-proof.txt",
     "agent.py",
@@ -72,7 +75,10 @@
     "skills/glba-ffiec-financial-privacy/SKILL.md",
     "skills/hitech-breach-notification/SKILL.md",
     "skills/us-state-privacy-laws/SKILL.md",
-    "skills/gdpr-us-multinational/SKILL.md"
+    "skills/gdpr-us-multinational/SKILL.md",
+    "skills/nist-ai-rmf-governance/SKILL.md",
+    "skills/ferpa-education-records/SKILL.md",
+    "skills/coppa-children-privacy/SKILL.md"
   ],
   "agent_adapters": {
     "Cursor": [
@@ -153,6 +159,18 @@
       "references/gdpr-article-checklist.md",
       "references/ccpa-cpra-checklist.md",
       "presets/multinational-privacy/PRESET.md",
+      "AGENTS.md",
+      "skills-index.md"
+    ],
+    "EdTech & Youth Privacy": [
+      "starter-packs/edtech-youth-privacy-starter.yaml",
+      "templates/nist-ai-rmf-profile.yaml",
+      "templates/ferpa-school-official.yaml",
+      "templates/coppa-parental-consent.yaml",
+      "references/nist-ai-rmf-checklist.md",
+      "references/ferpa-checklist.md",
+      "references/coppa-checklist.md",
+      "presets/edtech-youth-privacy/PRESET.md",
       "AGENTS.md",
       "skills-index.md"
     ]

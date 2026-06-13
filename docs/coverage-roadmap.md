@@ -1,6 +1,6 @@
 # Coverage & Roadmap
 
-What **compliance-agent-skills** covers today (27 skills) and notable **USA gaps** planned for future phases.
+What **compliance-agent-skills** covers today (30 skills) and notable **USA gaps** planned for future phases.
 
 > Operational patterns only — not legal advice.
 
@@ -26,16 +26,38 @@ What **compliance-agent-skills** covers today (27 skills) and notable **USA gaps
 
 ## USA compliance gaps (not yet dedicated skills)
 
-### High priority (Phase 5 candidates)
+| EdTech & youth (FERPA, COPPA, AI RMF) | `nist-ai-rmf-governance`, `ferpa-education-records`, `coppa-children-privacy` | Strong |
+
+---
+
+## USA compliance gaps (not yet dedicated skills)
+
+### High priority (Phase 6 candidates)
 
 | Framework | Why it matters for AI agents |
 | --- | --- |
-| **NIST AI RMF 1.0** | US AI governance standard — map, measure, manage, govern for LLM/agent systems |
-| **FERPA** | EdTech agents processing student education records |
-| **COPPA** | Consumer apps/agents interacting with children under 13 |
 | **NY DFS 23 NYCRR 500** | NY financial services cybersecurity — common for fintech |
 | **FISMA / RMF** | Federal agency systems (distinct from FedRAMP CSP path) |
-| **State breach notification playbooks** | Per-state timelines beyond HIPAA 60-day (partially in `breach-incident-response`) |
+| **State breach notification playbooks** | Per-state timelines (partially in `breach-incident-response`) |
+
+### Medium priority
+
+| Framework | Notes |
+| --- | --- |
+| **FDA 21 CFR Part 11** | Electronic records/signatures in pharma/med device AI |
+| **NERC CIP** | Energy sector critical infrastructure |
+| **CJIS Security Policy** | Law enforcement / criminal justice data |
+| **IRS Pub. 1075 / FTI** | Tax return information handling |
+| **BSA/AML / FinCEN** | Fintech KYC/transaction monitoring (often overlaps GLBA) |
+| **PCI-DSS full program** | All 12 requirements + ROC readiness (expand existing PCI skills) |
+| **HITECH Information Blocking** | 21st Century Cures / ONC interoperability rules |
+| **Section 508 / WCAG** | Federal/state accessibility for agent UIs |
+
+### Completed in Phase 5 ✓
+
+- ~~NIST AI RMF~~ → `nist-ai-rmf-governance`
+- ~~FERPA~~ → `ferpa-education-records`
+- ~~COPPA~~ → `coppa-children-privacy`
 
 ### Medium priority
 
@@ -81,13 +103,12 @@ What **compliance-agent-skills** covers today (27 skills) and notable **USA gaps
 
 ---
 
-## Suggest Phase 5?
+## Suggest Phase 6?
 
 If you want the next build, recommended order:
 
-1. **NIST AI RMF** — natural fit for this repo’s AI-agent mission  
-2. **FERPA + COPPA** — high-volume US verticals (edtech, consumer)  
-3. **NY DFS 500** — fintech gap alongside GLBA  
-4. **State breach playbook skill** — deepens `breach-incident-response`  
+1. **NY DFS 500** — fintech gap alongside GLBA  
+2. **FISMA / RMF** — federal agency path  
+3. **State breach playbook skill** — deepens `breach-incident-response`  
 
-Open an issue or PR with `phase-5` label to prioritize.
+Open an issue or PR with `phase-6` label to prioritize.

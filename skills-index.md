@@ -151,6 +151,36 @@ Coverage gaps: [docs/coverage-roadmap.md](docs/coverage-roadmap.md)
 
 ---
 
+## NIST AI RMF
+
+| Skill | Path | Summary |
+| --- | --- | --- |
+| **nist-ai-rmf-governance** | [skills/nist-ai-rmf-governance/](skills/nist-ai-rmf-governance/) | NIST AI RMF 1.0—GOVERN/MAP/MEASURE/MANAGE for trustworthy AI agents. |
+
+**Related:** references `nist-ai-rmf-checklist.md`, template `nist-ai-rmf-profile.yaml`
+
+---
+
+## FERPA
+
+| Skill | Path | Summary |
+| --- | --- | --- |
+| **ferpa-education-records** | [skills/ferpa-education-records/](skills/ferpa-education-records/) | FERPA education records, school officials, LEI for EdTech AI. |
+
+**Related:** references `ferpa-checklist.md`, template `ferpa-school-official.yaml`
+
+---
+
+## COPPA
+
+| Skill | Path | Summary |
+| --- | --- | --- |
+| **coppa-children-privacy** | [skills/coppa-children-privacy/](skills/coppa-children-privacy/) | FTC COPPA—VPC, direct notice, LLM service providers for under-13. |
+
+**Related:** references `coppa-checklist.md`, preset `edtech-youth-privacy`
+
+---
+
 ## Cross-cutting
 
 | Skill | Path | Summary |
@@ -186,4 +216,7 @@ GLBA / bank or fintech         → glba-ffiec-financial-privacy
 HITECH / OCR breach            → hitech-breach-notification
 US state privacy (non-CA)      → us-state-privacy-laws
 GDPR / EU data subjects        → gdpr-us-multinational
+NIST AI RMF / trustworthy AI   → nist-ai-rmf-governance
+FERPA / EdTech / students      → ferpa-education-records
+COPPA / under-13 / child app   → coppa-children-privacy
 ```

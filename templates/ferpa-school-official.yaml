@@ -1,0 +1,41 @@
+# FERPA school official and LEI matrix
+
+agreement_id: ""
+lea_name: ""
+vendor_name: ""
+effective_date: ""
+
+school_official:
+  performs_institutional_service: true
+  under_direct_control: true
+  dpa_signed: false
+  dpa_path: ""
+
+subprocessors:
+  - name: ""
+    role: ""  # LLM API | MCP host | analytics
+    ferpa_flow_down: false
+
+legitimate_educational_interest:
+  - agent_capability: ""
+    educational_purpose: ""
+    record_types_accessed: []
+    user_roles: []
+    approved_by: ""
+    approval_date: ""
+
+directory_information:
+  categories: []
+  annual_notice_date: ""
+  opt_out_process: ""
+
+disclosure_log:
+  enabled: true
+  storage: ""  # MCP Postgres | SIEM
+  fields: [actor, record_type, recipient, purpose, timestamp]
+
+technical_controls:
+  rbac: true
+  prompt_pseudonymization: true
+  llm_redaction: true
+  deanonymize_production: false

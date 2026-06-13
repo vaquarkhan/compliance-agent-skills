@@ -4,7 +4,7 @@ This file is the **primary routing document** for AI coding agents working in th
 
 ## Mission
 
-Execute **deterministic USA compliance audits** across HIPAA, HITECH, PCI-DSS v4.0, SOC 2, ISO 27001, NIST CSF 2.0, CCPA/CPRA, US state privacy laws, GDPR, FedRAMP, SOX, CMMC, and GLBA/FFIEC without inventing regulatory requirements. All user-provided text passes through **PHI redaction** (`redaction.py`) before LLM reasoning.
+Execute **deterministic USA compliance audits** across HIPAA, HITECH, PCI-DSS v4.0, SOC 2, ISO 27001, NIST CSF 2.0, NIST AI RMF, FERPA, COPPA, CCPA/CPRA, US state privacy laws, GDPR, FedRAMP, SOX, CMMC, and GLBA/FFIEC without inventing regulatory requirements. All user-provided text passes through **PHI redaction** (`redaction.py`) before LLM reasoning.
 
 ## Mandatory rules
 
@@ -43,6 +43,9 @@ Execute **deterministic USA compliance audits** across HIPAA, HITECH, PCI-DSS v4
 | SOX ITGC / SOX 404 | `sox-itgc-audit` |
 | CMMC / CUI / NIST 800-171 | `cmmc-nist-800-171` |
 | GLBA / FFIEC financial privacy | `glba-ffiec-financial-privacy` |
+| NIST AI RMF / trustworthy AI | `nist-ai-rmf-governance` |
+| FERPA / education records / EdTech | `ferpa-education-records` |
+| COPPA / under-13 / child-directed app | `coppa-children-privacy` |
 
 Full catalog: [skills-index.md](skills-index.md).
 
@@ -57,6 +60,7 @@ Apply a preset when the user names an industry or cloud:
 | SaaS SOC 2 Type II | `presets/saas-soc2-type2/PRESET.md` |
 | Financial GLBA/FFIEC | `presets/financial-services-glba/PRESET.md` |
 | Multinational privacy | `presets/multinational-privacy/PRESET.md` |
+| EdTech & youth privacy | `presets/edtech-youth-privacy/PRESET.md` |
 | AWS | `presets/aws-compliance/PRESET.md` |
 | Azure | `presets/azure-compliance/PRESET.md` |
 | GCP | `presets/gcp-compliance/PRESET.md` |
@@ -76,6 +80,9 @@ For role-play or multi-agent workflows, see `agents/`:
 - `gdpr-dpo-advisor.md` — GDPR RoPA, transfers, DPIA for US multinationals
 - `hitech-breach-coordinator.md` — HITECH OCR breach workflows
 - `state-privacy-analyst.md` — Multi-state US privacy (VCDPA, CPA, TDPSA)
+- `nist-ai-rmf-assessor.md` — NIST AI RMF trustworthy AI governance
+- `ferpa-compliance-officer.md` — FERPA education records and school officials
+- `coppa-privacy-officer.md` — FTC COPPA parental consent and child-directed apps
 
 ## MCP servers
 

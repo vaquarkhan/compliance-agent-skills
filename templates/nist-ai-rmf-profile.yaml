@@ -1,0 +1,60 @@
+# NIST AI RMF profile scaffold (AI 100-1)
+
+profile_id: ""
+organization: ""
+assessment_date: ""
+ai_risk_owner: ""
+
+govern:
+  inventory:
+    - system: ""
+      model: ""
+      mcp_tools: []
+      data_types: []
+  policies:
+    acceptable_use: ""
+    human_oversight: ""
+    change_management: ""
+  raci:
+    executive_sponsor: ""
+    ai_risk_owner: ""
+    security: ""
+    privacy: ""
+
+map:
+  use_cases:
+    - id: UC-001
+      name: ""
+      purpose: ""
+      actors: []
+      data_types: []
+      risk_tier: ""  # low | moderate | high
+      harms: []
+      benefits: []
+      dependencies: []
+
+measure:
+  metrics:
+    - name: ""
+      target: ""
+      current: ""
+  tevv:
+    pre_deploy_tests: []
+    production_monitoring: []
+    test_corpus_path: ""
+  transparency:
+    system_card_url: ""
+    user_disclosure: false
+
+manage:
+  treatments:
+    - risk_id: ""
+      control: ""
+      owner: ""
+      status: ""
+  residual_risk_accepted_by: ""
+  incident_playbook: ""
+
+current_vs_target:
+  govern_maturity: ""
+  target_date: ""

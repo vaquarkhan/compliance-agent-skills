@@ -1,0 +1,53 @@
+# Phase 5 — EdTech, youth privacy, and AI governance starter pack
+name: edtech-youth-privacy-starter
+version: "1.0.0"
+description: NIST AI RMF, FERPA, and COPPA for EdTech and child-facing AI agents.
+
+frameworks:
+  - NIST-AI-RMF
+  - FERPA
+  - COPPA
+
+skills:
+  - using-compliance-agent-skills
+  - nist-ai-rmf-governance
+  - ferpa-education-records
+  - coppa-children-privacy
+  - hipaa-phi-redaction-pipeline
+  - us-state-privacy-laws
+  - breach-incident-response
+  - mcp-compliance-integration
+  - access-control-identity-audit
+
+templates:
+  - templates/nist-ai-rmf-profile.yaml
+  - templates/ferpa-school-official.yaml
+  - templates/coppa-parental-consent.yaml
+  - templates/audit-evidence-manifest.yaml
+
+references:
+  - references/nist-ai-rmf-checklist.md
+  - references/ferpa-checklist.md
+  - references/coppa-checklist.md
+
+presets:
+  - presets/edtech-youth-privacy/PRESET.md
+
+agents:
+  - agents/nist-ai-rmf-assessor.md
+  - agents/ferpa-compliance-officer.md
+  - agents/coppa-privacy-officer.md
+
+mcp:
+  - mcp/postgres.mcp.json
+  - mcp/presidio.mcp.json
+
+examples:
+  - examples/hipaa-phi-redaction/
+
+lifecycle_commands:
+  - scope
+  - audit
+  - evidence
+  - remediate
+  - report

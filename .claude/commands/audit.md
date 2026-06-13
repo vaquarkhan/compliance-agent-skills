@@ -41,7 +41,9 @@ Run `hooks/audit-mode.sh` or set `COMPLIANCE_AUDIT_MODE=true` for read-only tool
 | GLBA / FFIEC | `glba-ffiec-financial-privacy` |
 | HITECH breach | `hitech-breach-notification` |
 | US state privacy | `us-state-privacy-laws` |
-| GDPR | `gdpr-us-multinational` |
+| COPPA / under-13 | `coppa-children-privacy` |
+| NIST AI RMF | `nist-ai-rmf-governance` |
+| FERPA / EdTech | `ferpa-education-records` |
 
 ## Next command
 

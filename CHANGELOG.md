@@ -5,6 +5,17 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0] - 2026-06-13
+
+### Added
+
+- **Phase 5 skills** — AI governance and youth privacy:
+  - `nist-ai-rmf-governance` — NIST AI RMF 1.0 GOVERN/MAP/MEASURE/MANAGE for LLM agents
+  - `ferpa-education-records` — FERPA school officials, LEI, EdTech agent controls
+  - `coppa-children-privacy` — FTC COPPA VPC, direct notice, LLM service providers
+- Checklists, templates, `edtech-youth-privacy` preset and starter pack
+- Agent personas: NIST AI RMF assessor, FERPA officer, COPPA officer
+
 ## [1.4.0] - 2026-06-13
 
 ### Added
@@ -82,6 +93,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - PHI redaction runs upstream of all LLM reasoning; reversible tokens require explicit deanonymization tool call
 
+[1.5.0]: https://github.com/vaquarkhan/compliance-agent-skills/releases/tag/v1.5.0
 [1.4.0]: https://github.com/vaquarkhan/compliance-agent-skills/releases/tag/v1.4.0
 [1.3.0]: https://github.com/vaquarkhan/compliance-agent-skills/releases/tag/v1.3.0
 [1.2.0]: https://github.com/vaquarkhan/compliance-agent-skills/releases/tag/v1.2.0

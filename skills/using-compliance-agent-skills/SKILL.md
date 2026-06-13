@@ -87,6 +87,9 @@ Load **exactly one primary skill** per audit thread; add secondary skills only w
 | GLBA / banking / fintech | `glba-ffiec-financial-privacy` | `vendor-third-party-risk` |
 | HITECH breach / OCR portal | `hitech-breach-notification` | `breach-incident-response` |
 | US state privacy (VCDPA, CPA, TX) | `us-state-privacy-laws` | `ccpa-cpra-privacy-rights` |
+| NIST AI RMF / AI governance | `nist-ai-rmf-governance` | `nist-csf-2-assessment` |
+| FERPA / EdTech / student records | `ferpa-education-records` | `coppa-children-privacy` |
+| COPPA / under-13 / child app | `coppa-children-privacy` | `ferpa-education-records` |
 | GDPR / EU transfers | `gdpr-us-multinational` | `us-state-privacy-laws` |
 | Breach / incident | `breach-incident-response` | `audit-logging-integrity` |
 | Policy-as-code / IaC | `compliance-as-code-governance` | `soc2-evidence-collection` |
