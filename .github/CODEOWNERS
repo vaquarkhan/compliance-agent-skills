@@ -1,0 +1,8 @@
+# Default reviewers for compliance-agent-skills
+* @vaquarkhan
+
+/skills/ @vaquarkhan
+/references/ @vaquarkhan
+/agent.py @vaquarkhan
+/redaction.py @vaquarkhan
+/.github/ @vaquarkhan

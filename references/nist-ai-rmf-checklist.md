@@ -41,3 +41,16 @@ Based on NIST AI 100-1 (GOVERN, MAP, MEASURE, MANAGE). Not legal advice.
 - [ ] `agent.py` skills routing enforced (no invented regulations)
 - [ ] MCP OAuth and audit mode hooks configured
 - [ ] `compliance_tests/` corpus run in CI
+
+---
+
+## Provenance
+
+| Field | Value |
+|-------|-------|
+| **Source document** | NIST AI RMF 1.0 (NIST AI 100-1) |
+| **Version / effective** | July 2024 |
+| **Last reviewed** | 2026-06-13 |
+| **Reviewer** | Repository maintainer (pending AI risk officer sign-off) |
+| **Next review due** | 2026-12-13 |
+| **Notes** | Agent/MCP mapping; not a NIST conformity assessment |

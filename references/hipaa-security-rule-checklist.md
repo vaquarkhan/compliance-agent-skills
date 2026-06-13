@@ -56,3 +56,16 @@ Administrative and physical safeguards are out of scope for this technical check
 Primary: `hipaa-technical-safeguards`, `hipaa-phi-redaction-pipeline`, `hipaa-baa-vendor-assessment`
 
 Template: `templates/hipaa-phi-flow-diagram.yaml`
+
+---
+
+## Provenance
+
+| Field | Value |
+|-------|-------|
+| **Source document** | 45 CFR Part 164 (HIPAA Security Rule) |
+| **Version / effective** | Current eCFR as of 2026-06-13 |
+| **Last reviewed** | 2026-06-13 |
+| **Reviewer** | Repository maintainer (pending Privacy Officer sign-off) |
+| **Next review due** | 2026-09-13 |
+| **Notes** | Agent/MCP-focused subset; not a full risk analysis |

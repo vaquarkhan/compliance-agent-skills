@@ -5,7 +5,10 @@
 </p>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](requirements.txt)
+[![CI](https://github.com/vaquarkhan/compliance-agent-skills/actions/workflows/validate-and-package.yml/badge.svg)](https://github.com/vaquarkhan/compliance-agent-skills/actions/workflows/validate-and-package.yml)
+[![CodeQL](https://github.com/vaquarkhan/compliance-agent-skills/actions/workflows/codeql.yml/badge.svg)](https://github.com/vaquarkhan/compliance-agent-skills/actions/workflows/codeql.yml)
+[![Coverage](https://img.shields.io/badge/coverage-%E2%89%A580%25-brightgreen.svg)](pyproject.toml)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](requirements-lock.txt)
 [![HIPAA](https://img.shields.io/badge/HIPAA-Security%20Rule-green.svg)](#hipaa)
 [![PCI-DSS](https://img.shields.io/badge/PCI--DSS-v4.0-red.svg)](#pci-dss)
 [![SOC 2](https://img.shields.io/badge/SOC%202-TSC-purple.svg)](#soc-2)
@@ -73,7 +76,7 @@ The installer detects your IDE (Cursor, VS Code, Claude Code, JetBrains) and cop
 ```bash
 python -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\Activate.ps1
-pip install -r requirements.txt
+pip install -r requirements-lock.txt
 
 export OPENAI_API_KEY=sk-...   # or ANTHROPIC_API_KEY
 python agent.py "Scope a HIPAA PHI redaction review for our LLM intake pipeline"
@@ -100,8 +103,14 @@ Run the no-API-key demo: `python scripts/demo_agent.py` or `make demo`.
 
 ```bash
 make validate   # or run scripts individually
-make test       # requires: pip install -r requirements.txt -r requirements-dev.txt
+make test       # requires: pip install -r requirements-lock.txt -r requirements-dev.txt
+make lint       # ruff check + format
+make security   # pip-audit, bandit, detect-secrets
 ```
+
+**Engineering:** CI enforces lint, mypy, security scans (pip-audit, Bandit, detect-secrets, CodeQL), and ≥80% coverage on `agent.py` + `redaction.py`. See [docs/architecture.md](docs/architecture.md), [docs/sme-review.md](docs/sme-review.md), and [docs/redaction-limitations.md](docs/redaction-limitations.md).
+
+**Locked dependencies:** Reproducible installs use `requirements-lock.txt` (compile with `make lock` from `requirements.in`).
 
 ---
 

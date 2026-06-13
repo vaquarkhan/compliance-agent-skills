@@ -1,0 +1,43 @@
+version: 2
+updates:
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      python-production:
+        patterns:
+          - pydantic*
+          - presidio*
+          - spacy*
+      python-dev:
+        dependency-type: development
+        patterns:
+          - pytest*
+          - ruff
+          - mypy
+          - pip-audit
+          - bandit
+
+  - package-ecosystem: npm
+    directory: /vscode-extension
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 3
+
+  - package-ecosystem: gradle
+    directory: /jetbrains-plugin
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 3
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5

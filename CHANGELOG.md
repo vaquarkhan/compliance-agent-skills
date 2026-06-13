@@ -5,6 +5,20 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.6.0] - 2026-06-13
+
+### Added
+
+- **Engineering hardening** — CI lint (Ruff), mypy, security scans (pip-audit, Bandit, detect-secrets), CodeQL
+- **Dependency locks** — `requirements.in` + `requirements-lock.txt` (pip-tools); bumped `pydantic-ai>=1.74` for skills compatibility
+- **Coverage gate** — pytest-cov ≥80% on `agent.py` + `redaction.py`
+- **Pre-commit** — Ruff, detect-secrets, validators (`.pre-commit-config.yaml`)
+- **Dependabot** — pip, npm, gradle, GitHub Actions
+- **Docs** — architecture diagram, redaction limitations, SME review cadence
+- **Examples** — FERPA, COPPA, NIST AI RMF runnable validators
+- **Repo hygiene** — CODEOWNERS, issue/PR templates, CITATION.cff
+- PCI-DSS v4.0.1 timeliness note and provenance footers (PCI, SME standard in `docs/sme-review.md`)
+
 ## [1.5.0] - 2026-06-13
 
 ### Added

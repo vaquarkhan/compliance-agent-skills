@@ -1,5 +1,7 @@
 # PCI-DSS v4.0 Checklist (Agent-Relevant Subset)
 
+> **Current as of 2026-06-13:** PCI SSC published **PCI-DSS v4.0.1** (March 2024) as the active standard. v4.0 future-dated requirements (e.g. Req 6.4.3 script integrity, customized approach transitions) became mandatory on their published effective dates — confirm your assessment scope against the [PCI SSC document library](https://www.pcisecuritystandards.org/document_library/) before attestation.
+
 Full PCI-DSS has 12 requirements. This checklist emphasizes controls commonly tested when **AI agents or MCP tools** interact with payment environments.
 
 ## Requirement 1: Network security controls
@@ -69,3 +71,16 @@ Primary: `pci-dss-script-audit`, `pci-dss-network-segmentation`, `audit-logging-
 Template: `templates/pci-script-baseline.yaml`
 
 Example: `examples/pci-checkout-audit/`
+
+---
+
+## Provenance
+
+| Field | Value |
+|-------|-------|
+| **Source document** | PCI SSC PCI-DSS v4.0.1 |
+| **Version / effective** | v4.0.1 (March 2024); v4.0 future-dated reqs per SSC bulletin |
+| **Last reviewed** | 2026-06-13 |
+| **Reviewer** | Repository maintainer (pending QSA sign-off) |
+| **Next review due** | 2026-09-13 |
+| **Notes** | Agent-relevant subset only; not a full ROC checklist |

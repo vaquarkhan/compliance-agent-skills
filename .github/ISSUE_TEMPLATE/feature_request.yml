@@ -1,0 +1,27 @@
+---
+name: Feature request
+about: Suggest a skill, framework, or engineering improvement
+title: "[feature]: "
+labels: enhancement
+assignees: ""
+---
+
+## Problem
+
+What compliance or agent workflow gap does this address?
+
+## Proposed solution
+
+## Frameworks affected
+
+- [ ] HIPAA / HITECH
+- [ ] PCI-DSS
+- [ ] SOC 2 / ISO / NIST
+- [ ] Privacy (state / GDPR)
+- [ ] FedRAMP / CMMC
+- [ ] EdTech (FERPA / COPPA)
+- [ ] Engineering / CI
+
+## SME review
+
+Can you cite an authoritative source (CFR, PCI SSC, NIST, FTC, etc.)?

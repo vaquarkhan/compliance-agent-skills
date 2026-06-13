@@ -1,6 +1,6 @@
 [project]
 name = "compliance-agent-skills"
-version = "1.5.0"
+version = "1.6.0"
 description = "Deterministic USA compliance auditing for AI agents"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -10,6 +10,22 @@ testpaths = ["compliance_tests"]
 asyncio_mode = "auto"
 asyncio_default_fixture_loop_scope = "function"
 filterwarnings = ["ignore::DeprecationWarning"]
+addopts = [
+    "--cov=agent",
+    "--cov=redaction",
+    "--cov-report=term-missing",
+    "--cov-report=xml:coverage.xml",
+    "--cov-fail-under=80",
+]
+
+[tool.coverage.run]
+source = ["agent", "redaction"]
+omit = ["compliance_tests/*"]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
+skip_covered = false
 
 [tool.ruff]
 line-length = 100
@@ -17,3 +33,22 @@ target-version = "py311"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "W"]
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/demo_agent.py" = ["E402"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_ignores = true
+disallow_untyped_defs = false
+check_untyped_defs = true
+ignore_missing_imports = true
+files = ["agent.py", "redaction.py", "scripts"]
+
+[tool.bandit]
+exclude_dirs = ["compliance_tests", "examples", ".venv", "venv"]
+skips = ["B101"]

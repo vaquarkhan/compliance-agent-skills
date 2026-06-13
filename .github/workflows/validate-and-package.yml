@@ -34,7 +34,14 @@ jobs:
       - name: Validate evidence manifest example
         run: python scripts/validate-evidence-manifest.py
 
-  test:
+      - name: Validate framework examples (FERPA, COPPA, NIST AI RMF)
+        run: |
+          pip install pyyaml
+          python examples/ferpa-education-records/validate_ferpa_scope.py
+          python examples/coppa-parental-consent/validate_consent.py
+          python examples/nist-ai-rmf-profile/validate_profile.py
+
+  lint:
     runs-on: ubuntu-latest
     needs: validate
     steps:
@@ -44,21 +51,68 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install runtime and test dependencies
-        run: pip install -r requirements.txt -r requirements-dev.txt
+      - name: Install lint tools
+        run: pip install ruff mypy types-PyYAML
 
-      - name: Run unit tests (no Presidio)
-        run: python -m pytest compliance_tests/test_deanonymize_unit.py -v
+      - name: Ruff check
+        run: ruff check agent.py redaction.py scripts/ compliance_tests/
 
-      - name: Run redaction and agent integration tests
-        run: python -m pytest compliance_tests/test_redaction.py compliance_tests/test_agent.py -v
+      - name: Ruff format check
+        run: ruff format --check agent.py redaction.py scripts/ compliance_tests/
+
+      - name: Mypy
+        run: mypy agent.py redaction.py scripts/
+
+  security:
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install security tools
+        run: pip install pip-audit bandit detect-secrets
+
+      - name: pip-audit (dependency CVEs)
+        run: pip-audit -r requirements-lock.txt --strict --desc on
+
+      - name: Bandit (Python SAST)
+        run: bandit -r agent.py redaction.py scripts/ -c pyproject.toml
+
+      - name: detect-secrets scan
+        run: detect-secrets scan --baseline .secrets.baseline .
+
+  test:
+    runs-on: ubuntu-latest
+    needs: [lint, security]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install locked runtime and test dependencies
+        run: pip install -r requirements-lock.txt -r requirements-dev.txt
+
+      - name: Run tests with coverage (≥80% on agent.py + redaction.py)
+        run: python -m pytest compliance_tests/ -v --cov-report=term
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-xml
+          path: coverage.xml
 
       - name: Demo agent smoke (TestModel)
         run: python scripts/demo_agent.py "Scope PCI script audit for https://example.com/checkout"
 
   package-vscode:
     runs-on: ubuntu-latest
-    needs: validate
+    needs: test
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v4

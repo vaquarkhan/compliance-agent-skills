@@ -94,7 +94,11 @@ def install_claude(project: Path, dry_run: bool) -> None:
 
 def install_vscode(project: Path, dry_run: bool) -> None:
     print("\n[vscode] Copilot instructions")
-    copy_tree(ROOT / ".github" / "copilot-instructions.md", project / ".github" / "copilot-instructions.md", dry_run=dry_run)
+    copy_tree(
+        ROOT / ".github" / "copilot-instructions.md",
+        project / ".github" / "copilot-instructions.md",
+        dry_run=dry_run,
+    )
     ext = ROOT / "vscode-extension"
     if ext.exists():
         print(f"  extension source: {ext.relative_to(ROOT)}/")
@@ -131,14 +135,16 @@ def validate_assets() -> bool:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Install compliance-agent-skills toolkit")
-    parser.add_argument("--target", action="append", dest="targets", help="cursor|claude|vscode|jetbrains|python")
+    parser.add_argument(
+        "--target", action="append", dest="targets", help="cursor|claude|vscode|jetbrains|python"
+    )
     parser.add_argument("--project", type=Path, default=ROOT, help="Destination project directory")
     parser.add_argument("--no-deps", action="store_true", help="Skip pip install")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--validate-only", action="store_true")
     args = parser.parse_args()
 
-    print(f"compliance-agent-skills installer")
+    print("compliance-agent-skills installer")
     print(f"  root: {ROOT}")
     print(f"  platform: {platform.system()} {platform.release()}")
 

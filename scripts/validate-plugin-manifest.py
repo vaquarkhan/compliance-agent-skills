@@ -39,12 +39,18 @@ def main() -> int:
     if not VSCODE_COPY.exists():
         errors.append("vscode-extension/install-manifest.json missing (copy from registry/)")
     elif MANIFEST.read_text(encoding="utf-8") != VSCODE_COPY.read_text(encoding="utf-8"):
-        errors.append("vscode-extension/install-manifest.json out of sync with registry/install-manifest.json")
+        errors.append(
+            "vscode-extension/install-manifest.json out of sync with "
+            "registry/install-manifest.json"
+        )
 
     if not JETBRAINS_COPY.exists():
         errors.append("jetbrains-plugin install-manifest.json missing (copy from registry/)")
     elif MANIFEST.read_text(encoding="utf-8") != JETBRAINS_COPY.read_text(encoding="utf-8"):
-        errors.append("jetbrains-plugin install-manifest.json out of sync with registry/install-manifest.json")
+        errors.append(
+            "jetbrains-plugin install-manifest.json out of sync with "
+            "registry/install-manifest.json"
+        )
 
     data = json.loads(MANIFEST.read_text(encoding="utf-8"))
     missing = [p for p in collect_paths(data) if not (ROOT / p).exists()]

@@ -69,7 +69,11 @@ def main() -> int:
     import argparse
 
     parser = argparse.ArgumentParser(description="Validate evidence manifest YAML")
-    parser.add_argument("manifest", nargs="?", default=str(ROOT / "examples/soc2-evidence-bundle/evidence-manifest.yaml"))
+    parser.add_argument(
+        "manifest",
+        nargs="?",
+        default=str(ROOT / "examples/soc2-evidence-bundle/evidence-manifest.yaml"),
+    )
     parser.add_argument("--strict", action="store_true", help="Fail on placeholder hashes")
     args = parser.parse_args()
 

@@ -1,0 +1,31 @@
+---
+name: Bug report
+about: Report incorrect regulatory content, redaction failure, or tooling defect
+title: "[bug]: "
+labels: bug
+assignees: ""
+---
+
+## Summary
+
+What went wrong?
+
+## Framework / skill
+
+e.g. `hipaa-security-rule`, `pci-dss-script-audit`
+
+## Expected vs actual
+
+## Reproduction
+
+Steps, sample input (use synthetic PHI only — no real patient or cardholder data).
+
+## Environment
+
+- OS:
+- Python version:
+- compliance-agent-skills version / commit:
+
+## Regulatory source (if checklist accuracy)
+
+Link to authoritative source you believe is correct.

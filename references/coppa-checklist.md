@@ -48,3 +48,16 @@ FTC children's privacy for apps and AI agents. Verify amended Rule effective dat
 ## School + consumer hybrid
 
 - [ ] FERPA school official path documented if school-directed (see ferpa-education-records)
+
+---
+
+## Provenance
+
+| Field | Value |
+|-------|-------|
+| **Source document** | 16 CFR Part 312 (COPPA Rule); FTC COPPA FAQs |
+| **Version / effective** | Amended Rule effective 2024-07-01 |
+| **Last reviewed** | 2026-06-13 |
+| **Reviewer** | Repository maintainer (pending FTC/privacy counsel sign-off) |
+| **Next review due** | 2027-06-13 |
+| **Notes** | EdTech/agent subset; not FTC staff guidance |

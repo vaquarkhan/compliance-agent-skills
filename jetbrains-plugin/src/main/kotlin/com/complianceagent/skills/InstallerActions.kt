@@ -127,22 +127,26 @@ abstract class BaseInstallAction : AnAction() {
 
     private fun repoRoot(): Path {
         var current = codeSourceRoot()
-        repeat(12) {
+        var steps = 0
+        while (steps < 12) {
             if (current.fileName?.toString() == "jetbrains-plugin") {
                 return current.parent
             }
             current = current.parent ?: break
+            steps++
         }
         return codeSourceRoot()
     }
 
     private fun pluginResourcesRoot(): Path {
         var current = codeSourceRoot()
-        repeat(12) {
+        var steps = 0
+        while (steps < 12) {
             if (current.fileName?.toString() == "jetbrains-plugin") {
                 return current.resolve("src").resolve("main").resolve("resources")
             }
             current = current.parent ?: break
+            steps++
         }
         return codeSourceRoot().resolve("resources")
     }

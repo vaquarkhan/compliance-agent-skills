@@ -41,3 +41,16 @@ EdTech and AI agent deployments. Not legal advice.
 
 - [ ] Improper disclosure playbook (state law + contract)
 - [ ] Linked to breach-incident-response
+
+---
+
+## Provenance
+
+| Field | Value |
+|-------|-------|
+| **Source document** | 34 CFR Part 99 (FERPA) |
+| **Version / effective** | Current eCFR as of 2026-06-13 |
+| **Last reviewed** | 2026-06-13 |
+| **Reviewer** | Repository maintainer (pending school privacy officer sign-off) |
+| **Next review due** | 2027-06-13 |
+| **Notes** | EdTech/agent subset; not ED official guidance |

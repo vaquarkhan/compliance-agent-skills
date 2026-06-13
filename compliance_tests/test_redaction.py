@@ -7,8 +7,8 @@ from pathlib import Path
 import pytest
 import yaml
 
-from redaction import PHIRedactor
 from compliance_tests.support import presidio
+from redaction import PHIRedactor
 
 CORPUS_PATH = Path(__file__).resolve().parent / "fixtures" / "synthetic_phi_corpus.yaml"
 PHI_CORPUS: list[dict] = yaml.safe_load(CORPUS_PATH.read_text(encoding="utf-8"))["cases"]

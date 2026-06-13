@@ -1,0 +1,39 @@
+# Pre-commit hooks — install: pre-commit install
+# Run all: pre-commit run --all-files
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+        args: ["--maxkb=7000"]
+      - id: check-merge-conflict
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.4
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      - id: detect-secrets
+        args: ["--baseline", ".secrets.baseline"]
+
+  - repo: local
+    hooks:
+      - id: validate-skills
+        name: validate-skills
+        entry: python scripts/validate-skills.py
+        language: system
+        pass_filenames: false
+      - id: smoke-syntax
+        name: smoke-syntax
+        entry: python scripts/smoke_syntax.py
+        language: system
+        pass_filenames: false

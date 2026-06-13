@@ -21,12 +21,12 @@ from __future__ import annotations
 
 from collections import defaultdict
 from dataclasses import dataclass, field
-from typing import Literal
+from typing import Any, Literal
 
 from presidio_analyzer import AnalyzerEngine, Pattern, PatternRecognizer
 from presidio_analyzer.nlp_engine import NlpEngineProvider
 from presidio_anonymizer import AnonymizerEngine
-from presidio_anonymizer.entities import OperatorConfig, RecognizerResult
+from presidio_anonymizer.entities import OperatorConfig
 
 EntityProfile = Literal["balanced", "aggressive"]
 
@@ -124,7 +124,9 @@ class PHIRedactor:
         self._token_to_value[token] = original_value
         return token
 
-    def _build_operators(self, analyzer_results: list[RecognizerResult]) -> dict[str, OperatorConfig]:
+    def _build_operators(
+        self, analyzer_results: list[Any]
+    ) -> dict[str, OperatorConfig]:
         """Create per-entity custom operators that emit stable masked tokens."""
 
         def make_token_lambda(entity_type: str):
@@ -160,7 +162,7 @@ class PHIRedactor:
 
         anonymized = self._anonymizer.anonymize(
             text=text,
-            analyzer_results=analyzer_results,
+            analyzer_results=analyzer_results,  # type: ignore[arg-type]
             operators=operators or {"DEFAULT": OperatorConfig("redact", {})},
         )
 

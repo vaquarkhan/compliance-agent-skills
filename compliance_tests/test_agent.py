@@ -6,7 +6,12 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from agent import ComplianceDeps, _env_deanonymize_enabled, deanonymize_response, run_compliance_agent
+from agent import (
+    ComplianceDeps,
+    _env_deanonymize_enabled,
+    deanonymize_response,
+    run_compliance_agent,
+)
 from compliance_tests.support import presidio
 
 

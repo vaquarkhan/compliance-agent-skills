@@ -34,7 +34,9 @@ def main() -> int:
     import argparse
 
     parser = argparse.ArgumentParser(description="Run a compliance hook by name")
-    parser.add_argument("hook", choices=["sessionStart", "beforeSubmitPrompt", "audit_mode", "release_guard"])
+    parser.add_argument(
+        "hook", choices=["sessionStart", "beforeSubmitPrompt", "audit_mode", "release_guard"]
+    )
     args = parser.parse_args()
 
     if not HOOKS_JSON.exists():

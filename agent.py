@@ -15,6 +15,7 @@ import asyncio
 import os
 from dataclasses import dataclass, field
 from pathlib import Path
+from typing import cast
 
 from pydantic_ai import Agent, RunContext
 from pydantic_ai_skills import SkillsCapability
@@ -48,7 +49,7 @@ class ComplianceDeps:
     deanonymize_authorized: bool = False
 
 
-compliance_agent = Agent(
+compliance_agent = Agent(  # type: ignore[call-overload]
     model=_resolve_model(),
     deps_type=ComplianceDeps,
     instructions=(
@@ -127,7 +128,7 @@ async def run_compliance_agent(
     run_deps.last_redaction = redaction
 
     result = await compliance_agent.run(redaction.redacted_text, deps=run_deps)
-    output = result.output
+    output = cast(str, result.output)
     if deanonymize_output:
         return run_deps.redactor.deanonymize(output)
     return output
@@ -157,5 +158,8 @@ if __name__ == "__main__":
     )
     deanonymize = _env_deanonymize_enabled()
     if deanonymize:
-        print(f"Note: {DEANONYMIZE_ENV} is set — output will restore redacted tokens.", file=sys.stderr)
+        print(
+            f"Note: {DEANONYMIZE_ENV} is set — output will restore redacted tokens.",
+            file=sys.stderr,
+        )
     print(run_compliance_agent_sync(prompt, deanonymize_output=deanonymize))

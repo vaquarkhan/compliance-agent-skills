@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "project": "compliance-agent-skills",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "frameworks": ["HIPAA", "HITECH", "PCI-DSS-v4.0", "SOC2-TSC", "ISO27001", "NIST-CSF-2.0", "NIST-AI-RMF", "FERPA", "COPPA", "CCPA-CPRA", "US-State-Privacy", "GDPR", "FedRAMP", "SOX", "CMMC", "GLBA"],
   "templates": [
     {
@@ -213,6 +213,21 @@
       "id": "soc2-evidence-bundle",
       "path": "examples/soc2-evidence-bundle/",
       "description": "SOC 2 evidence manifest packaging example"
+    },
+    {
+      "id": "ferpa-education-records",
+      "path": "examples/ferpa-education-records/",
+      "description": "FERPA school-official template validation for EdTech agents"
+    },
+    {
+      "id": "coppa-parental-consent",
+      "path": "examples/coppa-parental-consent/",
+      "description": "COPPA VPC and redaction control validation"
+    },
+    {
+      "id": "nist-ai-rmf-profile",
+      "path": "examples/nist-ai-rmf-profile/",
+      "description": "NIST AI RMF GOVERN/MAP/MEASURE/MANAGE profile scaffold check"
     }
   ],
   "mcp_templates": [
