@@ -13,12 +13,15 @@
 [![PCI-DSS](https://img.shields.io/badge/PCI--DSS-v4.0-red.svg)](#pci-dss)
 [![SOC 2](https://img.shields.io/badge/SOC%202-TSC-purple.svg)](#soc-2)
 [![Skills](https://img.shields.io/badge/skills-30-orange.svg)](skills-index.md)
+[![Version](https://img.shields.io/badge/version-1.6.3-blue.svg)](docs/project-status.md)
 
 **Deterministic USA compliance auditing for AI agents** — progressive-disclosure Agent Skills, a Presidio PHI redaction gate, MCP integrations, and IDE plugins for HIPAA, HITECH, PCI-DSS v4.0, SOC 2, ISO 27001, NIST CSF 2.0, CCPA/CPRA, US state privacy laws, GDPR, FedRAMP, SOX, CMMC, and GLBA/FFIEC workflows.
 
 > **Disclaimer:** This repository provides operational audit patterns and automation templates. It is **not legal advice** and does not replace a Qualified Security Assessor (QSA), HIPAA Privacy Officer, or licensed CPA for SOC 2 attestation.
 
-**Coverage:** 30 skills across HIPAA, PCI-DSS, SOC 2, FedRAMP, CMMC, GLBA, SOX, privacy, NIST AI RMF, FERPA, COPPA, and cross-cutting agent controls. See [docs/coverage-roadmap.md](docs/coverage-roadmap.md) for remaining USA gaps (NY DFS 500, FISMA, etc.).
+> **Regulatory accuracy:** Checklists are **verifiably scaffolded** (provenance, authoritative sources, CI-enforced review cadence) but **not independently attested** until external SMEs sign review records. See [docs/project-status.md](docs/project-status.md#regulatory-accuracy--honest-assessment).
+
+**Coverage:** 30 skills across HIPAA, PCI-DSS, SOC 2, FedRAMP, CMMC, GLBA, SOX, privacy, NIST AI RMF, FERPA, COPPA, and cross-cutting agent controls. See [docs/coverage-roadmap.md](docs/coverage-roadmap.md) for remaining USA gaps (NY DFS 500, FISMA, etc.). Full feature list: [docs/project-status.md](docs/project-status.md).
 
 ---
 
@@ -383,6 +386,10 @@ See [mcp/README.md](mcp/README.md) and skill `mcp-compliance-integration`.
 | [examples/pci-checkout-audit/](examples/pci-checkout-audit/) | PCI Req 6.4.3 script baseline audit |
 | [examples/hipaa-phi-redaction/](examples/hipaa-phi-redaction/) | Presidio redaction on sample PHI |
 | [examples/soc2-evidence-bundle/](examples/soc2-evidence-bundle/) | Evidence manifest packaging |
+| [examples/regulatory-reports/](examples/regulatory-reports/) | HIPAA, PCI, SOC 2, NIST AI RMF, FERPA/COPPA findings reports |
+| [examples/ferpa-education-records/](examples/ferpa-education-records/) | FERPA template validation |
+| [examples/coppa-parental-consent/](examples/coppa-parental-consent/) | COPPA consent controls |
+| [examples/nist-ai-rmf-profile/](examples/nist-ai-rmf-profile/) | NIST AI RMF profile scaffold |
 
 ---
 
@@ -390,7 +397,12 @@ See [mcp/README.md](mcp/README.md) and skill `mcp-compliance-integration`.
 
 | Doc | Topic |
 | --- | --- |
+| [docs/project-status.md](docs/project-status.md) | **Full feature list, v1.6.x summary, attestation honesty** |
 | [docs/coverage-roadmap.md](docs/coverage-roadmap.md) | What's covered vs USA compliance gaps |
+| [docs/architecture.md](docs/architecture.md) | Redaction gate and threat model |
+| [docs/sme-review.md](docs/sme-review.md) | Provenance cadence; CI enforcement |
+| [docs/regulatory-reports.md](docs/regulatory-reports.md) | Structured `/report` generator |
+| [docs/redaction-limitations.md](docs/redaction-limitations.md) | US/English PHI coverage limits |
 | [docs/getting-started.md](docs/getting-started.md) | First engagement walkthrough |
 | [docs/skill-anatomy.md](docs/skill-anatomy.md) | Authoring skills |
 | [docs/plugin-publishing.md](docs/plugin-publishing.md) | VS Code / JetBrains releases |

@@ -24,9 +24,13 @@ What **compliance-agent-skills** covers today (30 skills) and notable **USA gaps
 
 ---
 
-## USA compliance gaps (not yet dedicated skills)
+## Covered today — EdTech & youth (Phase 5)
 
-| EdTech & youth (FERPA, COPPA, AI RMF) | `nist-ai-rmf-governance`, `ferpa-education-records`, `coppa-children-privacy` | Strong |
+| Framework | Skills | Depth |
+| --- | --- | --- |
+| **NIST AI RMF 1.0** | `nist-ai-rmf-governance` | GOVERN/MAP/MEASURE/MANAGE for LLM agents |
+| **FERPA** | `ferpa-education-records` | School officials, LEI, EdTech agents |
+| **COPPA** | `coppa-children-privacy` | VPC, direct notice, service providers |
 
 ---
 

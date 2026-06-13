@@ -72,4 +72,14 @@ The validator fails if any checklist is missing sections, required provenance ro
 
 This repository does not replace Qualified Security Assessors, HIPAA Privacy Officers, licensed CPAs, or legal counsel. Provenance footers document **internal review effort**, not third-party attestation.
 
+### Attestation status (honest)
+
+| Status | Meaning |
+|--------|---------|
+| **Verifiably scaffolded** | All 15 checklists have provenance + authoritative sources; CI enforces via `validate-sme-provenance`; review templates and cadence exist |
+| **Maintainer-reviewed** | Q2 2026 scaffold pass documented in `reviews/2026-Q2/` — structure and links, not full line-by-line mapping |
+| **Independently attested** | **Not yet** — review records state pending QSA / Privacy Officer / CPA sign-off |
+
+Until external SMEs sign review files under `reviews/`, describe regulatory content as **scaffolded**, not **independently attested**. See [project-status.md](project-status.md#regulatory-accuracy--honest-assessment).
+
 See also [reviews/README.md](../reviews/README.md).

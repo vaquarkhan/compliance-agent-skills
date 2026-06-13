@@ -5,6 +5,13 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.6.3] - 2026-06-13
+
+### Added
+
+- **[docs/project-status.md](docs/project-status.md)** — comprehensive feature list (v1.0–v1.6.2), engineering gates, and honest regulatory attestation status
+- Updated README, [references/README.md](references/README.md), [docs/sme-review.md](docs/sme-review.md), [reviews/2026-Q2/README.md](reviews/2026-Q2/README.md) with **verifiably scaffolded vs independently attested** distinction
+
 ## [1.6.2] - 2026-06-13
 
 ### Added
