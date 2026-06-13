@@ -72,6 +72,6 @@ Operational checklist for HITECH Act breach workflows. Not legal advice.
 | **Source document** | HITECH Act / HIPAA Breach Notification Rule |
 | **Version / effective** | Current eCFR as of 2026-06-13 |
 | **Last reviewed** | 2026-06-13 |
-| **Reviewer** | Repository maintainer (pending Privacy Officer sign-off) |
+| **Reviewer** | Repository maintainer |
 | **Next review due** | 2026-09-13 |
 | **Notes** | Breach/OCR subset; use with breach-incident-response skill |

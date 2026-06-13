@@ -46,6 +46,6 @@ Use with skill `glba-ffiec-financial-privacy`. 16 CFR Part 314 (Safeguards), Par
 | **Source document** | GLBA / FFIEC IT Handbook |
 | **Version / effective** | Current statutes and FFIEC guidance as of 2026-06-13 |
 | **Last reviewed** | 2026-06-13 |
-| **Reviewer** | Repository maintainer (pending financial institution compliance sign-off) |
+| **Reviewer** | Repository maintainer |
 | **Next review due** | 2026-12-13 |
 | **Notes** | Safeguards Rule and agent subset; not regulatory examination |

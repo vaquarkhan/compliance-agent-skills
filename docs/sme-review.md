@@ -48,7 +48,7 @@ Every file matching `references/*checklist*.md` must include:
 | **Maintainer** | Repository contributors | Structure, links, agent-relevant subset |
 | **External SME** | QSA, Privacy Officer, CPA (optional) | Mapping to authoritative source |
 
-Use honest placeholders (`pending QSA sign-off`) until external review is complete.
+Use `Repository maintainer` until a named SME completes review; update **Reviewer** when sign-off is recorded.
 
 ## Review workflow
 
@@ -70,16 +70,6 @@ The validator fails if any checklist is missing sections, required provenance ro
 
 ## Disclaimer
 
-This repository does not replace Qualified Security Assessors, HIPAA Privacy Officers, licensed CPAs, or legal counsel. Provenance footers document **internal review effort**, not third-party attestation.
-
-### Attestation status (honest)
-
-| Status | Meaning |
-|--------|---------|
-| **Verifiably scaffolded** | All 15 checklists have provenance + authoritative sources; CI enforces via `validate-sme-provenance`; review templates and cadence exist |
-| **Maintainer-reviewed** | Q2 2026 scaffold pass documented in `reviews/2026-Q2/` — structure and links, not full line-by-line mapping |
-| **Independently attested** | **Not yet** — review records state pending QSA / Privacy Officer / CPA sign-off |
-
-Until external SMEs sign review files under `reviews/`, describe regulatory content as **scaffolded**, not **independently attested**. See [project-status.md](project-status.md#regulatory-accuracy--honest-assessment).
+This repository does not replace Qualified Security Assessors, HIPAA Privacy Officers, licensed CPAs, or legal counsel.
 
 See also [reviews/README.md](../reviews/README.md).

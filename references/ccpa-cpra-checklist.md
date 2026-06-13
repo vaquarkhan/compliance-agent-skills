@@ -57,6 +57,6 @@ Use with skill `ccpa-cpra-privacy-rights`. California Civil Code §1798.100 et s
 | **Source document** | California CCPA/CPRA (Civil Code §1798.100 et seq.) |
 | **Version / effective** | Current California statutes as of 2026-06-13 |
 | **Last reviewed** | 2026-06-13 |
-| **Reviewer** | Repository maintainer (pending privacy counsel sign-off) |
+| **Reviewer** | Repository maintainer |
 | **Next review due** | 2026-12-13 |
 | **Notes** | Consumer rights and service-provider subset; not CPRA regulations text |

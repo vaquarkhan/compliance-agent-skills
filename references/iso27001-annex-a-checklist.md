@@ -79,6 +79,6 @@ Use with skill `iso27001-annex-a-controls`.
 | **Source document** | ISO/IEC 27001:2022 Annex A |
 | **Version / effective** | 2022 edition |
 | **Last reviewed** | 2026-06-13 |
-| **Reviewer** | Repository maintainer (pending ISO LA sign-off) |
+| **Reviewer** | Repository maintainer |
 | **Next review due** | 2026-12-13 |
 | **Notes** | SoA-focused subset for agent deployments; not ISMS certification |

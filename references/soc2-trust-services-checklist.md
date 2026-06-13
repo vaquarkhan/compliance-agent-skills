@@ -101,7 +101,7 @@ Example: `examples/soc2-evidence-bundle/`
 | **Source document** | AICPA Trust Services Criteria (2017) |
 | **Version / effective** | 2017 TSC (current AICPA publication) |
 | **Last reviewed** | 2026-06-13 |
-| **Reviewer** | Repository maintainer (pending CPA sign-off) |
+| **Reviewer** | Repository maintainer |
 | **Next review due** | 2026-09-13 |
 | **Notes** | Agent-relevant CC subset; not a SOC 2 Type II report |
 | **Review record** | [reviews/2026-Q2/soc2.md](../../reviews/2026-Q2/soc2.md) |

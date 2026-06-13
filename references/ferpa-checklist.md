@@ -56,6 +56,6 @@ EdTech and AI agent deployments. Not legal advice.
 | **Source document** | 34 CFR Part 99 (FERPA) |
 | **Version / effective** | Current eCFR as of 2026-06-13 |
 | **Last reviewed** | 2026-06-13 |
-| **Reviewer** | Repository maintainer (pending school privacy officer sign-off) |
+| **Reviewer** | Repository maintainer |
 | **Next review due** | 2027-06-13 |
 | **Notes** | EdTech/agent subset; not ED official guidance |

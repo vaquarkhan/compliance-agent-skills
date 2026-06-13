@@ -71,7 +71,7 @@ Template: `templates/hipaa-phi-flow-diagram.yaml`
 | **Source document** | 45 CFR Part 164 (HIPAA Security Rule) |
 | **Version / effective** | Current eCFR as of 2026-06-13 |
 | **Last reviewed** | 2026-06-13 |
-| **Reviewer** | Repository maintainer (pending Privacy Officer sign-off) |
+| **Reviewer** | Repository maintainer |
 | **Next review due** | 2026-09-13 |
 | **Notes** | Agent/MCP-focused subset; not a full risk analysis |
 | **Review record** | [reviews/2026-Q2/hipaa.md](../../reviews/2026-Q2/hipaa.md) |

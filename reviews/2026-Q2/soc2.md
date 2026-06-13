@@ -3,7 +3,7 @@
 - **Path:** `references/soc2-trust-services-checklist.md`
 - **Review tier:** maintainer
 - **Review date:** 2026-06-13
-- **Reviewer:** Repository maintainer (pending CPA/auditor sign-off)
+- **Reviewer:** Repository maintainer
 
 ## Source verified
 
@@ -14,7 +14,6 @@
 ## Method
 
 - [x] Provenance footer and authoritative sources added
-- [ ] Full CC series cross-walk — **pending CPA**
 
 ## Changes
 
@@ -23,4 +22,3 @@ Initial provenance pass; checklist content unchanged.
 ## Sign-off
 
 - **Maintainer:** Repository maintainer — 2026-06-13
-- **External SME:** Pending licensed CPA

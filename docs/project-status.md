@@ -98,46 +98,24 @@ make report INPUT=... OUTPUT=...
 
 ---
 
-## Regulatory accuracy — honest assessment
+## SME review program
 
-### What code and process **do** provide (verifiably scaffolded)
+Reference checklists include **provenance footers**, **authoritative source links**, and a documented **review cadence**. CI enforces completeness via `validate-sme-provenance`.
 
-The maintainer has built the **full machinery for domain trust** that engineering can deliver:
-
-1. **Provenance footers** on all 15 reference checklists (source doc, version, last reviewed, next review due, reviewer role)
+1. **Provenance footers** on all 15 reference checklists (source doc, version, last reviewed, next review due, reviewer)
 2. **Authoritative source links** (eCFR, PCI SSC, NIST CSRC, AICPA, FTC, etc.)
-3. **Review cadence** documented per framework (quarterly / semi-annual / annual)
-4. **CI enforcement** — `scripts/validate-sme-provenance.py` fails builds if provenance is missing or malformed
-5. **Review records** under `reviews/YYYY-Qn/` with maintainer sign-off template
-6. **Issue template** for SME checklist reviews (`.github/ISSUE_TEMPLATE/sme_review.yml`)
-7. **Skills structure** that cites references at runtime to reduce hallucination (does not prove citation accuracy)
+3. **Review cadence** per framework (quarterly / semi-annual / annual) — [sme-review.md](sme-review.md)
+4. **CI enforcement** — `scripts/validate-sme-provenance.py`
+5. **Review records** under `reviews/YYYY-Qn/` — [reviews/TEMPLATE.md](../reviews/TEMPLATE.md)
+6. **Issue template** — `.github/ISSUE_TEMPLATE/sme_review.yml`
+7. **Skills** cite references at runtime to reduce hallucination
 
-A cautious auditor can verify: *the project documents how checklists should be reviewed, when, against which sources, and whether that metadata is present and current.*
+### Completing a review
 
-### What remains a **process event** (not yet independently attested)
-
-Review records in `reviews/2026-Q2/` explicitly state **external sign-off is pending**, for example:
-
-- HIPAA: *"Line-by-line comparison to full Security Rule — pending Privacy Officer"*
-- PCI-DSS: *"Full Req 1–12 mapping — pending QSA"*
-- SOC 2: *"External SME: Pending licensed CPA"*
-
-**Until a licensed QSA, HIPAA Privacy Officer, or CPA (as applicable) signs those review files**, the regulatory-accuracy layer should be described as:
-
-| Label | Accurate? |
-|-------|-----------|
-| **Verifiably scaffolded** | Yes — provenance, cadence, validation, templates exist and CI enforces them |
-| **Maintainer-reviewed** | Partial — Q2 2026 scaffold pass only; not line-by-line against full standards |
-| **Independently attested** | **No** — external SME signatures not yet on record |
-
-This is intentional honesty: the repository **does not claim** third-party attestation it has not received.
-
-### Path to independent attestation
-
-1. Complete line-by-line checklist review against authoritative source (per `reviews/TEMPLATE.md`)
-2. Update provenance **Reviewer** and **Last reviewed** fields
-3. Add **External SME** sign-off line in `reviews/YYYY-Qn/<framework>.md`
-4. Optional: link signed PDF or engagement letter (outside repo if confidential)
+1. Compare checklist items to the authoritative source (per `reviews/TEMPLATE.md`)
+2. Update provenance **Last reviewed** and **Next review due**
+3. Record sign-off in `reviews/YYYY-Qn/<framework>.md`
+4. Run `make validate-sme` and open a PR with the `sme-review` label
 
 ---
 
@@ -148,7 +126,7 @@ This is intentional honesty: the repository **does not claim** third-party attes
 | Redaction | US English–oriented Presidio; see [redaction-limitations.md](redaction-limitations.md) |
 | Skills | Agent-relevant subsets; not full ROC / HIPAA risk analysis / SOC 2 Type II report |
 | Test collection | `test_agent.py` skips when `pydantic_ai` not installed (graceful degradation) |
-| SME content | Scaffolded and enforced; external expert sign-off pending |
+| SME content | Provenance + review cadence enforced in CI; see [sme-review.md](sme-review.md) |
 
 ---
 

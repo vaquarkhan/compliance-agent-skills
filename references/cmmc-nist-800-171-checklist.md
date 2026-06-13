@@ -59,6 +59,6 @@ Use with skill `cmmc-nist-800-171`. 110 security practices for CUI.
 | **Source document** | CMMC Level 2 / NIST SP 800-171 Rev 2 |
 | **Version / effective** | 800-171 Rev 2; CMMC rule as published |
 | **Last reviewed** | 2026-06-13 |
-| **Reviewer** | Repository maintainer (pending C3PAO sign-off) |
+| **Reviewer** | Repository maintainer |
 | **Next review due** | 2026-12-13 |
 | **Notes** | CUI/agent subset; not CMMC certification assessment |

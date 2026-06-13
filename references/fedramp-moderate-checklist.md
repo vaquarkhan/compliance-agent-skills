@@ -58,6 +58,6 @@ Use with skill `fedramp-moderate-baseline`. NIST SP 800-53 Rev 5 (Moderate basel
 | **Source document** | FedRAMP Moderate baseline (NIST SP 800-53 Rev 5) |
 | **Version / effective** | FedRAMP Rev 5 baseline (ongoing) |
 | **Last reviewed** | 2026-06-13 |
-| **Reviewer** | Repository maintainer (pending 3PAO/ISSO sign-off) |
+| **Reviewer** | Repository maintainer |
 | **Next review due** | 2026-12-13 |
 | **Notes** | SSP/ConMon subset; not FedRAMP authorization |

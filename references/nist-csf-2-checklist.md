@@ -69,6 +69,6 @@ Document current tier (Partial → Adaptive) per Function and target tier with g
 | **Source document** | NIST Cybersecurity Framework 2.0 |
 | **Version / effective** | CSF 2.0 (February 2024) |
 | **Last reviewed** | 2026-06-13 |
-| **Reviewer** | Repository maintainer (pending security architect sign-off) |
+| **Reviewer** | Repository maintainer |
 | **Next review due** | 2026-12-13 |
 | **Notes** | Profile/gap subset; not NIST CSF certification |

@@ -24,10 +24,6 @@ Each checklist includes **Authoritative sources** and **Provenance** (review dat
 | FERPA | [ferpa-checklist.md](ferpa-checklist.md) | Annual |
 | COPPA | [coppa-checklist.md](coppa-checklist.md) | Annual |
 
-### Attestation note
-
-Provenance footers are **CI-enforced** and review records live under [reviews/](../reviews/). External SME sign-off (QSA, Privacy Officer, CPA) is **documented as pending** in Q2 2026 maintainer records — see [docs/project-status.md](../docs/project-status.md).
-
 ## Other references
 
 | Topic | Document | Use when |

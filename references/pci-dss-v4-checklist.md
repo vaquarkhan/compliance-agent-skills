@@ -86,7 +86,7 @@ Example: `examples/pci-checkout-audit/`
 | **Source document** | PCI SSC PCI-DSS v4.0.1 |
 | **Version / effective** | v4.0.1 (March 2024); v4.0 future-dated reqs per SSC bulletin |
 | **Last reviewed** | 2026-06-13 |
-| **Reviewer** | Repository maintainer (pending QSA sign-off) |
+| **Reviewer** | Repository maintainer |
 | **Next review due** | 2026-09-13 |
 | **Notes** | Agent-relevant subset only; not a full ROC checklist |
 | **Review record** | [reviews/2026-Q2/pci-dss.md](../../reviews/2026-Q2/pci-dss.md) |

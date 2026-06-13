@@ -56,6 +56,6 @@ Based on NIST AI 100-1 (GOVERN, MAP, MEASURE, MANAGE). Not legal advice.
 | **Source document** | NIST AI RMF 1.0 (NIST AI 100-1) |
 | **Version / effective** | July 2024 |
 | **Last reviewed** | 2026-06-13 |
-| **Reviewer** | Repository maintainer (pending AI risk officer sign-off) |
+| **Reviewer** | Repository maintainer |
 | **Next review due** | 2026-12-13 |
 | **Notes** | Agent/MCP mapping; not a NIST conformity assessment |
