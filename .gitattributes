@@ -1,0 +1,2 @@
+# Normalize text for reproducible evidence hashes across Windows/Linux CI
+examples/soc2-evidence-bundle/artifacts/** text eol=lf

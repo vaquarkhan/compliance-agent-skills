@@ -3,17 +3,17 @@ framework: SOC2-TSC
 period_start: '2026-01-01'
 period_end: '2026-06-30'
 prepared_by: compliance-agent-skills-example
-bundle_hash: sha256:6102a0f2813086a268cb70f2fd03d96efbe0a3f7ef9df1805e4695c694d0b8f1
+bundle_hash: sha256:a15bc3ef3434d76c9c47f63165cabf65a81b1f99753aefc4de108c3bbae739a0
 artifacts:
 - id: cc6-access-policy
   path: artifacts/cc6-access-policy.txt
   control: CC6.1
-  sha256: sha256:a1a934afe665c1f69b3c06378372a4bfe045ce8c9422e66fb4e01eedc91f2e13
+  sha256: sha256:ce3a13b45ba1ac67a8b37311c50f33cbe52d165111081784fe72c3005614d832
   collected_at: '2026-06-13T00:00:00Z'
-  size_bytes: 169
+  size_bytes: 166
 - id: iam-export
   path: artifacts/iam-export.csv
   control: CC6.2
-  sha256: sha256:6f30601967383c14a162df3aa7290383abcd8c03c61235c48feb6c6da7a37f8b
+  sha256: sha256:1055c5b69a19e8baa2558afdff737625ea831776a9e6e9e56a54130d5715cb9e
   collected_at: '2026-06-13T00:00:00Z'
-  size_bytes: 184
+  size_bytes: 179
