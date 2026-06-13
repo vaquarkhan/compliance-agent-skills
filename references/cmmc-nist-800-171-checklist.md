@@ -43,3 +43,22 @@ Use with skill `cmmc-nist-800-171`. 110 security practices for CUI.
 - [ ] Self-assessment score calculated and submitted to SPRS
 - [ ] POA&M for not-met practices with milestones
 - [ ] C3PAO assessment scheduled if required for certification
+
+---
+
+## Authoritative sources
+
+- CMMC program: [DoD CMMC](https://dodcio.defense.gov/CMMC/)
+- NIST SP 800-171 Rev 2: [NIST CSRC SP 800-171](https://csrc.nist.gov/publications/detail/sp/800-171/rev-2/final)
+- DFARS 252.204-7012: [Acquisition.gov DFARS](https://www.acquisition.gov/dfars)
+
+## Provenance
+
+| Field | Value |
+|-------|-------|
+| **Source document** | CMMC Level 2 / NIST SP 800-171 Rev 2 |
+| **Version / effective** | 800-171 Rev 2; CMMC rule as published |
+| **Last reviewed** | 2026-06-13 |
+| **Reviewer** | Repository maintainer (pending C3PAO sign-off) |
+| **Next review due** | 2026-12-13 |
+| **Notes** | CUI/agent subset; not CMMC certification assessment |

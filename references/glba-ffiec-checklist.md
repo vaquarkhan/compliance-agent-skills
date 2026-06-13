@@ -31,3 +31,21 @@ Use with skill `glba-ffiec-financial-privacy`. 16 CFR Part 314 (Safeguards), Par
 - [ ] Customer PI not sent to non-GLBA-compliant LLM providers
 - [ ] Model outputs do not expose account numbers or authentication secrets
 - [ ] Audit trail for automated decisions affecting customer accounts
+
+---
+
+## Authoritative sources
+
+- Gramm-Leach-Bliley Act: [15 U.S.C. §6801 et seq.](https://www.ftc.gov/legal-library/browse/statutes/gramm-leach-bliley-act)
+- FFIEC IT Examination Handbook: [FFIEC Infobase](https://ithandbook.ffiec.gov/)
+
+## Provenance
+
+| Field | Value |
+|-------|-------|
+| **Source document** | GLBA / FFIEC IT Handbook |
+| **Version / effective** | Current statutes and FFIEC guidance as of 2026-06-13 |
+| **Last reviewed** | 2026-06-13 |
+| **Reviewer** | Repository maintainer (pending financial institution compliance sign-off) |
+| **Next review due** | 2026-12-13 |
+| **Notes** | Safeguards Rule and agent subset; not regulatory examination |

@@ -1,0 +1,73 @@
+# Regulatory findings report — structured input for /report and generate-regulatory-report.py
+# Fill from /scope, /audit, /evidence, and /remediate outputs. No raw PHI/PAN in this file.
+schema_version: "1.0"
+
+report:
+  id: "RPT-YYYY-NNN"
+  engagement_id: "ENG-YYYY-NNN"
+  title: ""
+  framework: ""  # HIPAA-Security-Rule | PCI-DSS-v4.0 | SOC2-TSC | NIST-AI-RMF | FERPA | COPPA | FedRAMP | CMMC | SOX-ITGC | multi
+  frameworks: []  # when multi-framework
+  period:
+    start: "YYYY-MM-DD"
+    end: "YYYY-MM-DD"
+  prepared_by: ""
+  prepared_at: "YYYY-MM-DD"
+  classification: confidential
+  distribution: internal  # internal | auditor | board
+
+executive_summary:
+  # not_assessed | gaps_identified | controls_operating_effectively
+  posture: not_assessed
+  narrative: ""
+  top_risks:
+    - id: "R-001"
+      severity: high  # critical | high | medium | low | informational
+      title: ""
+      control_ref: ""
+  limitations:
+    - ""
+
+scope:
+  in_scope_systems: []
+  out_of_scope_systems: []
+  data_classes: []  # ePHI | CHD | PII | education_records | children_pi
+  skills_used: []
+  mcp_tools_used: []
+
+findings:
+  - id: "F-001"
+    severity: medium
+    status: open  # open | remediated | accepted_risk | not_tested
+    control_id: ""
+    control_title: ""
+    observation: ""
+    recommendation: ""
+    evidence_refs: []  # artifact IDs from audit-evidence-manifest.yaml
+    remediation_owner: ""
+    remediation_due: null
+
+evidence_index:
+  manifest_path: "templates/audit-evidence-manifest.yaml"
+  artifact_ids: []
+
+remediation:
+  - finding_id: "F-001"
+    action: ""
+    owner: ""
+    due_date: null
+    status: planned  # planned | in_progress | complete
+
+methodology:
+  sampling_approach: ""
+  tools: []
+  redaction_profile: balanced  # balanced | aggressive
+  deanonymize_used: false
+
+sign_off:
+  compliance_lead: { name: "", role: "", date: null }
+  technical_lead: { name: "", role: "", date: null }
+
+disclaimer: >
+  This report documents control testing observations and is not legal advice,
+  attestation, certification, or a Qualified Security Assessor (QSA) / CPA opinion.

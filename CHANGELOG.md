@@ -5,6 +5,17 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.6.2] - 2026-06-13
+
+### Added
+
+- **Regulatory reports** — `templates/reports/regulatory-findings-report.yaml`, `scripts/generate-regulatory-report.py`, five synthetic examples (HIPAA, PCI, SOC 2, NIST AI RMF, FERPA/COPPA), [docs/regulatory-reports.md](docs/regulatory-reports.md)
+- **SME review program** — provenance + authoritative sources on all 15 reference checklists; `scripts/validate-sme-provenance.py` enforced in CI/pre-commit; `reviews/` scaffold and Q2 2026 maintainer records; SME review issue template
+
+### Fixed
+
+- **test_agent.py** — graceful skip when `pydantic_ai` / agent deps unavailable (`allow_module_level=True`)
+
 ## [1.6.1] - 2026-06-13
 
 ### Fixed

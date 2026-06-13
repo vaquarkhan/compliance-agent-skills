@@ -42,6 +42,18 @@ Summary table from `/remediate` output.
 - Control matrix excerpt
 - Methodology (skills used, MCP tools, sampling approach)
 
+## Structured output (recommended)
+
+1. Copy `templates/reports/regulatory-findings-report.yaml` to your engagement folder.
+2. Populate from scope, audit, evidence, and remediate artifacts.
+3. Generate Markdown:
+
+```bash
+python scripts/generate-regulatory-report.py engagement/findings-input.yaml -o engagement/findings-report.md
+```
+
+See [docs/regulatory-reports.md](../../docs/regulatory-reports.md) and [examples/regulatory-reports/](../../examples/regulatory-reports/) for framework samples (HIPAA, PCI, SOC 2, NIST AI RMF, FERPA/COPPA).
+
 ## Rules
 
 - No raw PHI/PAN in report text

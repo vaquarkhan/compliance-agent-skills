@@ -44,6 +44,11 @@ EdTech and AI agent deployments. Not legal advice.
 
 ---
 
+## Authoritative sources
+
+- FERPA: [34 CFR Part 99](https://www.ecfr.gov/current/title-34/subtitle-B/chapter-XI/part-99)
+- US ED FERPA guidance: [Student Privacy Policy Office](https://studentprivacy.ed.gov/)
+
 ## Provenance
 
 | Field | Value |

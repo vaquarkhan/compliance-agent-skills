@@ -51,6 +51,11 @@ FTC children's privacy for apps and AI agents. Verify amended Rule effective dat
 
 ---
 
+## Authoritative sources
+
+- COPPA Rule: [16 CFR Part 312](https://www.ecfr.gov/current/title-16/chapter-I/subchapter-C/part-312)
+- FTC COPPA resources: [FTC COPPA](https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa)
+
 ## Provenance
 
 | Field | Value |

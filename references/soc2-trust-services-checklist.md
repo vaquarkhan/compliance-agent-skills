@@ -86,3 +86,22 @@ Primary: `soc2-trust-services-criteria`, `soc2-evidence-collection`, `soc2-ccm-c
 Template: `templates/soc2-control-evidence.yaml`
 
 Example: `examples/soc2-evidence-bundle/`
+
+---
+
+## Authoritative sources
+
+- AICPA Trust Services Criteria (2017): [SOC 2 overview](https://www.aicpa.org/resources/landing/system-and-organization-controls-soc-2)
+- AICPA Description Criteria: [2018 Description Criteria](https://www.aicpa.org/resources/download/trust-services-criteria)
+
+## Provenance
+
+| Field | Value |
+|-------|-------|
+| **Source document** | AICPA Trust Services Criteria (2017) |
+| **Version / effective** | 2017 TSC (current AICPA publication) |
+| **Last reviewed** | 2026-06-13 |
+| **Reviewer** | Repository maintainer (pending CPA sign-off) |
+| **Next review due** | 2026-09-13 |
+| **Notes** | Agent-relevant CC subset; not a SOC 2 Type II report |
+| **Review record** | [reviews/2026-Q2/soc2.md](../../reviews/2026-Q2/soc2.md) |

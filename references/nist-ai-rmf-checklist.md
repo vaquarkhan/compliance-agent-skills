@@ -44,6 +44,11 @@ Based on NIST AI 100-1 (GOVERN, MAP, MEASURE, MANAGE). Not legal advice.
 
 ---
 
+## Authoritative sources
+
+- NIST AI RMF 1.0: [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework)
+- NIST AI 100-1 publication: [NIST CSRC AI 100-1](https://csrc.nist.gov/pubs/ai/100/1/final)
+
 ## Provenance
 
 | Field | Value |

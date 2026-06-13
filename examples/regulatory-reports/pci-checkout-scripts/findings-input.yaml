@@ -1,0 +1,82 @@
+schema_version: "1.0"
+
+report:
+  id: RPT-2026-PCI-001
+  engagement_id: ENG-2026-CHECKOUT-001
+  title: PCI-DSS v4.0 — Payment page script audit (Req 6.4.3)
+  framework: PCI-DSS-v4.0
+  period:
+    start: "2026-04-01"
+    end: "2026-06-30"
+  prepared_by: compliance-agent-skills (synthetic example)
+  prepared_at: "2026-06-13"
+  classification: confidential
+  distribution: auditor
+
+executive_summary:
+  posture: gaps_identified
+  narrative: >
+    Read-only DOM/script inventory of checkout page identified one unauthorized
+    third-party script without integrity mechanism. No PAN entered agent prompts.
+  top_risks:
+    - id: R-001
+      severity: high
+      title: Script without SRI/CSP hash on payment page
+      control_ref: PCI-DSS Req 6.4.3
+  limitations:
+    - Point-in-time DOM snapshot; no continuous monitoring validated
+    - QSA review required before ROC submission
+
+scope:
+  in_scope_systems:
+    - https://example.com/checkout (synthetic)
+    - Playwright MCP read-only audit mode
+  out_of_scope_systems:
+    - Cardholder data environment database tier
+  data_classes:
+    - CHD (environment only — not processed by LLM)
+  skills_used:
+    - pci-dss-script-audit
+  mcp_tools_used:
+    - playwright
+
+findings:
+  - id: F-001
+    severity: high
+    status: open
+    control_id: Req-6.4.3
+    control_title: Payment-page script inventory and integrity
+    observation: >
+      analytics-helper.js loaded without documented authorization or SRI attribute.
+    recommendation: >
+      Remove or authorize script; implement CSP/SRI; add to script inventory with owner.
+    evidence_refs:
+      - art-script-inventory
+    remediation_owner: ecommerce-platform
+    remediation_due: "2026-07-01"
+
+evidence_index:
+  manifest_path: examples/pci-checkout-audit/config/baseline.yaml
+  artifact_ids:
+    - art-script-inventory
+
+remediation:
+  - finding_id: F-001
+    action: Authorize or remove analytics-helper.js; add SRI
+    owner: ecommerce-platform
+    due_date: "2026-07-01"
+    status: in_progress
+
+methodology:
+  sampling_approach: Full payment page script enumeration via Playwright MCP
+  tools:
+    - examples/pci-checkout-audit/audit_scripts.py
+  redaction_profile: balanced
+  deanonymize_used: false
+
+sign_off:
+  compliance_lead: { name: "", role: PCI Program Owner, date: null }
+  technical_lead: { name: "", role: Platform Engineering, date: null }
+
+disclaimer: >
+  Synthetic example. Not a QSA attestation or ROC.

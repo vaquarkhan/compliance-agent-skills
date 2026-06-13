@@ -37,3 +37,21 @@ Use with skill `sox-itgc-audit`. COSO / PCAOB AS 2201 alignment.
 - [ ] Sample of 25+ access changes tested per audit period
 - [ ] Sample of 25+ production changes tested
 - [ ] No unmitigated deficiencies in scope of reliance
+
+---
+
+## Authoritative sources
+
+- Sarbanes-Oxley Act Section 404: [SEC SOX summary](https://www.sec.gov/news/studies/sox404study.pdf)
+- PCAOB AS 2201 (ICFR audit): [PCAOB standards](https://pcaobus.org/oversight/standards/auditing-standards)
+
+## Provenance
+
+| Field | Value |
+|-------|-------|
+| **Source document** | SOX §404 / PCAOB AS 2201 ITGC |
+| **Version / effective** | Current PCAOB standards as of 2026-06-13 |
+| **Last reviewed** | 2026-06-13 |
+| **Reviewer** | Repository maintainer (pending CPA sign-off) |
+| **Next review due** | 2026-12-13 |
+| **Notes** | ITGC subset for financial reporting systems; not audit opinion |

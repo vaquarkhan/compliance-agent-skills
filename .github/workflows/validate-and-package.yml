@@ -41,6 +41,14 @@ jobs:
           python examples/coppa-parental-consent/validate_consent.py
           python examples/nist-ai-rmf-profile/validate_profile.py
 
+      - name: Validate SME provenance on reference checklists
+        run: python scripts/validate-sme-provenance.py
+
+      - name: Validate regulatory report generator (sample)
+        run: |
+          pip install pyyaml
+          python scripts/generate-regulatory-report.py examples/regulatory-reports/hipaa-llm-intake/findings-input.yaml -o /tmp/hipaa-report.md
+
   lint:
     runs-on: ubuntu-latest
     needs: validate

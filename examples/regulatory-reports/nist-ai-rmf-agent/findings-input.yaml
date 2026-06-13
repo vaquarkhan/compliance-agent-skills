@@ -1,0 +1,84 @@
+schema_version: "1.0"
+
+report:
+  id: RPT-2026-AIRMF-001
+  engagement_id: ENG-2026-AI-GOV-001
+  title: NIST AI RMF 1.0 — LLM agent deployment profile review
+  framework: NIST-AI-RMF
+  period:
+    start: "2026-01-01"
+    end: "2026-06-30"
+  prepared_by: compliance-agent-skills (synthetic example)
+  prepared_at: "2026-06-13"
+  classification: confidential
+  distribution: board
+
+executive_summary:
+  posture: gaps_identified
+  narrative: >
+    GOVERN/MAP profile complete for compliance agent; MEASURE TEVV corpus defined
+    but production monitoring for hallucinated regulatory citations not yet automated.
+  top_risks:
+    - id: R-001
+      severity: medium
+      title: No automated regression for skill citation drift
+      control_ref: NIST AI RMF MEASURE / TEVV
+  limitations:
+    - Self-assessment only; not third-party AI audit
+
+scope:
+  in_scope_systems:
+    - compliance-agent-skills agent.py
+    - 30 Agent Skills library
+    - MCP tool integrations
+  data_classes:
+    - ePHI (redacted upstream)
+    - confidential
+  skills_used:
+    - nist-ai-rmf-governance
+  mcp_tools_used:
+    - playwright
+    - postgres
+
+findings:
+  - id: F-001
+    severity: medium
+    status: open
+    control_id: MEASURE-TEVV
+    control_title: Test, evaluation, verification, and validation
+    observation: >
+      Skill validators run in CI but no scheduled production prompt regression against
+      golden audit questions.
+    recommendation: >
+      Add weekly TEVV job with fixed prompt corpus; alert on citation or step drift.
+    evidence_refs:
+      - art-ai-rmf-profile
+    remediation_owner: ai-risk-owner
+    remediation_due: "2026-08-15"
+
+evidence_index:
+  manifest_path: templates/nist-ai-rmf-profile.yaml
+  artifact_ids:
+    - art-ai-rmf-profile
+
+remediation:
+  - finding_id: F-001
+    action: Implement scheduled TEVV prompt regression in CI/CD
+    owner: ai-risk-owner
+    due_date: "2026-08-15"
+    status: planned
+
+methodology:
+  sampling_approach: Profile document review + CI validator output
+  tools:
+    - scripts/validate-skills.py
+    - examples/nist-ai-rmf-profile/validate_profile.py
+  redaction_profile: balanced
+  deanonymize_used: false
+
+sign_off:
+  compliance_lead: { name: "", role: AI Risk Owner, date: null }
+  technical_lead: { name: "", role: ML Platform Lead, date: null }
+
+disclaimer: >
+  Synthetic example. Not NIST conformity assessment.

@@ -70,3 +70,21 @@ Operational checklist for EU/EEA/UK GDPR programs. Not legal advice. UK GDPR par
 
 - [ ] DPO appointed if required (large-scale Art. 9 or systematic monitoring)
 - [ ] DPO contact published; consulted on DPIA
+
+---
+
+## Authoritative sources
+
+- GDPR (Regulation EU 2016/679): [EUR-Lex GDPR text](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679)
+- EDPB guidelines: [European Data Protection Board](https://www.edpb.europa.eu/)
+
+## Provenance
+
+| Field | Value |
+|-------|-------|
+| **Source document** | GDPR (EU) 2016/679 |
+| **Version / effective** | GDPR in force; EDPB guidance as of 2026-06-13 |
+| **Last reviewed** | 2026-06-13 |
+| **Reviewer** | Repository maintainer (pending DPO sign-off) |
+| **Next review due** | 2026-12-13 |
+| **Notes** | US multinational subset; not EU representative opinion |

@@ -59,6 +59,11 @@ Template: `templates/hipaa-phi-flow-diagram.yaml`
 
 ---
 
+## Authoritative sources
+
+- HIPAA Security Rule: [45 CFR Part 164 Subpart C](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C)
+- HHS OCR Security Rule: [HHS HIPAA Security](https://www.hhs.gov/hipaa/for-professionals/security/index.html)
+
 ## Provenance
 
 | Field | Value |
@@ -69,3 +74,4 @@ Template: `templates/hipaa-phi-flow-diagram.yaml`
 | **Reviewer** | Repository maintainer (pending Privacy Officer sign-off) |
 | **Next review due** | 2026-09-13 |
 | **Notes** | Agent/MCP-focused subset; not a full risk analysis |
+| **Review record** | [reviews/2026-Q2/hipaa.md](../../reviews/2026-Q2/hipaa.md) |

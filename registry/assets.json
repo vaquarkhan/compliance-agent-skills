@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "project": "compliance-agent-skills",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "frameworks": ["HIPAA", "HITECH", "PCI-DSS-v4.0", "SOC2-TSC", "ISO27001", "NIST-CSF-2.0", "NIST-AI-RMF", "FERPA", "COPPA", "CCPA-CPRA", "US-State-Privacy", "GDPR", "FedRAMP", "SOX", "CMMC", "GLBA"],
   "templates": [
     {
@@ -103,6 +103,11 @@
       "id": "coppa-parental-consent",
       "path": "templates/coppa-parental-consent.yaml",
       "description": "COPPA direct notice and verifiable parental consent tracker"
+    },
+    {
+      "id": "regulatory-findings-report",
+      "path": "templates/reports/regulatory-findings-report.yaml",
+      "description": "Structured YAML input scaffold for /report executive and technical findings"
     }
   ],
   "starter_packs": [
@@ -228,6 +233,31 @@
       "id": "nist-ai-rmf-profile",
       "path": "examples/nist-ai-rmf-profile/",
       "description": "NIST AI RMF GOVERN/MAP/MEASURE/MANAGE profile scaffold check"
+    },
+    {
+      "id": "regulatory-reports-hipaa",
+      "path": "examples/regulatory-reports/hipaa-llm-intake/",
+      "description": "Sample HIPAA Security Rule findings report (YAML input + Markdown output)"
+    },
+    {
+      "id": "regulatory-reports-pci",
+      "path": "examples/regulatory-reports/pci-checkout-scripts/",
+      "description": "Sample PCI-DSS Req 6.4.3 script audit findings report"
+    },
+    {
+      "id": "regulatory-reports-soc2",
+      "path": "examples/regulatory-reports/soc2-access-review/",
+      "description": "Sample SOC 2 CC6 access review findings report"
+    },
+    {
+      "id": "regulatory-reports-nist-ai-rmf",
+      "path": "examples/regulatory-reports/nist-ai-rmf-agent/",
+      "description": "Sample NIST AI RMF agent governance findings report"
+    },
+    {
+      "id": "regulatory-reports-edtech",
+      "path": "examples/regulatory-reports/edtech-ferpa-coppa/",
+      "description": "Sample combined FERPA/COPPA EdTech findings report"
     }
   ],
   "mcp_templates": [

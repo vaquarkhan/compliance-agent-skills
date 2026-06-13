@@ -6,16 +6,23 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from compliance_tests.support import presidio
+from compliance_tests.support import presidio, pydantic_ai_available
 
-pytest.importorskip("pydantic_ai")
+if not pydantic_ai_available():
+    pytest.skip(
+        "pydantic-ai/pydantic-ai-skills not installed (pip install -r requirements-lock.txt)",
+        allow_module_level=True,
+    )
 
-from agent import (
-    ComplianceDeps,
-    _env_deanonymize_enabled,
-    deanonymize_response,
-    run_compliance_agent,
-)
+try:
+    from agent import (
+        ComplianceDeps,
+        _env_deanonymize_enabled,
+        deanonymize_response,
+        run_compliance_agent,
+    )
+except ImportError as exc:
+    pytest.skip(f"agent module unavailable: {exc}", allow_module_level=True)
 
 
 def test_deanonymize_authorized_defaults_false() -> None:

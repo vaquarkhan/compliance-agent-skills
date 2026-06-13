@@ -74,6 +74,11 @@ Example: `examples/pci-checkout-audit/`
 
 ---
 
+## Authoritative sources
+
+- PCI SSC standards: [PCI Document Library](https://www.pcisecuritystandards.org/document_library/)
+- PCI DSS v4.0.1 summary: [PCI SSC v4 resources](https://www.pcisecuritystandards.org/)
+
 ## Provenance
 
 | Field | Value |
@@ -84,3 +89,4 @@ Example: `examples/pci-checkout-audit/`
 | **Reviewer** | Repository maintainer (pending QSA sign-off) |
 | **Next review due** | 2026-09-13 |
 | **Notes** | Agent-relevant subset only; not a full ROC checklist |
+| **Review record** | [reviews/2026-Q2/pci-dss.md](../../reviews/2026-Q2/pci-dss.md) |

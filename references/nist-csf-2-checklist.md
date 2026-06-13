@@ -54,3 +54,21 @@ Document current tier (Partial → Adaptive) per Function and target tier with g
 - [ ] Current Profile documented
 - [ ] Target Profile documented
 - [ ] Gap analysis exported with prioritized roadmap
+
+---
+
+## Authoritative sources
+
+- NIST Cybersecurity Framework 2.0: [NIST CSF 2.0](https://www.nist.gov/cyberframework)
+- CSF 2.0 Core (PDF): [NIST CSRC CSF 2.0](https://csrc.nist.gov/pubs/cswp/29/the-nist-cybersecurity-framework-20/final)
+
+## Provenance
+
+| Field | Value |
+|-------|-------|
+| **Source document** | NIST Cybersecurity Framework 2.0 |
+| **Version / effective** | CSF 2.0 (February 2024) |
+| **Last reviewed** | 2026-06-13 |
+| **Reviewer** | Repository maintainer (pending security architect sign-off) |
+| **Next review due** | 2026-12-13 |
+| **Notes** | Profile/gap subset; not NIST CSF certification |

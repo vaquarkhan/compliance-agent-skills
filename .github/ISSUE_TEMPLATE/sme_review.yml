@@ -1,0 +1,80 @@
+---
+name: SME checklist review
+description: Record a maintainer or external SME review of a regulatory reference checklist
+title: "[sme-review]: "
+labels:
+  - sme-review
+  - documentation
+body:
+  - type: dropdown
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - hipaa-security-rule-checklist.md
+        - pci-dss-v4-checklist.md
+        - soc2-trust-services-checklist.md
+        - hitech-breach-checklist.md
+        - iso27001-annex-a-checklist.md
+        - nist-csf-2-checklist.md
+        - nist-ai-rmf-checklist.md
+        - ccpa-cpra-checklist.md
+        - us-state-privacy (multiple)
+        - gdpr-article-checklist.md
+        - fedramp-moderate-checklist.md
+        - cmmc-nist-800-171-checklist.md
+        - sox-itgc-checklist.md
+        - glba-ffiec-checklist.md
+        - ferpa-checklist.md
+        - coppa-checklist.md
+        - other
+    validations:
+      required: true
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Review tier
+      options:
+        - maintainer
+        - external_sme
+    validations:
+      required: true
+  - type: input
+    id: source_version
+    attributes:
+      label: Authoritative source version verified
+      placeholder: e.g. PCI DSS v4.0.1 March 2024
+    validations:
+      required: true
+  - type: input
+    id: source_url
+    attributes:
+      label: Source URL
+      placeholder: https://...
+    validations:
+      required: true
+  - type: textarea
+    id: changes
+    attributes:
+      label: Changes made (or none)
+      description: List checklist edits, or state no changes required
+    validations:
+      required: true
+  - type: input
+    id: reviewer
+    attributes:
+      label: Reviewer name or role
+      placeholder: e.g. QSA, HIPAA Privacy Officer, Repository maintainer
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist_done
+    attributes:
+      label: Completion
+      options:
+        - label: Updated provenance footer (Last reviewed + Next review due)
+          required: true
+        - label: Added/updated review record under reviews/YYYY-Qn/
+          required: false
+        - label: Ran make validate (including validate-sme)
+          required: true

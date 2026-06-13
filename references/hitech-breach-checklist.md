@@ -57,3 +57,21 @@ Operational checklist for HITECH Act breach workflows. Not legal advice.
 - [ ] `agent.py` deanonymize authorization audit trail reviewed
 - [ ] MCP OAuth tokens revoked; rogue tools removed
 - [ ] LLM vendor prompt retention status confirmed
+
+---
+
+## Authoritative sources
+
+- HITECH Act breach notification: [45 CFR §164.400–414](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-D)
+- HHS OCR Breach Portal: [HHS Breach Reporting](https://ocrportal.hhs.gov/ocr/breach/wizard_breach.jsf)
+
+## Provenance
+
+| Field | Value |
+|-------|-------|
+| **Source document** | HITECH Act / HIPAA Breach Notification Rule |
+| **Version / effective** | Current eCFR as of 2026-06-13 |
+| **Last reviewed** | 2026-06-13 |
+| **Reviewer** | Repository maintainer (pending Privacy Officer sign-off) |
+| **Next review due** | 2026-09-13 |
+| **Notes** | Breach/OCR subset; use with breach-incident-response skill |

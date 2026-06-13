@@ -1,0 +1,105 @@
+schema_version: "1.0"
+
+report:
+  id: RPT-2026-EDTECH-001
+  engagement_id: ENG-2026-EDTECH-001
+  title: FERPA + COPPA — EdTech youth privacy combined review
+  framework: multi
+  frameworks:
+    - FERPA
+    - COPPA
+  period:
+    start: "2026-01-01"
+    end: "2026-06-30"
+  prepared_by: compliance-agent-skills (synthetic example)
+  prepared_at: "2026-06-13"
+  classification: confidential
+  distribution: internal
+
+executive_summary:
+  posture: gaps_identified
+  narrative: >
+    School-official and VPC templates validated. Direct notice URL placeholder;
+    parental consent log retention policy not yet operationalized.
+  top_risks:
+    - id: R-001
+      severity: medium
+      title: COPPA direct notice not published at production URL
+      control_ref: 16 CFR §312.4
+    - id: R-002
+      severity: low
+      title: FERPA disclosure log fields incomplete in MCP Postgres schema
+      control_ref: 34 CFR §99.32
+  limitations:
+    - No under-13 user acceptance testing performed
+
+scope:
+  in_scope_systems:
+    - EdTech tutoring agent (under-13 capable)
+    - templates/ferpa-school-official.yaml
+    - templates/coppa-parental-consent.yaml
+  data_classes:
+    - education_records
+    - children_pi
+  skills_used:
+    - ferpa-education-records
+    - coppa-children-privacy
+  mcp_tools_used:
+    - postgres
+
+findings:
+  - id: F-001
+    severity: medium
+    status: open
+    control_id: COPPA-312.4
+    control_title: Direct notice to parents
+    observation: Parent notice URL in template is placeholder; not reachable in staging.
+    recommendation: Publish COPPA direct notice before child-directed features go live.
+    evidence_refs:
+      - art-coppa-notice
+    remediation_owner: privacy-office
+    remediation_due: "2026-07-01"
+  - id: F-002
+    severity: low
+    status: open
+    control_id: FERPA-99.32
+    control_title: Disclosure accounting log
+    observation: MCP Postgres disclosure log missing recipient purpose field.
+    recommendation: Align log schema with templates/ferpa-school-official.yaml fields.
+    evidence_refs:
+      - art-ferpa-log-schema
+    remediation_owner: data-engineering
+    remediation_due: "2026-07-15"
+
+evidence_index:
+  manifest_path: templates/ferpa-school-official.yaml
+  artifact_ids:
+    - art-coppa-notice
+    - art-ferpa-log-schema
+
+remediation:
+  - finding_id: F-001
+    action: Publish COPPA direct notice at production URL
+    owner: privacy-office
+    due_date: "2026-07-01"
+    status: planned
+  - finding_id: F-002
+    action: Extend disclosure log schema with recipient and purpose
+    owner: data-engineering
+    due_date: "2026-07-15"
+    status: planned
+
+methodology:
+  sampling_approach: Template validation scripts + configuration review
+  tools:
+    - examples/ferpa-education-records/validate_ferpa_scope.py
+    - examples/coppa-parental-consent/validate_consent.py
+  redaction_profile: balanced
+  deanonymize_used: false
+
+sign_off:
+  compliance_lead: { name: "", role: School Privacy Officer, date: null }
+  technical_lead: { name: "", role: EdTech Engineering, date: null }
+
+disclaimer: >
+  Synthetic example. Not FTC or ED official guidance.

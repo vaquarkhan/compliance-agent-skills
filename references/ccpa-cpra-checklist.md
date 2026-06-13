@@ -42,3 +42,21 @@ Use with skill `ccpa-cpra-privacy-rights`. California Civil Code §1798.100 et s
 
 - [ ] 24-month retention of consumer requests and responses
 - [ ] Metrics: requests received, fulfilled, denied with reason
+
+---
+
+## Authoritative sources
+
+- California Consumer Privacy Act (CCPA) as amended by CPRA: [California OAG CCPA](https://oag.ca.gov/privacy/ccpa)
+- CPRA regulations: [California Privacy Protection Agency](https://cppa.ca.gov/)
+
+## Provenance
+
+| Field | Value |
+|-------|-------|
+| **Source document** | California CCPA/CPRA (Civil Code §1798.100 et seq.) |
+| **Version / effective** | Current California statutes as of 2026-06-13 |
+| **Last reviewed** | 2026-06-13 |
+| **Reviewer** | Repository maintainer (pending privacy counsel sign-off) |
+| **Next review due** | 2026-12-13 |
+| **Notes** | Consumer rights and service-provider subset; not CPRA regulations text |

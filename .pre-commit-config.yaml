@@ -32,6 +32,11 @@ repos:
         entry: python scripts/validate-skills.py
         language: system
         pass_filenames: false
+      - id: validate-sme-provenance
+        name: validate-sme-provenance
+        entry: python scripts/validate-sme-provenance.py
+        language: system
+        pass_filenames: false
       - id: smoke-syntax
         name: smoke-syntax
         entry: python scripts/smoke_syntax.py

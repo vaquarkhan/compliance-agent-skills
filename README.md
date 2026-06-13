@@ -112,6 +112,10 @@ make security   # pip-audit, bandit, detect-secrets
 
 **Locked dependencies:** Reproducible installs use `requirements-lock.txt` (compile with `make lock` from `requirements.in`).
 
+**Regulatory reports:** Structured `/report` outputs via [docs/regulatory-reports.md](docs/regulatory-reports.md) and `make report INPUT=... OUTPUT=...`.
+
+**SME review:** All reference checklists include provenance footers; CI enforces via [docs/sme-review.md](docs/sme-review.md) and `make validate-sme`.
+
 ---
 
 ## Plugin installation

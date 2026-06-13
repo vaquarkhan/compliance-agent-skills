@@ -1,0 +1,80 @@
+schema_version: "1.0"
+
+report:
+  id: RPT-2026-SOC2-001
+  engagement_id: ENG-2026-SOC2-Q2
+  title: SOC 2 Type II — CC6 logical access (Q2 2026)
+  framework: SOC2-TSC
+  period:
+    start: "2026-04-01"
+    end: "2026-06-30"
+  prepared_by: compliance-agent-skills (synthetic example)
+  prepared_at: "2026-06-13"
+  classification: confidential
+  distribution: auditor
+
+executive_summary:
+  posture: controls_operating_effectively
+  narrative: >
+    Quarterly access review and policy artifacts packaged with SHA-256 manifest.
+    One low finding on MFA exception documentation.
+  top_risks:
+    - id: R-001
+      severity: low
+      title: MFA exception ticket missing approver field
+      control_ref: CC6.1
+  limitations:
+    - Sample-based IAM export; not full population
+
+scope:
+  in_scope_systems:
+    - Identity provider (Okta synthetic export)
+    - Agent service accounts
+  data_classes:
+    - confidential
+  skills_used:
+    - soc2-logical-access
+    - audit-logging-integrity
+  mcp_tools_used:
+    - postgres
+
+findings:
+  - id: F-001
+    severity: low
+    status: open
+    control_id: CC6.1
+    control_title: Logical access — MFA exceptions
+    observation: One break-glass account exception lacks documented approver in ticket sample.
+    recommendation: Enforce required approver field on MFA exception workflow.
+    evidence_refs:
+      - cc6-access-policy
+      - iam-export
+    remediation_owner: it-operations
+    remediation_due: "2026-07-30"
+
+evidence_index:
+  manifest_path: examples/soc2-evidence-bundle/evidence-manifest.yaml
+  artifact_ids:
+    - cc6-access-policy
+    - iam-export
+
+remediation:
+  - finding_id: F-001
+    action: Update IdP exception workflow required fields
+    owner: it-operations
+    due_date: "2026-07-30"
+    status: planned
+
+methodology:
+  sampling_approach: 25-user IAM export sample; policy document review
+  tools:
+    - examples/soc2-evidence-bundle/hash_evidence.py
+  redaction_profile: balanced
+  deanonymize_used: false
+
+sign_off:
+  compliance_lead: { name: "", role: GRC Manager, date: null }
+  technical_lead: { name: "", role: IT Operations, date: null }
+
+disclaimer: >
+  Synthetic example. Not a CPA attestation report.

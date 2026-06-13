@@ -1,0 +1,112 @@
+schema_version: "1.0"
+
+report:
+  id: RPT-2026-HIPAA-001
+  engagement_id: ENG-2026-LLM-001
+  title: HIPAA Security Rule — LLM intake pipeline assessment
+  framework: HIPAA-Security-Rule
+  period:
+    start: "2026-01-01"
+    end: "2026-06-30"
+  prepared_by: compliance-agent-skills (synthetic example)
+  prepared_at: "2026-06-13"
+  classification: confidential
+  distribution: internal
+
+executive_summary:
+  posture: gaps_identified
+  narrative: >
+    Point-in-time review of the LLM agent gateway handling potential ePHI found
+    Presidio redaction active upstream with opt-in deanonymization. Two medium
+    findings require remediation before production attestation.
+  top_risks:
+    - id: R-001
+      severity: high
+      title: Deanonymize flag enabled in non-production config drift
+      control_ref: "45 CFR §164.312(a)(1)"
+    - id: R-002
+      severity: medium
+      title: BAA gap for LLM subprocessors not fully documented
+      control_ref: "45 CFR §164.308(b)(1)"
+  limitations:
+    - Synthetic corpus only; no production log sampling
+    - SME legal review of checklist mappings pending
+
+scope:
+  in_scope_systems:
+    - LLM Agent Gateway (agent.py)
+    - Presidio redaction gate (redaction.py)
+    - MCP Postgres evidence export
+  out_of_scope_systems:
+    - Legacy fax intake
+    - Production EHR direct integration
+  data_classes:
+    - ePHI
+    - confidential
+  skills_used:
+    - hipaa-technical-safeguards
+    - hipaa-phi-redaction-pipeline
+    - hipaa-baa-vendor-assessment
+  mcp_tools_used:
+    - presidio
+    - postgres
+
+findings:
+  - id: F-001
+    severity: high
+    status: open
+    control_id: "§164.312(a)(1)"
+    control_title: Access control — deanonymize authorization
+    observation: >
+      COMPLIANCE_AGENT_DEANONYMIZE documented in runbooks but no role-based gate
+      tying flag to Privacy Officer approval workflow.
+    recommendation: >
+      Require break-glass ticket ID in env var; log all deanonymize sessions to SIEM.
+    evidence_refs:
+      - art-redaction-config
+    remediation_owner: security-engineering
+    remediation_due: "2026-07-15"
+  - id: F-002
+    severity: medium
+    status: open
+    control_id: "§164.308(b)(1)"
+    control_title: Business associate agreements
+    observation: Subprocessor list for MCP host missing from BAA exhibit B.
+    recommendation: Execute BAAs and flow-down terms for all LLM/MCP vendors touching ePHI flows.
+    evidence_refs:
+      - art-baa-register
+    remediation_owner: privacy-office
+    remediation_due: "2026-08-01"
+
+evidence_index:
+  manifest_path: examples/soc2-evidence-bundle/evidence-manifest.yaml
+  artifact_ids:
+    - art-redaction-config
+    - art-baa-register
+
+remediation:
+  - finding_id: F-001
+    action: Implement deanonymize break-glass workflow and SIEM logging
+    owner: security-engineering
+    due_date: "2026-07-15"
+    status: planned
+  - finding_id: F-002
+    action: Complete BAA subprocessor exhibit for MCP/LLM vendors
+    owner: privacy-office
+    due_date: "2026-08-01"
+    status: planned
+
+methodology:
+  sampling_approach: Full review of redaction.py and agent.py; synthetic PHI corpus
+  tools:
+    - compliance_tests synthetic corpus
+    - scripts/demo_agent.py
+  redaction_profile: balanced
+  deanonymize_used: false
+
+sign_off:
+  compliance_lead: { name: "", role: HIPAA Privacy Officer, date: null }
+  technical_lead: { name: "", role: Security Engineering Lead, date: null }
+
+disclaimer: >
+  Synthetic example report. Not legal advice or OCR attestation.

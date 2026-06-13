@@ -1,6 +1,8 @@
-.PHONY: validate lint typecheck security coverage test test-unit smoke demo install lock sync-version pre-commit
+.PHONY: validate validate-sme lint typecheck security coverage test test-unit smoke demo install lock sync-version pre-commit report
 
 PYTHON ?= python
+INPUT ?= templates/reports/regulatory-findings-report.yaml
+OUTPUT ?= findings-report.md
 
 validate:
 	$(PYTHON) scripts/smoke_syntax.py
@@ -9,6 +11,9 @@ validate:
 	$(PYTHON) scripts/validate-plugin-manifest.py
 	$(PYTHON) scripts/validate-evidence-manifest.py
 	$(PYTHON) scripts/sync-install-manifest.py
+
+validate-sme:
+	$(PYTHON) scripts/validate-sme-provenance.py
 
 lint:
 	ruff check agent.py redaction.py scripts/ compliance_tests/
@@ -47,3 +52,6 @@ pre-commit:
 
 sync-version:
 	$(PYTHON) scripts/sync-version.py
+
+report:
+	$(PYTHON) scripts/generate-regulatory-report.py $(INPUT) -o $(OUTPUT)

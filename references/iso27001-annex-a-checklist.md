@@ -64,3 +64,21 @@ Use with skill `iso27001-annex-a-controls`.
 - [ ] Every Annex A control marked: Applicable / Not Applicable with justification
 - [ ] Implementation status and evidence owner per applicable control
 - [ ] Risk treatment plan linked to gaps
+
+---
+
+## Authoritative sources
+
+- ISO/IEC 27001:2022: [ISO 27001 standard](https://www.iso.org/standard/82875.html)
+- ISO/IEC 27002:2022 controls guidance: [ISO 27002](https://www.iso.org/standard/75652.html)
+
+## Provenance
+
+| Field | Value |
+|-------|-------|
+| **Source document** | ISO/IEC 27001:2022 Annex A |
+| **Version / effective** | 2022 edition |
+| **Last reviewed** | 2026-06-13 |
+| **Reviewer** | Repository maintainer (pending ISO LA sign-off) |
+| **Next review due** | 2026-12-13 |
+| **Notes** | SoA-focused subset for agent deployments; not ISMS certification |
