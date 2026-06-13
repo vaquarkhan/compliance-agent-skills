@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "project": "compliance-agent-skills",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "frameworks": ["HIPAA", "PCI-DSS-v4.0", "SOC2-TSC", "ISO27001", "NIST-CSF-2.0", "CCPA-CPRA", "FedRAMP", "SOX", "CMMC", "GLBA"],
   "templates": [
     {
@@ -278,6 +278,8 @@
     "scripts/validate-assets.py",
     "scripts/validate-plugin-manifest.py",
     "scripts/sync-install-manifest.py",
+    "scripts/sync-version.py",
+    "scripts/smoke_syntax.py",
     "scripts/validate-evidence-manifest.py",
     "scripts/hook_runner.py"
   ]

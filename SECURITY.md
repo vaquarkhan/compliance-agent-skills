@@ -4,13 +4,17 @@
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.0.x   | :white_check_mark: |
+| 1.3.x   | :white_check_mark: |
+| 1.2.x   | :white_check_mark: |
+| < 1.2   | :x:                |
 
 ## Reporting a vulnerability
 
 **Do not open public GitHub issues for security vulnerabilities.**
 
-Email security reports via [GitHub Security Advisories](https://github.com/vaquarkhan/compliance-agent-skills/security/advisories/new) or open a private issue if enabled.
+Submit reports via [GitHub Security Advisories](https://github.com/vaquarkhan/compliance-agent-skills/security/advisories/new) (private disclosure).
+
+Include:
 
 - Description of the vulnerability
 - Steps to reproduce
@@ -35,4 +39,4 @@ Out of scope:
 
 ## PHI handling
 
-This repository is designed so **raw ePHI never reaches the LLM**. If you discover a path where Presidio redaction can be skipped, treat it as **critical** severity.
+This repository is designed so **raw ePHI never reaches the LLM**. Model output is returned **with redacted tokens by default**; restoring original values requires explicit opt-in (`deanonymize_output=True` or `COMPLIANCE_AGENT_DEANONYMIZE=1`). If you discover a path where Presidio redaction can be skipped or PHI is auto-restored without authorization, treat it as **critical** severity.

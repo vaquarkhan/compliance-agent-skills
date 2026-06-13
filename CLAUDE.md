@@ -42,6 +42,7 @@ When the user needs browser audits, DB evidence, or IaC scans, reference templat
 - Evidence: YAML manifest with SHA-256 per file (`templates/audit-evidence-manifest.yaml`)
 - Findings: severity, control ID, observation, recommendation, owner, due date
 - Never include raw PHI/PAN in final reports unless explicitly authorized and redaction is disabled for that export path
+- Deanonymization requires explicit opt-in: `deanonymize_output=True` or `COMPLIANCE_AGENT_DEANONYMIZE=1` when calling `agent.py`
 
 ## References
 

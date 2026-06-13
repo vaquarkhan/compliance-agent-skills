@@ -5,6 +5,23 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2026-06-13
+
+### Fixed
+
+- **Breaking (security):** `run_compliance_agent` no longer auto-deanonymizes output. Deanonymization is opt-in via `deanonymize_output=True` or `COMPLIANCE_AGENT_DEANONYMIZE=1`. The `deanonymize_response` tool now requires session authorization.
+- Redaction default profile is **`balanced`** (preserves URLs/dates in audit text); use `entity_profile="aggressive"` for maximum PHI recall.
+- `hash_evidence.py` writes the manifest once (removed placeholder double-write).
+
+### Added
+
+- Test suite: synthetic PHI corpus, unit/integration tests, pytest wired in CI
+- `Makefile` targets: `validate`, `test`, `demo`, `sync-version`
+- `VERSION` single source of truth + `scripts/sync-version.py`
+- Custom SSN pattern recognizer (dashed and spaced formats) in `redaction.py`
+- Example custom MRN recognizer: `examples/custom-ssn-recognizer.py`
+- `scripts/smoke_syntax.py` — AST syntax check in CI validate job
+
 ## [1.2.0] - 2026-06-13
 
 ### Added
@@ -53,6 +70,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - PHI redaction runs upstream of all LLM reasoning; reversible tokens require explicit deanonymization tool call
 
+[1.3.0]: https://github.com/vaquarkhan/compliance-agent-skills/releases/tag/v1.3.0
 [1.2.0]: https://github.com/vaquarkhan/compliance-agent-skills/releases/tag/v1.2.0
 [1.1.0]: https://github.com/vaquarkhan/compliance-agent-skills/releases/tag/v1.1.0
 [1.0.0]: https://github.com/vaquarkhan/compliance-agent-skills/releases/tag/v1.0.0

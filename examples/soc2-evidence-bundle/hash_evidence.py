@@ -23,6 +23,11 @@ def sha256_file(path: Path) -> str:
     return f"sha256:{h.hexdigest()}"
 
 
+def bundle_hash_from_artifacts(artifacts: list[dict]) -> str:
+    combined = "".join(a.get("sha256", "") for a in artifacts)
+    return f"sha256:{hashlib.sha256(combined.encode()).hexdigest()}"
+
+
 def main() -> int:
     data = yaml.safe_load(MANIFEST.read_text(encoding="utf-8"))
     updated = 0
@@ -39,12 +44,7 @@ def main() -> int:
         updated += 1
 
     if updated:
-        data["bundle_hash"] = sha256_file(MANIFEST)  # placeholder until write
-        MANIFEST.write_text(yaml.dump(data, sort_keys=False, allow_unicode=True), encoding="utf-8")
-        # Recompute bundle hash after write
-        data = yaml.safe_load(MANIFEST.read_text(encoding="utf-8"))
-        combined = "".join(a.get("sha256", "") for a in data.get("artifacts", []))
-        data["bundle_hash"] = f"sha256:{hashlib.sha256(combined.encode()).hexdigest()}"
+        data["bundle_hash"] = bundle_hash_from_artifacts(data.get("artifacts", []))
         MANIFEST.write_text(yaml.dump(data, sort_keys=False, allow_unicode=True), encoding="utf-8")
 
     print(f"Updated {updated} artifact hash(es) in {MANIFEST.name}")

@@ -17,7 +17,13 @@ User input → Presidio analyze → Tokenize → Redacted text → LLM/agent →
 
 The compliance agent (`agent.py`) runs redaction **upstream** of `compliance_agent.run()`. The agent receives only redacted text; restoration uses `deanonymize_response` tool or `PHIRedactor.deanonymize()` for authorized downstream delivery.
 
-**Default entity types** (from `DEFAULT_ENTITY_TYPES` in `redaction.py`): PERSON, PHONE_NUMBER, EMAIL_ADDRESS, US_SSN, US_DRIVER_LICENSE, US_PASSPORT, US_BANK_NUMBER, CREDIT_CARD, DATE_TIME, MEDICAL_LICENSE, IP_ADDRESS, LOCATION, NRP, URL.
+**Default entity profile** (`entity_profile="balanced"` in `PHIRedactor`): PERSON, PHONE_NUMBER, EMAIL_ADDRESS, US_SSN, US_DRIVER_LICENSE, US_PASSPORT, US_BANK_NUMBER, CREDIT_CARD, MEDICAL_LICENSE, IP_ADDRESS.
+
+**Aggressive profile** (`entity_profile="aggressive"`): balanced types plus DATE_TIME, LOCATION, NRP, URL — higher recall but over-redacts audit URLs and dates. Use for clinical free-text; use balanced for PCI/SOC 2 technical audits.
+
+Legacy alias `DEFAULT_ENTITY_TYPES` maps to the aggressive list.
+
+**Built-in custom recognizers** in `redaction.py` add dashed and spaced US SSN patterns. For MRN/ICD/CPT, see `examples/custom-ssn-recognizer.py`.
 
 ## When to Use
 

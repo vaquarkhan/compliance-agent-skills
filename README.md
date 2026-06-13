@@ -45,7 +45,8 @@ compliance-agent-skills addresses this with:
 **macOS / Linux:**
 
 ```bash
-git clone git@github.com:vaquarkhan/compliance-agent-skills.git
+git clone https://github.com/vaquarkhan/compliance-agent-skills.git
+# or: git clone git@github.com:vaquarkhan/compliance-agent-skills.git
 cd compliance-agent-skills
 chmod +x bootstrap.sh
 ./bootstrap.sh
@@ -54,7 +55,7 @@ chmod +x bootstrap.sh
 **Windows (PowerShell):**
 
 ```powershell
-git clone git@github.com:vaquarkhan/compliance-agent-skills.git
+git clone https://github.com/vaquarkhan/compliance-agent-skills.git
 cd compliance-agent-skills
 .\bootstrap.ps1
 ```
@@ -74,11 +75,26 @@ python agent.py "Scope a HIPAA PHI redaction review for our LLM intake pipeline"
 
 Without API keys, the agent falls back to Pydantic AI `TestModel` for local development.
 
+**Deanonymization is opt-in.** By default, agent output keeps redacted tokens (`<PERSON_1>`). To restore original PHI for an authorized downstream channel only:
+
+```python
+from agent import run_compliance_agent_sync
+
+# Default — redacted output (safe)
+run_compliance_agent_sync("Review Jane Doe SSN 123-45-6789")
+
+# Authorized restore — explicit opt-in
+run_compliance_agent_sync("Review Jane Doe SSN 123-45-6789", deanonymize_output=True)
+# or: COMPLIANCE_AGENT_DEANONYMIZE=1 python agent.py "..."
+```
+
+Run the no-API-key demo: `python scripts/demo_agent.py` or `make demo`.
+
 ### Validate the repository
 
 ```bash
-python scripts/validate-skills.py
-python scripts/validate-assets.py
+make validate   # or run scripts individually
+make test       # requires: pip install -r requirements.txt -r requirements-dev.txt
 ```
 
 ---

@@ -1,0 +1,50 @@
+# Synthetic PHI test corpus — no real patient data.
+# Used by compliance_tests/test_redaction.py for Presidio detection assertions.
+
+cases:
+  - id: standard_ssn
+    text: "Patient record: John Smith, SSN 123-45-6789, DOB 1985-03-12."
+    must_detect:
+      - PERSON
+    must_redact_substrings:
+      - "123-45-6789"
+    score_threshold: 0.25
+
+  - id: spaced_ssn
+    text: "Insurance ID on file: 123 45 6789 for member Jane Doe."
+    must_detect:
+      - PERSON
+      - US_SSN
+    must_redact_substrings:
+      - "123 45 6789"
+    score_threshold: 0.25
+
+  - id: email_and_phone
+    text: "Contact Dr. Sarah Chen at sarah.chen@clinic.org or call 415-555-0199."
+    must_detect:
+      - EMAIL_ADDRESS
+      - PHONE_NUMBER
+
+  - id: credit_card
+    text: "Payment on file ending in card 4111 1111 1111 1111 was declined."
+    must_detect:
+      - CREDIT_CARD
+
+  - id: clinical_note_snippet
+    text: |
+      Chief complaint: persistent cough. Referral to pulmonology for Maria Garcia.
+      MRN on wristband scanned. Follow up in two weeks.
+    must_detect:
+      - PERSON
+
+  - id: pci_checkout_url_preserved_balanced
+    text: "Audit scripts at https://shop.example.com/checkout for PCI-DSS 6.4.3."
+    must_not_redact_substrings:
+      - "https://shop.example.com/checkout"
+    profile: balanced
+
+  - id: pci_checkout_url_redacted_aggressive
+    text: "Audit scripts at https://shop.example.com/checkout for PCI-DSS 6.4.3."
+    must_redact_substrings:
+      - "https://shop.example.com/checkout"
+    profile: aggressive
