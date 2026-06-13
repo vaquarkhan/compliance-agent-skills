@@ -438,9 +438,9 @@ python-multipart==0.0.32
     # via
     #   fastmcp-slim
     #   mcp
-pywin32==312
+pywin32==312 ; sys_platform == 'win32'
     # via mcp
-pywin32-ctypes==0.2.3
+pywin32-ctypes==0.2.3 ; sys_platform == 'win32'
     # via keyring
 pyyaml==6.0.3
     # via
