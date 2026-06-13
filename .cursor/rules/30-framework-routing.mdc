@@ -1,5 +1,5 @@
 ---
-description: Route tasks to HIPAA, PCI-DSS v4.0, or SOC 2 skills based on user intent and presets.
+description: Route tasks to HIPAA, PCI-DSS, SOC 2, ISO 27001, NIST CSF, CCPA, FedRAMP, SOX, CMMC, and GLBA skills based on user intent and presets.
 globs:
 alwaysApply: true
 ---
@@ -16,12 +16,21 @@ Load **`using-compliance-agent-skills`** first.
 | --- | --- | --- |
 | ePHI, BAA, Security Rule | `hipaa-technical-safeguards` | `healthcare-hipaa` |
 | Presidio, redaction pipeline | `hipaa-phi-redaction-pipeline` | `healthcare-hipaa` |
+| Minimum necessary, de-id | `hipaa-privacy-minimum-necessary` | `healthcare-hipaa` |
 | LLM vendor BAA | `hipaa-baa-vendor-assessment` | `healthcare-hipaa` |
 | Checkout scripts, Req 6.4.3 | `pci-dss-script-audit` | `fintech-pci-dss` |
 | CDE, firewall, segmentation | `pci-dss-network-segmentation` | `fintech-pci-dss` |
+| PAN encryption, key management | `pci-dss-encryption-key-management` | `fintech-pci-dss` |
 | TSC mapping, SOC 2 scope | `soc2-trust-services-criteria` | `saas-soc2-type2` |
 | Evidence binder | `soc2-evidence-collection` | `saas-soc2-type2` |
 | CCM, drift dashboards | `soc2-ccm-continuous-monitoring` | `saas-soc2-type2` |
+| ISO 27001 Annex A, SoA | `iso27001-annex-a-controls` | any |
+| NIST CSF 2.0 profile | `nist-csf-2-assessment` | any |
+| CCPA, CPRA, DSAR | `ccpa-cpra-privacy-rights` | any |
+| FedRAMP, SSP, 800-53 | `fedramp-moderate-baseline` | `financial-services-glba` |
+| SOX ITGC, SOX 404 | `sox-itgc-audit` | `financial-services-glba` |
+| CMMC, CUI, 800-171 | `cmmc-nist-800-171` | `enterprise-regulated` |
+| GLBA, FFIEC, NPI | `glba-ffiec-financial-privacy` | `financial-services-glba` |
 | IAM, MFA, RBAC | `access-control-identity-audit` | any |
 | Logs, SIEM, Req 10 | `audit-logging-integrity` | any |
 | Breach, incident | `breach-incident-response` | `healthcare-hipaa` |
@@ -32,6 +41,10 @@ Load **`using-compliance-agent-skills`** first.
 ## Cloud presets
 
 AWS / Azure / GCP presets add cloud-specific control mappings — combine with framework skills.
+
+## Enterprise starter pack
+
+For FedRAMP + SOX + CMMC + GLBA engagements, use `starter-packs/enterprise-regulated-starter.yaml`.
 
 ## One primary skill per thread
 

@@ -264,7 +264,11 @@
     "agents/compliance-architect.md",
     "agents/hipaa-privacy-officer.md",
     "agents/pci-qsa-reviewer.md",
-    "agents/soc2-auditor.md"
+    "agents/soc2-auditor.md",
+    "agents/fedramp-3pao-advisor.md",
+    "agents/sox-it-auditor.md",
+    "agents/cmmc-assessor.md",
+    "agents/glba-compliance-officer.md"
   ],
   "core_scripts": [
     "scripts/install_toolkit.py",

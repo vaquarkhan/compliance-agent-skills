@@ -29,9 +29,16 @@ Run `hooks/audit-mode.sh` or set `COMPLIANCE_AUDIT_MODE=true` for read-only tool
 
 | Framework | Skills |
 | --- | --- |
-| HIPAA | `hipaa-technical-safeguards`, `hipaa-phi-redaction-pipeline` |
-| PCI | `pci-dss-script-audit`, `pci-dss-network-segmentation` |
-| SOC 2 | `soc2-trust-services-criteria` |
+| HIPAA | `hipaa-technical-safeguards`, `hipaa-phi-redaction-pipeline`, `hipaa-privacy-minimum-necessary` |
+| PCI-DSS | `pci-dss-script-audit`, `pci-dss-network-segmentation`, `pci-dss-encryption-key-management` |
+| SOC 2 | `soc2-trust-services-criteria`, `soc2-evidence-collection`, `soc2-ccm-continuous-monitoring` |
+| ISO 27001 | `iso27001-annex-a-controls` |
+| NIST CSF 2.0 | `nist-csf-2-assessment` |
+| CCPA / CPRA | `ccpa-cpra-privacy-rights` |
+| FedRAMP | `fedramp-moderate-baseline` |
+| SOX | `sox-itgc-audit` |
+| CMMC | `cmmc-nist-800-171` |
+| GLBA / FFIEC | `glba-ffiec-financial-privacy` |
 
 ## Next command
 

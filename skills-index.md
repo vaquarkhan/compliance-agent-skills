@@ -86,7 +86,7 @@ Validation: `python scripts/validate-skills.py`
 | --- | --- | --- |
 | **fedramp-moderate-baseline** | [skills/fedramp-moderate-baseline/](skills/fedramp-moderate-baseline/) | FedRAMP Moderate, NIST 800-53 Rev 5, SSP, POA&M, ConMon. |
 
-**Related:** references `fedramp-moderate-checklist.md`, template `fedramp-ssp-outline.yaml`
+**Related:** references `fedramp-moderate-checklist.md`, template `fedramp-ssp-outline.yaml`, starter `enterprise-regulated-starter.yaml`
 
 ---
 
@@ -116,7 +116,7 @@ Validation: `python scripts/validate-skills.py`
 | --- | --- | --- |
 | **glba-ffiec-financial-privacy** | [skills/glba-ffiec-financial-privacy/](skills/glba-ffiec-financial-privacy/) | GLBA Safeguards/Privacy, FFIEC IT handbook alignment. |
 
-**Related:** references `glba-ffiec-checklist.md`, preset `financial-services-glba`
+**Related:** references `glba-ffiec-checklist.md`, preset `financial-services-glba`, starter `enterprise-regulated-starter.yaml`
 
 ---
 

@@ -4,14 +4,14 @@ Claude-specific instructions for the **compliance-agent-skills** repository.
 
 ## Identity
 
-You are assisting with **USA compliance auditing** (HIPAA, PCI-DSS v4.0, SOC 2) in an agent-skills repository. You must follow loaded skills exactly and never invent regulatory steps.
+You are assisting with **USA compliance auditing** (HIPAA, PCI-DSS v4.0, SOC 2, ISO 27001, NIST CSF 2.0, CCPA/CPRA, FedRAMP, SOX, CMMC, GLBA/FFIEC) in an agent-skills repository. You must follow loaded skills exactly and never invent regulatory steps.
 
 ## First actions
 
 1. Read [AGENTS.md](AGENTS.md) for routing.
 2. If the task is broad, load skill **`using-compliance-agent-skills`**.
 3. Apply PHI redaction mentally: treat `<ENTITY_N>` tokens as intentional masks—do not guess original values.
-4. Check for an applicable **preset** in `presets/` when the user names healthcare, fintech, SaaS, or a cloud provider.
+4. Check for an applicable **preset** in `presets/` when the user names healthcare, fintech, SaaS, financial services, or a cloud provider.
 
 ## Lifecycle commands
 
@@ -29,7 +29,7 @@ Run them in order for full engagements unless the user requests a subset.
 
 ## Skill discovery
 
-- Index: [skills-index.md](skills-index.md)
+- Index: [skills-index.md](skills-index.md) — 24 skills
 - Validation: `python scripts/validate-skills.py`
 
 ## MCP
@@ -49,7 +49,18 @@ Quick checklists live in `references/`:
 
 - `hipaa-security-rule-checklist.md`
 - `pci-dss-v4-checklist.md`
-- `soc2-trust-services-criteria-checklist.md`
+- `soc2-trust-services-checklist.md`
+- `iso27001-annex-a-checklist.md`
+- `nist-csf-2-checklist.md`
+- `ccpa-cpra-checklist.md`
+- `fedramp-moderate-checklist.md`
+- `sox-itgc-checklist.md`
+- `cmmc-nist-800-171-checklist.md`
+- `glba-ffiec-checklist.md`
+
+## Persona agents
+
+Role-specific prompts in `agents/` for multi-agent workflows (architect, QSA, SOC 2 auditor, FedRAMP 3PAO, SOX IT auditor, CMMC assessor, GLBA officer).
 
 ## Python agent
 

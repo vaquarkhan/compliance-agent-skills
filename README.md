@@ -7,7 +7,7 @@
 [![SOC 2](https://img.shields.io/badge/SOC%202-TSC-purple.svg)](#soc-2)
 [![Skills](https://img.shields.io/badge/skills-24-orange.svg)](skills-index.md)
 
-**Deterministic USA compliance auditing for AI agents** — progressive-disclosure Agent Skills, a Presidio PHI redaction gate, MCP integrations, and IDE plugins for HIPAA, PCI-DSS v4.0, and SOC 2 workflows.
+**Deterministic USA compliance auditing for AI agents** — progressive-disclosure Agent Skills, a Presidio PHI redaction gate, MCP integrations, and IDE plugins for HIPAA, PCI-DSS v4.0, SOC 2, ISO 27001, NIST CSF 2.0, CCPA/CPRA, FedRAMP, SOX, CMMC, and GLBA/FFIEC workflows.
 
 > **Disclaimer:** This repository provides operational audit patterns and automation templates. It is **not legal advice** and does not replace a Qualified Security Assessor (QSA), HIPAA Privacy Officer, or licensed CPA for SOC 2 attestation.
 
@@ -149,14 +149,21 @@ Example engagement flow:
 
 ## Skills catalog
 
-15 skills organized by framework. Full catalog: [skills-index.md](skills-index.md).
+24 skills organized by framework. Full catalog: [skills-index.md](skills-index.md).
 
 | Group | Skills |
 | --- | --- |
 | **Meta** | `using-compliance-agent-skills` |
-| **HIPAA** | `hipaa-technical-safeguards`, `hipaa-phi-redaction-pipeline`, `hipaa-baa-vendor-assessment` |
-| **PCI-DSS v4.0** | `pci-dss-script-audit`, `pci-dss-network-segmentation` |
+| **HIPAA** | `hipaa-technical-safeguards`, `hipaa-phi-redaction-pipeline`, `hipaa-baa-vendor-assessment`, `hipaa-privacy-minimum-necessary` |
+| **PCI-DSS v4.0** | `pci-dss-script-audit`, `pci-dss-network-segmentation`, `pci-dss-encryption-key-management` |
 | **SOC 2** | `soc2-trust-services-criteria`, `soc2-evidence-collection`, `soc2-ccm-continuous-monitoring` |
+| **ISO 27001** | `iso27001-annex-a-controls` |
+| **NIST CSF 2.0** | `nist-csf-2-assessment` |
+| **CCPA / CPRA** | `ccpa-cpra-privacy-rights` |
+| **FedRAMP** | `fedramp-moderate-baseline` |
+| **SOX** | `sox-itgc-audit` |
+| **CMMC** | `cmmc-nist-800-171` |
+| **GLBA / FFIEC** | `glba-ffiec-financial-privacy` |
 | **Cross-cutting** | `access-control-identity-audit`, `audit-logging-integrity`, `breach-incident-response`, `vendor-third-party-risk`, `compliance-as-code-governance`, `mcp-compliance-integration` |
 
 Load skills progressively — only pull in what matches the task. See [AGENTS.md](AGENTS.md) for routing.
@@ -186,6 +193,56 @@ AICPA Trust Services Criteria (2017 + 2022 revisions): Security, Availability, C
 **Preset:** [presets/saas-soc2-type2/PRESET.md](presets/saas-soc2-type2/PRESET.md)  
 **Starter pack:** [starter-packs/soc2-saas-starter.yaml](starter-packs/soc2-saas-starter.yaml)
 
+### ISO 27001
+
+ISO/IEC 27001:2022 Annex A controls, Statement of Applicability, risk treatment.
+
+**Related skill:** `iso27001-annex-a-controls`  
+**Template:** [templates/iso27001-statement-of-applicability.yaml](templates/iso27001-statement-of-applicability.yaml)
+
+### NIST CSF 2.0
+
+Govern, Identify, Protect, Detect, Respond, Recover gap assessments and organizational profiles.
+
+**Related skill:** `nist-csf-2-assessment`  
+**Template:** [templates/nist-csf-profile.yaml](templates/nist-csf-profile.yaml)
+
+### CCPA / CPRA
+
+California consumer privacy rights, DSAR workflows, service provider contracts.
+
+**Related skill:** `ccpa-cpra-privacy-rights`  
+**Template:** [templates/dsar-request-log.yaml](templates/dsar-request-log.yaml)
+
+### FedRAMP
+
+FedRAMP Moderate baseline, NIST SP 800-53 Rev 5, SSP/POA&M/ConMon authorization packages.
+
+**Related skill:** `fedramp-moderate-baseline`  
+**Template:** [templates/fedramp-ssp-outline.yaml](templates/fedramp-ssp-outline.yaml)
+
+### SOX
+
+Sarbanes-Oxley IT general controls (SOX 404) — access, change, development, operations.
+
+**Related skill:** `sox-itgc-audit`  
+**Template:** [templates/sox-itgc-control-matrix.yaml](templates/sox-itgc-control-matrix.yaml)
+
+### CMMC
+
+CMMC 2.0 Level 2, CUI, NIST SP 800-171, SPRS scoring for defense supply chain.
+
+**Related skill:** `cmmc-nist-800-171`  
+**Template:** [templates/cmmc-poam.yaml](templates/cmmc-poam.yaml)
+
+### GLBA / FFIEC
+
+GLBA Safeguards and Privacy Rules, FFIEC IT handbook alignment for financial institutions.
+
+**Related skill:** `glba-ffiec-financial-privacy`  
+**Preset:** [presets/financial-services-glba/PRESET.md](presets/financial-services-glba/PRESET.md)  
+**Starter pack:** [starter-packs/enterprise-regulated-starter.yaml](starter-packs/enterprise-regulated-starter.yaml)
+
 ---
 
 ## Project structure
@@ -195,7 +252,7 @@ compliance-agent-skills/
 ├── agent.py                 # Pydantic AI entry + SkillsCapability
 ├── redaction.py             # Presidio PHI redaction gate
 ├── requirements.txt
-├── skills/                  # 15 Agent Skills (SKILL.md each)
+├── skills/                  # 24 Agent Skills (SKILL.md each)
 ├── presets/                 # Framework + cloud presets
 ├── starter-packs/           # Curated skill + template bundles
 ├── templates/               # YAML/MD audit artifacts

@@ -2,7 +2,7 @@
 
 ## Role
 
-Cross-framework compliance architect for organizations running AI agents and MCP servers under **HIPAA**, **PCI-DSS v4.0**, and/or **SOC 2** obligations simultaneously.
+Cross-framework compliance architect for organizations running AI agents and MCP servers under **HIPAA**, **PCI-DSS v4.0**, **SOC 2**, **ISO 27001**, **NIST CSF 2.0**, **CCPA/CPRA**, **FedRAMP**, **SOX**, **CMMC**, and/or **GLBA/FFIEC** obligations simultaneously.
 
 ## Responsibilities
 

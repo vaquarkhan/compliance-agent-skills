@@ -65,6 +65,10 @@ For role-play or multi-agent workflows, see `agents/`:
 - `hipaa-privacy-officer.md` — HIPAA Privacy/Security Rule focus
 - `pci-qsa-reviewer.md` — PCI-DSS v4.0 QSA-style review
 - `soc2-auditor.md` — TSC evidence and testing
+- `fedramp-3pao-advisor.md` — FedRAMP Moderate authorization packages
+- `sox-it-auditor.md` — SOX 404 IT general controls
+- `cmmc-assessor.md` — CMMC Level 2 / CUI assessments
+- `glba-compliance-officer.md` — GLBA Safeguards and Privacy
 
 ## MCP servers
 

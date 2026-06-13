@@ -1,6 +1,6 @@
 ---
 name: using-compliance-agent-skills
-description: Meta entry skill for the USA compliance agent repository. Routes tasks to HIPAA, PCI-DSS, and SOC 2 skills; configures presets, MCP servers, and the audit lifecycle (/scope, /audit, /evidence, /remediate, /report). Trigger when starting any compliance engagement, choosing which skill to load, onboarding a new auditor, or orchestrating multi-framework workflows. Do not use when a specific framework skill already matches the task (load that skill directly instead).
+description: Meta entry skill for the USA compliance agent repository. Routes tasks to HIPAA, PCI-DSS, SOC 2, ISO 27001, NIST CSF 2.0, CCPA/CPRA, FedRAMP, SOX, CMMC, and GLBA skills; configures presets, MCP servers, and the audit lifecycle (/scope, /audit, /evidence, /remediate, /report). Trigger when starting any compliance engagement, choosing which skill to load, onboarding a new auditor, or orchestrating multi-framework workflows. Do not use when a specific framework skill already matches the task (load that skill directly instead).
 ---
 
 # Using Compliance Agent Skills
@@ -26,7 +26,7 @@ The compliance agent enforces a **mandatory PHI redaction gate** (`redaction.py`
 Use this skill when:
 
 - The user asks a **broad compliance question** without naming a framework ("Are we compliant?")
-- You need to **select among HIPAA, PCI-DSS, and SOC 2** skills
+- You need to **select among framework skills** (HIPAA, PCI-DSS, SOC 2, ISO 27001, NIST CSF, CCPA, FedRAMP, SOX, CMMC, GLBA)
 - Configuring **MCP servers** (Playwright, Postgres, Slack, Presidio) for an audit run
 - Starting a **new engagement** and defining scope before deep work
 - Chaining skills (e.g., scope → PHI redaction → PCI script audit → evidence bundle)
@@ -45,7 +45,7 @@ Execute the following steps **in order** for every new engagement.
 ### Step 1: Intake and framework detection
 
 1. Parse the user request for:
-   - **Framework signals**: HIPAA (PHI, BAA, Security Rule), PCI-DSS (CDE, PAN, scripts, segmentation), SOC 2 (TSC, trust principles, auditor evidence)
+   - **Framework signals**: HIPAA (PHI, BAA), PCI-DSS (CDE, PAN, scripts), SOC 2 (TSC), ISO 27001 (Annex A, SoA), NIST CSF (Govern/Identify/Protect), CCPA/CPRA (DSAR, opt-out), FedRAMP (SSP, 800-53), SOX (ITGC, 404), CMMC (CUI, 800-171), GLBA (NPI, Safeguards)
    - **Artifact type**: policy review, technical control test, incident, vendor assessment
    - **Environment**: production vs staging, cloud provider, MCP availability
 2. If multiple frameworks apply, list them explicitly and propose a **sequenced plan** (scope first, then deepest-risk skill).

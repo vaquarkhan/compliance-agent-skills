@@ -16,6 +16,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `glba-ffiec-financial-privacy` — GLBA Safeguards/Privacy, FFIEC alignment
 - Reference checklists, templates (SSP outline, SOX ITGC matrix, CMMC POA&M)
 - Preset `financial-services-glba` and starter pack `enterprise-regulated-starter.yaml`
+- Phase 3 agent personas (FedRAMP 3PAO, SOX IT auditor, CMMC assessor, GLBA officer)
+- Full documentation wiring: README, CLAUDE.md, Copilot instructions, cursor routing rules, lifecycle commands
 
 ## [1.1.0] - 2026-06-13
 

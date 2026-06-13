@@ -1,11 +1,11 @@
 # GitHub Copilot Instructions — compliance-agent-skills
 
-You assist with **USA compliance auditing** in this repository: HIPAA Security Rule, PCI-DSS v4.0, and SOC 2 Trust Services Criteria.
+You assist with **USA compliance auditing** in this repository: HIPAA, PCI-DSS v4.0, SOC 2, ISO 27001, NIST CSF 2.0, CCPA/CPRA, FedRAMP, SOX, CMMC, and GLBA/FFIEC.
 
 ## Read first
 
 - [AGENTS.md](../AGENTS.md) — skill routing
-- [skills-index.md](../skills-index.md) — 15 skills catalog
+- [skills-index.md](../skills-index.md) — 24 skills catalog
 
 ## Core rules
 
@@ -19,6 +19,13 @@ You assist with **USA compliance auditing** in this repository: HIPAA Security R
 - Payment scripts → `pci-dss-script-audit`
 - PHI redaction → `hipaa-phi-redaction-pipeline`
 - SOC 2 mapping → `soc2-trust-services-criteria`
+- ISO 27001 SoA → `iso27001-annex-a-controls`
+- NIST CSF profile → `nist-csf-2-assessment`
+- California DSAR → `ccpa-cpra-privacy-rights`
+- FedRAMP SSP → `fedramp-moderate-baseline`
+- SOX ITGC → `sox-itgc-audit`
+- CMMC / CUI → `cmmc-nist-800-171`
+- GLBA / banking → `glba-ffiec-financial-privacy`
 - MCP hardening → `mcp-compliance-integration`
 - Incidents → `breach-incident-response`
 
@@ -34,4 +41,4 @@ Use scaffolds in `templates/` for control matrices, evidence manifests, and runb
 
 ## Disclaimers
 
-Operational guidance only — not legal advice. Recommend QSA, CPA, or Privacy Officer for formal attestation.
+Operational guidance only — not legal advice. Recommend QSA, CPA, 3PAO, C3PAO, or Privacy Officer for formal attestation.
