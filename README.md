@@ -15,6 +15,8 @@
 
 > **Disclaimer:** This repository provides operational audit patterns and automation templates. It is **not legal advice** and does not replace a Qualified Security Assessor (QSA), HIPAA Privacy Officer, or licensed CPA for SOC 2 attestation.
 
+**Coverage:** 27 skills across HIPAA, PCI-DSS, SOC 2, FedRAMP, CMMC, GLBA, SOX, privacy (CCPA + US states + GDPR), and cross-cutting agent controls. See [docs/coverage-roadmap.md](docs/coverage-roadmap.md) for USA gaps and Phase 5 priorities (NIST AI RMF, FERPA, COPPA, NY DFS 500, etc.).
+
 ---
 
 ## Why this exists
@@ -349,6 +351,7 @@ See [mcp/README.md](mcp/README.md) and skill `mcp-compliance-integration`.
 
 | Doc | Topic |
 | --- | --- |
+| [docs/coverage-roadmap.md](docs/coverage-roadmap.md) | What's covered vs USA compliance gaps |
 | [docs/getting-started.md](docs/getting-started.md) | First engagement walkthrough |
 | [docs/skill-anatomy.md](docs/skill-anatomy.md) | Authoring skills |
 | [docs/plugin-publishing.md](docs/plugin-publishing.md) | VS Code / JetBrains releases |

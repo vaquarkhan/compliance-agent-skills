@@ -1,7 +1,8 @@
 # Skills Index
 
 Machine-readable registry: [registry/assets.json](registry/assets.json).  
-Validation: `python scripts/validate-skills.py`
+Validation: `python scripts/validate-skills.py`  
+Coverage gaps: [docs/coverage-roadmap.md](docs/coverage-roadmap.md)
 
 ---
 
