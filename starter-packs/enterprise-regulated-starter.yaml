@@ -1,0 +1,41 @@
+# Phase 3 — Enterprise & regulated industry starter pack
+schema_version: "1.0"
+name: enterprise-regulated-starter
+description: FedRAMP, SOX, CMMC, and GLBA/FFIEC skills for government cloud, public companies, defense contractors, and financial institutions.
+
+frameworks:
+  - FedRAMP-Moderate
+  - SOX-ITGC
+  - CMMC-L2
+  - GLBA-Safeguards
+
+primary_skills:
+  - using-compliance-agent-skills
+  - fedramp-moderate-baseline
+  - sox-itgc-audit
+  - cmmc-nist-800-171
+  - glba-ffiec-financial-privacy
+  - access-control-identity-audit
+  - audit-logging-integrity
+  - vendor-third-party-risk
+
+templates:
+  - templates/fedramp-ssp-outline.yaml
+  - templates/sox-itgc-control-matrix.yaml
+  - templates/cmmc-poam.yaml
+  - templates/audit-evidence-manifest.yaml
+
+references:
+  - references/fedramp-moderate-checklist.md
+  - references/sox-itgc-checklist.md
+  - references/cmmc-nist-800-171-checklist.md
+  - references/glba-ffiec-checklist.md
+
+presets:
+  - presets/financial-services-glba/PRESET.md
+  - presets/aws-compliance/PRESET.md
+
+mcp_servers:
+  - mcp/terraform.mcp.json
+  - mcp/github.mcp.json
+  - mcp/postgres.mcp.json

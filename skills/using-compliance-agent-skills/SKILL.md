@@ -81,6 +81,10 @@ Load **exactly one primary skill** per audit thread; add secondary skills only w
 | ISO 27001 Annex A / SoA | `iso27001-annex-a-controls` | `soc2-trust-services-criteria` |
 | NIST CSF 2.0 assessment | `nist-csf-2-assessment` | `compliance-as-code-governance` |
 | CCPA/CPRA consumer rights | `ccpa-cpra-privacy-rights` | `hipaa-privacy-minimum-necessary` |
+| FedRAMP cloud authorization | `fedramp-moderate-baseline` | `nist-csf-2-assessment` |
+| SOX ITGC / SOX 404 | `sox-itgc-audit` | `access-control-identity-audit` |
+| CMMC / CUI / defense | `cmmc-nist-800-171` | `fedramp-moderate-baseline` |
+| GLBA / banking / fintech | `glba-ffiec-financial-privacy` | `vendor-third-party-risk` |
 | Breach / incident | `breach-incident-response` | `audit-logging-integrity` |
 | Policy-as-code / IaC | `compliance-as-code-governance` | `soc2-evidence-collection` |
 

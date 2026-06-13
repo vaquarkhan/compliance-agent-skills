@@ -5,7 +5,7 @@
 [![HIPAA](https://img.shields.io/badge/HIPAA-Security%20Rule-green.svg)](#hipaa)
 [![PCI-DSS](https://img.shields.io/badge/PCI--DSS-v4.0-red.svg)](#pci-dss)
 [![SOC 2](https://img.shields.io/badge/SOC%202-TSC-purple.svg)](#soc-2)
-[![Skills](https://img.shields.io/badge/skills-20-orange.svg)](skills-index.md)
+[![Skills](https://img.shields.io/badge/skills-24-orange.svg)](skills-index.md)
 
 **Deterministic USA compliance auditing for AI agents** — progressive-disclosure Agent Skills, a Presidio PHI redaction gate, MCP integrations, and IDE plugins for HIPAA, PCI-DSS v4.0, and SOC 2 workflows.
 
@@ -23,7 +23,7 @@ LLM agents can accelerate compliance work, but they must not:
 
 compliance-agent-skills addresses this with:
 
-1. **20 specialized skills** with explicit triggers, anti-patterns, and output artifacts
+1. **24 specialized skills** with explicit triggers, anti-patterns, and output artifacts
 2. **Mandatory PHI redaction** (`redaction.py`) before any user text reaches the model
 3. **Audit lifecycle commands** — `/scope`, `/audit`, `/evidence`, `/remediate`, `/report`
 4. **MCP templates** for Playwright DOM audits, Postgres evidence queries, Presidio DLP, Slack notifications, GitHub change tracking, and Terraform drift

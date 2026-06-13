@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
   "project": "compliance-agent-skills",
-  "version": "1.0.0",
-  "frameworks": ["HIPAA", "PCI-DSS-v4.0", "SOC2-TSC"],
+  "version": "1.2.0",
+  "frameworks": ["HIPAA", "PCI-DSS-v4.0", "SOC2-TSC", "ISO27001", "NIST-CSF-2.0", "CCPA-CPRA", "FedRAMP", "SOX", "CMMC", "GLBA"],
   "templates": [
     {
       "id": "compliance-control-matrix",
@@ -58,6 +58,21 @@
       "id": "dsar-request-log",
       "path": "templates/dsar-request-log.yaml",
       "description": "CCPA/CPRA DSAR intake and response log"
+    },
+    {
+      "id": "fedramp-ssp-outline",
+      "path": "templates/fedramp-ssp-outline.yaml",
+      "description": "FedRAMP System Security Plan outline scaffold"
+    },
+    {
+      "id": "sox-itgc-control-matrix",
+      "path": "templates/sox-itgc-control-matrix.yaml",
+      "description": "SOX IT general controls testing matrix"
+    },
+    {
+      "id": "cmmc-poam",
+      "path": "templates/cmmc-poam.yaml",
+      "description": "CMMC Level 2 POA&M and SPRS gap tracker"
     }
   ],
   "starter_packs": [
@@ -106,6 +121,21 @@
         "hipaa-phi-redaction-pipeline",
         "mcp-compliance-integration",
         "compliance-as-code-governance",
+        "vendor-third-party-risk"
+      ]
+    },
+    {
+      "id": "enterprise-regulated",
+      "path": "starter-packs/enterprise-regulated-starter.yaml",
+      "frameworks": ["FedRAMP", "SOX", "CMMC", "GLBA"],
+      "skills": [
+        "using-compliance-agent-skills",
+        "fedramp-moderate-baseline",
+        "sox-itgc-audit",
+        "cmmc-nist-800-171",
+        "glba-ffiec-financial-privacy",
+        "access-control-identity-audit",
+        "audit-logging-integrity",
         "vendor-third-party-risk"
       ]
     }
@@ -212,7 +242,8 @@
     "presets/saas-soc2-type2/PRESET.md",
     "presets/aws-compliance/PRESET.md",
     "presets/azure-compliance/PRESET.md",
-    "presets/gcp-compliance/PRESET.md"
+    "presets/gcp-compliance/PRESET.md",
+    "presets/financial-services-glba/PRESET.md"
   ],
   "references": [
     "references/hipaa-security-rule-checklist.md",
@@ -223,7 +254,11 @@
     "references/compliance-as-code-patterns.md",
     "references/iso27001-annex-a-checklist.md",
     "references/nist-csf-2-checklist.md",
-    "references/ccpa-cpra-checklist.md"
+    "references/ccpa-cpra-checklist.md",
+    "references/fedramp-moderate-checklist.md",
+    "references/sox-itgc-checklist.md",
+    "references/cmmc-nist-800-171-checklist.md",
+    "references/glba-ffiec-checklist.md"
   ],
   "agents": [
     "agents/compliance-architect.md",
@@ -238,6 +273,7 @@
     "scripts/validate-skills.py",
     "scripts/validate-assets.py",
     "scripts/validate-plugin-manifest.py",
+    "scripts/sync-install-manifest.py",
     "scripts/validate-evidence-manifest.py",
     "scripts/hook_runner.py"
   ]

@@ -1,0 +1,18 @@
+# CMMC POA&M — Template
+schema_version: "1.0"
+organization: ""
+cage_code: ""
+sprs_score: null
+assessment_date: ""
+
+practice_gaps:
+  - practice_id: 3.1.1
+    domain: Access Control
+    status: not_met
+    finding: ""
+    remediation_plan: ""
+    milestone_date: ""
+    owner: ""
+    risk_level: medium
+
+certification_target: CMMC Level 2

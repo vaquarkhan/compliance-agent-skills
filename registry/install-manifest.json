@@ -16,6 +16,9 @@
     "templates/iso27001-statement-of-applicability.yaml",
     "templates/nist-csf-profile.yaml",
     "templates/dsar-request-log.yaml",
+    "templates/fedramp-ssp-outline.yaml",
+    "templates/sox-itgc-control-matrix.yaml",
+    "templates/cmmc-poam.yaml",
     "requirements.txt",
     "requirements-proof.txt",
     "agent.py",
@@ -59,7 +62,11 @@
     "skills/nist-csf-2-assessment/SKILL.md",
     "skills/ccpa-cpra-privacy-rights/SKILL.md",
     "skills/pci-dss-encryption-key-management/SKILL.md",
-    "skills/hipaa-privacy-minimum-necessary/SKILL.md"
+    "skills/hipaa-privacy-minimum-necessary/SKILL.md",
+    "skills/fedramp-moderate-baseline/SKILL.md",
+    "skills/sox-itgc-audit/SKILL.md",
+    "skills/cmmc-nist-800-171/SKILL.md",
+    "skills/glba-ffiec-financial-privacy/SKILL.md"
   ],
   "agent_adapters": {
     "Cursor": [
@@ -113,6 +120,19 @@
       "templates/vendor-risk-assessment.yaml",
       "references/mcp-compliance-patterns.md",
       "references/phi-redaction-patterns.md",
+      "AGENTS.md",
+      "skills-index.md"
+    ],
+    "Enterprise Regulated": [
+      "starter-packs/enterprise-regulated-starter.yaml",
+      "templates/fedramp-ssp-outline.yaml",
+      "templates/sox-itgc-control-matrix.yaml",
+      "templates/cmmc-poam.yaml",
+      "references/fedramp-moderate-checklist.md",
+      "references/sox-itgc-checklist.md",
+      "references/cmmc-nist-800-171-checklist.md",
+      "references/glba-ffiec-checklist.md",
+      "presets/financial-services-glba/PRESET.md",
       "AGENTS.md",
       "skills-index.md"
     ]

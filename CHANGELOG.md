@@ -5,6 +5,18 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2026-06-13
+
+### Added
+
+- **Phase 3 skills** — enterprise and regulated-industry coverage:
+  - `fedramp-moderate-baseline` — FedRAMP Moderate, NIST SP 800-53 Rev 5, SSP/POA&M/ConMon
+  - `sox-itgc-audit` — Sarbanes-Oxley IT general controls (COSO / SOX 404)
+  - `cmmc-nist-800-171` — CMMC 2.0 Level 2, CUI, SPRS scoring
+  - `glba-ffiec-financial-privacy` — GLBA Safeguards/Privacy, FFIEC alignment
+- Reference checklists, templates (SSP outline, SOX ITGC matrix, CMMC POA&M)
+- Preset `financial-services-glba` and starter pack `enterprise-regulated-starter.yaml`
+
 ## [1.1.0] - 2026-06-13
 
 ### Added
@@ -39,5 +51,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - PHI redaction runs upstream of all LLM reasoning; reversible tokens require explicit deanonymization tool call
 
+[1.2.0]: https://github.com/vaquarkhan/compliance-agent-skills/releases/tag/v1.2.0
 [1.1.0]: https://github.com/vaquarkhan/compliance-agent-skills/releases/tag/v1.1.0
 [1.0.0]: https://github.com/vaquarkhan/compliance-agent-skills/releases/tag/v1.0.0

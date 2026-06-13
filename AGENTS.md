@@ -4,7 +4,7 @@ This file is the **primary routing document** for AI coding agents working in th
 
 ## Mission
 
-Execute **deterministic USA compliance audits** for HIPAA, PCI-DSS v4.0, SOC 2, ISO 27001, NIST CSF 2.0, and CCPA/CPRA without inventing regulatory requirements. All user-provided text passes through **PHI redaction** (`redaction.py`) before LLM reasoning.
+Execute **deterministic USA compliance audits** across HIPAA, PCI-DSS v4.0, SOC 2, ISO 27001, NIST CSF 2.0, CCPA/CPRA, FedRAMP, SOX, CMMC, and GLBA/FFIEC without inventing regulatory requirements. All user-provided text passes through **PHI redaction** (`redaction.py`) before LLM reasoning.
 
 ## Mandatory rules
 
@@ -36,6 +36,10 @@ Execute **deterministic USA compliance audits** for HIPAA, PCI-DSS v4.0, SOC 2, 
 | CCPA/CPRA, DSAR, California privacy | `ccpa-cpra-privacy-rights` |
 | PCI encryption, PAN, key management | `pci-dss-encryption-key-management` |
 | HIPAA minimum necessary / de-id | `hipaa-privacy-minimum-necessary` |
+| FedRAMP Moderate / NIST 800-53 | `fedramp-moderate-baseline` |
+| SOX ITGC / SOX 404 | `sox-itgc-audit` |
+| CMMC / CUI / NIST 800-171 | `cmmc-nist-800-171` |
+| GLBA / FFIEC financial privacy | `glba-ffiec-financial-privacy` |
 
 Full catalog: [skills-index.md](skills-index.md).
 
@@ -48,6 +52,7 @@ Apply a preset when the user names an industry or cloud:
 | Healthcare HIPAA | `presets/healthcare-hipaa/PRESET.md` |
 | Fintech PCI-DSS | `presets/fintech-pci-dss/PRESET.md` |
 | SaaS SOC 2 Type II | `presets/saas-soc2-type2/PRESET.md` |
+| Financial GLBA/FFIEC | `presets/financial-services-glba/PRESET.md` |
 | AWS | `presets/aws-compliance/PRESET.md` |
 | Azure | `presets/azure-compliance/PRESET.md` |
 | GCP | `presets/gcp-compliance/PRESET.md` |

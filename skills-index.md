@@ -80,6 +80,46 @@ Validation: `python scripts/validate-skills.py`
 
 ---
 
+## FedRAMP
+
+| Skill | Path | Summary |
+| --- | --- | --- |
+| **fedramp-moderate-baseline** | [skills/fedramp-moderate-baseline/](skills/fedramp-moderate-baseline/) | FedRAMP Moderate, NIST 800-53 Rev 5, SSP, POA&M, ConMon. |
+
+**Related:** references `fedramp-moderate-checklist.md`, template `fedramp-ssp-outline.yaml`
+
+---
+
+## SOX
+
+| Skill | Path | Summary |
+| --- | --- | --- |
+| **sox-itgc-audit** | [skills/sox-itgc-audit/](skills/sox-itgc-audit/) | SOX 404 ITGC — access, change, development, operations. |
+
+**Related:** references `sox-itgc-checklist.md`, template `sox-itgc-control-matrix.yaml`
+
+---
+
+## CMMC / Defense
+
+| Skill | Path | Summary |
+| --- | --- | --- |
+| **cmmc-nist-800-171** | [skills/cmmc-nist-800-171/](skills/cmmc-nist-800-171/) | CMMC 2.0 Level 2, CUI, NIST 800-171, SPRS. |
+
+**Related:** references `cmmc-nist-800-171-checklist.md`, template `cmmc-poam.yaml`
+
+---
+
+## GLBA / Financial
+
+| Skill | Path | Summary |
+| --- | --- | --- |
+| **glba-ffiec-financial-privacy** | [skills/glba-ffiec-financial-privacy/](skills/glba-ffiec-financial-privacy/) | GLBA Safeguards/Privacy, FFIEC IT handbook alignment. |
+
+**Related:** references `glba-ffiec-checklist.md`, preset `financial-services-glba`
+
+---
+
 ## Cross-cutting
 
 | Skill | Path | Summary |
@@ -108,4 +148,8 @@ ISO 27001 Annex A              → iso27001-annex-a-controls
 NIST CSF 2.0                   → nist-csf-2-assessment
 CCPA / CPRA / DSAR             → ccpa-cpra-privacy-rights
 HIPAA minimum necessary        → hipaa-privacy-minimum-necessary
+FedRAMP / cloud ATO            → fedramp-moderate-baseline
+SOX ITGC / financial controls  → sox-itgc-audit
+CMMC / CUI / defense           → cmmc-nist-800-171
+GLBA / bank or fintech         → glba-ffiec-financial-privacy
 ```

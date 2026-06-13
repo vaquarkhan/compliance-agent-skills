@@ -1,0 +1,26 @@
+# FedRAMP System Security Plan Outline — Template
+schema_version: "1.0"
+system_name: ""
+csp_name: ""
+impact_level: Moderate
+authorization_boundary: ""
+assessment_date: ""
+
+data_flows:
+  - from: ""
+    to: ""
+    data_classification: ""
+    encryption_in_transit: TLS 1.2+
+
+inherited_controls:
+  - control_id: ""
+    provider: ""
+    customer_responsibility: ""
+
+customer_implemented_controls:
+  - control_id: ""
+    implementation: ""
+    evidence_ref: ""
+
+poam_items: []
+approver: ""

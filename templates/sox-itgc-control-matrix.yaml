@@ -1,0 +1,25 @@
+# SOX ITGC Control Matrix — Template
+schema_version: "1.0"
+entity: ""
+fiscal_year: ""
+preparer: ""
+
+domains:
+  access_to_programs_and_data:
+    - control_id: ITGC-AC-01
+      description: User access provisioning requires manager approval
+      frequency: per change
+      owner: ""
+      test_procedure: ""
+      last_tested: ""
+      result: ""
+  program_change:
+    - control_id: ITGC-CH-01
+      description: Production changes require CAB approval and testing evidence
+      frequency: per change
+      owner: ""
+      test_procedure: ""
+      last_tested: ""
+      result: ""
+
+deficiencies: []
