@@ -28,6 +28,10 @@ from presidio_analyzer.nlp_engine import NlpEngineProvider
 from presidio_anonymizer import AnonymizerEngine
 from presidio_anonymizer.entities import OperatorConfig
 
+# Presidio invokes custom operator lambdas twice: once with this sentinel for
+# validation, then with the real matched text. Never store a token for the probe.
+PII_VALIDATION_PROBE = "PII"
+
 EntityProfile = Literal["balanced", "aggressive"]
 
 # Core PHI/PII — suitable for most compliance audit prompts.
@@ -124,22 +128,42 @@ class PHIRedactor:
         self._token_to_value[token] = original_value
         return token
 
-    def _build_operators(
-        self, analyzer_results: list[Any]
-    ) -> dict[str, OperatorConfig]:
-        """Create per-entity custom operators that emit stable masked tokens."""
+    def _preassign_tokens(
+        self, text: str, analyzer_results: list[Any]
+    ) -> dict[str, dict[str, str]]:
+        """Assign one stable token per unique (entity_type, matched span text).
 
-        def make_token_lambda(entity_type: str):
+        Presidio's custom operators must not mint tokens inside the lambda — the
+        engine calls it with ``PII_VALIDATION_PROBE`` before the real value.
+        """
+        lookups: dict[str, dict[str, str]] = defaultdict(dict)
+        for result in analyzer_results:
+            matched = text[result.start : result.end]
+            entity_type = result.entity_type
+            if matched in lookups[entity_type]:
+                continue
+            token = self._next_token(entity_type, matched)
+            lookups[entity_type][matched] = token
+        return lookups
+
+    def _build_operators(
+        self, token_lookups: dict[str, dict[str, str]]
+    ) -> dict[str, OperatorConfig]:
+        """Create per-entity operators that look up pre-assigned tokens."""
+
+        def make_token_lambda(entity_type: str, lookup: dict[str, str]):
             def token_lambda(value: str) -> str:
-                return self._next_token(entity_type, value)
+                if value == PII_VALIDATION_PROBE:
+                    return PII_VALIDATION_PROBE
+                return lookup[value]
 
             return token_lambda
 
         operators: dict[str, OperatorConfig] = {}
-        for entity_type in {result.entity_type for result in analyzer_results}:
+        for entity_type, lookup in token_lookups.items():
             operators[entity_type] = OperatorConfig(
                 "custom",
-                {"lambda": make_token_lambda(entity_type)},
+                {"lambda": make_token_lambda(entity_type, lookup)},
             )
         return operators
 
@@ -158,7 +182,8 @@ class PHIRedactor:
         if not analyzer_results:
             return RedactionResult(original_text=text, redacted_text=text, entity_count=0)
 
-        operators = self._build_operators(analyzer_results)
+        token_lookups = self._preassign_tokens(text, analyzer_results)
+        operators = self._build_operators(token_lookups)
 
         anonymized = self._anonymizer.anonymize(
             text=text,

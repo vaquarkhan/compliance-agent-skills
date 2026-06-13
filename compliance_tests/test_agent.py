@@ -6,13 +6,16 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
+from compliance_tests.support import presidio
+
+pytest.importorskip("pydantic_ai")
+
 from agent import (
     ComplianceDeps,
     _env_deanonymize_enabled,
     deanonymize_response,
     run_compliance_agent,
 )
-from compliance_tests.support import presidio
 
 
 def test_deanonymize_authorized_defaults_false() -> None:

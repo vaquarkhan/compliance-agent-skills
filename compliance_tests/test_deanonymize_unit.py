@@ -34,7 +34,12 @@ def test_deanonymize_round_trip_preserves_unrelated_text() -> None:
     assert redactor.deanonymize("SSN token: <US_SSN_1> end.") == "SSN token: 123-45-6789 end."
 
 
-def test_reset_session_clears_token_map() -> None:
+def test_deanonymize_leaves_unmapped_tokens_unchanged() -> None:
+    """Regression: phantom <PERSON_1> -> PII must never corrupt literal token strings."""
+    redactor = _bare_redactor()
+    assert redactor.deanonymize("Model cited <PERSON_1> as an example.") == (
+        "Model cited <PERSON_1> as an example."
+    )
     redactor = _bare_redactor()
     redactor._token_to_value["<EMAIL_ADDRESS_1>"] = "a@b.com"
     redactor._token_counters["EMAIL_ADDRESS"] = 1

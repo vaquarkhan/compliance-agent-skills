@@ -15,7 +15,22 @@ def presidio_available() -> bool:
         return False
 
 
+def pydantic_ai_available() -> bool:
+    try:
+        import pydantic_ai  # noqa: F401
+        import pydantic_ai_skills  # noqa: F401
+
+        return True
+    except ImportError:
+        return False
+
+
 presidio = pytest.mark.skipif(
     not presidio_available(),
-    reason="Presidio/spaCy not installed (pip install -r requirements.txt)",
+    reason="Presidio/spaCy not installed (pip install -r requirements-lock.txt)",
+)
+
+pydantic_ai = pytest.mark.skipif(
+    not pydantic_ai_available(),
+    reason="pydantic-ai not installed (pip install -r requirements-lock.txt)",
 )

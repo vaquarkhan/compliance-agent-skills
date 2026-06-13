@@ -68,3 +68,29 @@ def test_session_isolation_between_redactors() -> None:
     assert first.active_token_count >= 1
     assert second.active_token_count >= 1
     assert first._token_to_value != second._token_to_value
+
+
+@presidio
+def test_token_numbering_starts_at_one_no_phantom_pii() -> None:
+    """Regression: Presidio's PII validation probe must not consume a token slot."""
+    redactor = PHIRedactor(entity_profile="balanced")
+    result = redactor.redact("Patient John Smith called today.", score_threshold=0.25)
+
+    assert "<PERSON_1>" in result.redacted_text
+    assert "<PERSON_2>" not in result.redacted_text
+    assert redactor.active_token_count == 1
+    assert "PII" not in redactor._token_to_value.values()
+    assert redactor._token_to_value.get("<PERSON_1>") == "John Smith"
+
+
+@presidio
+def test_sequential_token_numbering_for_multiple_entities() -> None:
+    redactor = PHIRedactor(entity_profile="balanced")
+    text = "Jane Doe and Bob Jones both attended."
+    result = redactor.redact(text, score_threshold=0.25)
+
+    assert "<PERSON_1>" in result.redacted_text
+    assert "<PERSON_2>" in result.redacted_text
+    assert "<PERSON_3>" not in result.redacted_text
+    assert redactor.active_token_count == 2
+    assert redactor.deanonymize(result.redacted_text) == text

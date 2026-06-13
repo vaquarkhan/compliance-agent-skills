@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "project": "compliance-agent-skills",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "frameworks": ["HIPAA", "HITECH", "PCI-DSS-v4.0", "SOC2-TSC", "ISO27001", "NIST-CSF-2.0", "NIST-AI-RMF", "FERPA", "COPPA", "CCPA-CPRA", "US-State-Privacy", "GDPR", "FedRAMP", "SOX", "CMMC", "GLBA"],
   "templates": [
     {

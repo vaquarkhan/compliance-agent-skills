@@ -5,6 +5,17 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.6.1] - 2026-06-13
+
+### Fixed
+
+- **redaction.py:** Presidio custom operators call the lambda twice (``PII`` validation probe, then real span text). Pre-assign stable tokens per unique ``(entity_type, matched_value)`` before anonymization so numbering starts at ``_1``, no phantom ``<PERSON_1> -> PII`` mapping, and ``active_token_count`` reflects real entities only.
+- **test_agent.py:** Skip collection gracefully when ``pydantic_ai`` is not installed (``pytest.importorskip``).
+
+### Added
+
+- Regression tests for token numbering, phantom PII mapping, and unmapped deanonymize safety.
+
 ## [1.6.0] - 2026-06-13
 
 ### Added
