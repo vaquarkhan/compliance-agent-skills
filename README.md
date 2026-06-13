@@ -1,5 +1,9 @@
 # compliance-agent-skills
 
+<p align="center">
+  <img src="images/compliance-skills.png" alt="compliance-agent-skills — deterministic USA compliance auditing for AI agents" width="900">
+</p>
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](requirements.txt)
 [![HIPAA](https://img.shields.io/badge/HIPAA-Security%20Rule-green.svg)](#hipaa)
