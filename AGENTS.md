@@ -4,7 +4,7 @@ This file is the **primary routing document** for AI coding agents working in th
 
 ## Mission
 
-Execute **deterministic USA compliance audits** across HIPAA, PCI-DSS v4.0, SOC 2, ISO 27001, NIST CSF 2.0, CCPA/CPRA, FedRAMP, SOX, CMMC, and GLBA/FFIEC without inventing regulatory requirements. All user-provided text passes through **PHI redaction** (`redaction.py`) before LLM reasoning.
+Execute **deterministic USA compliance audits** across HIPAA, HITECH, PCI-DSS v4.0, SOC 2, ISO 27001, NIST CSF 2.0, CCPA/CPRA, US state privacy laws, GDPR, FedRAMP, SOX, CMMC, and GLBA/FFIEC without inventing regulatory requirements. All user-provided text passes through **PHI redaction** (`redaction.py`) before LLM reasoning.
 
 ## Mandatory rules
 
@@ -28,6 +28,9 @@ Execute **deterministic USA compliance audits** across HIPAA, PCI-DSS v4.0, SOC 
 | IAM, MFA, RBAC | `access-control-identity-audit` |
 | Logs, SIEM, Req 10 | `audit-logging-integrity` |
 | Breach, incident notification | `breach-incident-response` |
+| HITECH breach / OCR portal | `hitech-breach-notification` |
+| US state privacy (VCDPA, CPA, TDPSA) | `us-state-privacy-laws` |
+| GDPR / EU transfers (US multinational) | `gdpr-us-multinational` |
 | Vendor SOC reports | `vendor-third-party-risk` |
 | OPA, Terraform, policy-as-code | `compliance-as-code-governance` |
 | MCP server hardening | `mcp-compliance-integration` |
@@ -53,6 +56,7 @@ Apply a preset when the user names an industry or cloud:
 | Fintech PCI-DSS | `presets/fintech-pci-dss/PRESET.md` |
 | SaaS SOC 2 Type II | `presets/saas-soc2-type2/PRESET.md` |
 | Financial GLBA/FFIEC | `presets/financial-services-glba/PRESET.md` |
+| Multinational privacy | `presets/multinational-privacy/PRESET.md` |
 | AWS | `presets/aws-compliance/PRESET.md` |
 | Azure | `presets/azure-compliance/PRESET.md` |
 | GCP | `presets/gcp-compliance/PRESET.md` |
@@ -69,6 +73,9 @@ For role-play or multi-agent workflows, see `agents/`:
 - `sox-it-auditor.md` — SOX 404 IT general controls
 - `cmmc-assessor.md` — CMMC Level 2 / CUI assessments
 - `glba-compliance-officer.md` — GLBA Safeguards and Privacy
+- `gdpr-dpo-advisor.md` — GDPR RoPA, transfers, DPIA for US multinationals
+- `hitech-breach-coordinator.md` — HITECH OCR breach workflows
+- `state-privacy-analyst.md` — Multi-state US privacy (VCDPA, CPA, TDPSA)
 
 ## MCP servers
 

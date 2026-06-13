@@ -39,6 +39,9 @@ Run `hooks/audit-mode.sh` or set `COMPLIANCE_AUDIT_MODE=true` for read-only tool
 | SOX | `sox-itgc-audit` |
 | CMMC | `cmmc-nist-800-171` |
 | GLBA / FFIEC | `glba-ffiec-financial-privacy` |
+| HITECH breach | `hitech-breach-notification` |
+| US state privacy | `us-state-privacy-laws` |
+| GDPR | `gdpr-us-multinational` |
 
 ## Next command
 

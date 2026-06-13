@@ -1,0 +1,56 @@
+# Multi-state US privacy assessment scaffold
+
+assessment_id: ""
+organization: ""
+assessment_date: ""
+assessor: ""
+
+states:
+  - code: VA
+    law: VCDPA
+    applicable: false
+    controller_or_processor: ""
+    consumer_count: 0
+    exemptions_claimed: []
+    gaps: []
+  - code: CO
+    law: CPA
+    applicable: false
+    controller_or_processor: ""
+    consumer_count: 0
+    exemptions_claimed: []
+    gaps: []
+  - code: TX
+    law: TDPSA
+    applicable: false
+    small_business_exemption: false
+    gaps: []
+  - code: CT
+    law: CTDPA
+    applicable: false
+    gaps: []
+
+agent_data_flows:
+  - name: ""
+    pi_categories: []
+    sensitive_data: false
+    sale_or_targeted_ads: false
+    profiling_significant_decisions: false
+    subprocessors: []
+    mitigations: []
+
+consumer_rights_program:
+  unified_policy_url: ""
+  dsar_methods: []
+  response_sla_days: 45
+  gpc_honored: false
+  universal_opt_out_url: ""
+
+data_protection_assessments:
+  - activity: ""
+    states_requiring: []
+    completed: false
+    path: ""
+
+evidence:
+  manifest_path: ""

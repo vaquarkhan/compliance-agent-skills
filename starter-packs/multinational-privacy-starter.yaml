@@ -1,0 +1,59 @@
+# Phase 4 — Multinational privacy starter pack
+name: multinational-privacy-starter
+version: "1.0.0"
+description: HITECH breach depth, US state privacy laws, and GDPR for US multinationals with agent/LLM data flows.
+
+frameworks:
+  - HITECH
+  - US-State-Privacy
+  - GDPR
+  - CCPA-CPRA
+
+skills:
+  - using-compliance-agent-skills
+  - hitech-breach-notification
+  - us-state-privacy-laws
+  - gdpr-us-multinational
+  - ccpa-cpra-privacy-rights
+  - breach-incident-response
+  - hipaa-phi-redaction-pipeline
+  - hipaa-privacy-minimum-necessary
+  - vendor-third-party-risk
+  - mcp-compliance-integration
+
+templates:
+  - templates/hitech-breach-workbook.yaml
+  - templates/state-privacy-assessment.yaml
+  - templates/gdpr-ropa-template.yaml
+  - templates/dsar-request-log.yaml
+  - templates/breach-notification-plan.yaml
+  - templates/audit-evidence-manifest.yaml
+
+references:
+  - references/hitech-breach-checklist.md
+  - references/us-state-privacy-matrix.md
+  - references/gdpr-article-checklist.md
+  - references/ccpa-cpra-checklist.md
+
+presets:
+  - presets/multinational-privacy/PRESET.md
+
+agents:
+  - agents/hitech-breach-coordinator.md
+  - agents/state-privacy-analyst.md
+  - agents/gdpr-dpo-advisor.md
+
+mcp:
+  - mcp/postgres.mcp.json
+  - mcp/presidio.mcp.json
+  - mcp/slack.mcp.json
+
+examples:
+  - examples/hipaa-phi-redaction/
+
+lifecycle_commands:
+  - scope
+  - audit
+  - evidence
+  - remediate
+  - report

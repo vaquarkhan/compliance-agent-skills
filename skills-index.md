@@ -120,6 +120,36 @@ Validation: `python scripts/validate-skills.py`
 
 ---
 
+## HITECH
+
+| Skill | Path | Summary |
+| --- | --- | --- |
+| **hitech-breach-notification** | [skills/hitech-breach-notification/](skills/hitech-breach-notification/) | HITECH breach depth—OCR portal, unsecured PHI, BA liability, penalty tiers. |
+
+**Related:** references `hitech-breach-checklist.md`, template `hitech-breach-workbook.yaml`
+
+---
+
+## US state privacy
+
+| Skill | Path | Summary |
+| --- | --- | --- |
+| **us-state-privacy-laws** | [skills/us-state-privacy-laws/](skills/us-state-privacy-laws/) | VCDPA, CPA, TDPSA, and multi-state harmonized consumer rights for agents/LLM. |
+
+**Related:** references `us-state-privacy-matrix.md`, template `state-privacy-assessment.yaml`
+
+---
+
+## GDPR
+
+| Skill | Path | Summary |
+| --- | --- | --- |
+| **gdpr-us-multinational** | [skills/gdpr-us-multinational/](skills/gdpr-us-multinational/) | GDPR for US multinationals—RoPA, transfers, DPIA, 72-hour breach. |
+
+**Related:** references `gdpr-article-checklist.md`, template `gdpr-ropa-template.yaml`, preset `multinational-privacy`
+
+---
+
 ## Cross-cutting
 
 | Skill | Path | Summary |
@@ -152,4 +182,7 @@ FedRAMP / cloud ATO            → fedramp-moderate-baseline
 SOX ITGC / financial controls  → sox-itgc-audit
 CMMC / CUI / defense           → cmmc-nist-800-171
 GLBA / bank or fintech         → glba-ffiec-financial-privacy
+HITECH / OCR breach            → hitech-breach-notification
+US state privacy (non-CA)      → us-state-privacy-laws
+GDPR / EU data subjects        → gdpr-us-multinational
 ```

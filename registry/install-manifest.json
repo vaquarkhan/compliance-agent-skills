@@ -19,6 +19,9 @@
     "templates/fedramp-ssp-outline.yaml",
     "templates/sox-itgc-control-matrix.yaml",
     "templates/cmmc-poam.yaml",
+    "templates/hitech-breach-workbook.yaml",
+    "templates/state-privacy-assessment.yaml",
+    "templates/gdpr-ropa-template.yaml",
     "requirements.txt",
     "requirements-proof.txt",
     "agent.py",
@@ -66,7 +69,10 @@
     "skills/fedramp-moderate-baseline/SKILL.md",
     "skills/sox-itgc-audit/SKILL.md",
     "skills/cmmc-nist-800-171/SKILL.md",
-    "skills/glba-ffiec-financial-privacy/SKILL.md"
+    "skills/glba-ffiec-financial-privacy/SKILL.md",
+    "skills/hitech-breach-notification/SKILL.md",
+    "skills/us-state-privacy-laws/SKILL.md",
+    "skills/gdpr-us-multinational/SKILL.md"
   ],
   "agent_adapters": {
     "Cursor": [
@@ -133,6 +139,20 @@
       "references/cmmc-nist-800-171-checklist.md",
       "references/glba-ffiec-checklist.md",
       "presets/financial-services-glba/PRESET.md",
+      "AGENTS.md",
+      "skills-index.md"
+    ],
+    "Multinational Privacy": [
+      "starter-packs/multinational-privacy-starter.yaml",
+      "templates/hitech-breach-workbook.yaml",
+      "templates/state-privacy-assessment.yaml",
+      "templates/gdpr-ropa-template.yaml",
+      "templates/dsar-request-log.yaml",
+      "references/hitech-breach-checklist.md",
+      "references/us-state-privacy-matrix.md",
+      "references/gdpr-article-checklist.md",
+      "references/ccpa-cpra-checklist.md",
+      "presets/multinational-privacy/PRESET.md",
       "AGENTS.md",
       "skills-index.md"
     ]

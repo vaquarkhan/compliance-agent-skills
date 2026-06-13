@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
   "project": "compliance-agent-skills",
-  "version": "1.3.0",
-  "frameworks": ["HIPAA", "PCI-DSS-v4.0", "SOC2-TSC", "ISO27001", "NIST-CSF-2.0", "CCPA-CPRA", "FedRAMP", "SOX", "CMMC", "GLBA"],
+  "version": "1.4.0",
+  "frameworks": ["HIPAA", "HITECH", "PCI-DSS-v4.0", "SOC2-TSC", "ISO27001", "NIST-CSF-2.0", "CCPA-CPRA", "US-State-Privacy", "GDPR", "FedRAMP", "SOX", "CMMC", "GLBA"],
   "templates": [
     {
       "id": "compliance-control-matrix",
@@ -73,6 +73,21 @@
       "id": "cmmc-poam",
       "path": "templates/cmmc-poam.yaml",
       "description": "CMMC Level 2 POA&M and SPRS gap tracker"
+    },
+    {
+      "id": "hitech-breach-workbook",
+      "path": "templates/hitech-breach-workbook.yaml",
+      "description": "HITECH breach determination and OCR notification workbook"
+    },
+    {
+      "id": "state-privacy-assessment",
+      "path": "templates/state-privacy-assessment.yaml",
+      "description": "Multi-state US comprehensive privacy applicability assessment"
+    },
+    {
+      "id": "gdpr-ropa-template",
+      "path": "templates/gdpr-ropa-template.yaml",
+      "description": "GDPR Article 30 Record of Processing Activities scaffold"
     }
   ],
   "starter_packs": [
@@ -136,6 +151,21 @@
         "glba-ffiec-financial-privacy",
         "access-control-identity-audit",
         "audit-logging-integrity",
+        "vendor-third-party-risk"
+      ]
+    },
+    {
+      "id": "multinational-privacy",
+      "path": "starter-packs/multinational-privacy-starter.yaml",
+      "frameworks": ["HITECH", "US-State-Privacy", "GDPR", "CCPA-CPRA"],
+      "skills": [
+        "using-compliance-agent-skills",
+        "hitech-breach-notification",
+        "us-state-privacy-laws",
+        "gdpr-us-multinational",
+        "ccpa-cpra-privacy-rights",
+        "breach-incident-response",
+        "hipaa-phi-redaction-pipeline",
         "vendor-third-party-risk"
       ]
     }
@@ -243,7 +273,8 @@
     "presets/aws-compliance/PRESET.md",
     "presets/azure-compliance/PRESET.md",
     "presets/gcp-compliance/PRESET.md",
-    "presets/financial-services-glba/PRESET.md"
+    "presets/financial-services-glba/PRESET.md",
+    "presets/multinational-privacy/PRESET.md"
   ],
   "references": [
     "references/hipaa-security-rule-checklist.md",
@@ -258,7 +289,10 @@
     "references/fedramp-moderate-checklist.md",
     "references/sox-itgc-checklist.md",
     "references/cmmc-nist-800-171-checklist.md",
-    "references/glba-ffiec-checklist.md"
+    "references/glba-ffiec-checklist.md",
+    "references/hitech-breach-checklist.md",
+    "references/us-state-privacy-matrix.md",
+    "references/gdpr-article-checklist.md"
   ],
   "agents": [
     "agents/compliance-architect.md",
@@ -268,7 +302,10 @@
     "agents/fedramp-3pao-advisor.md",
     "agents/sox-it-auditor.md",
     "agents/cmmc-assessor.md",
-    "agents/glba-compliance-officer.md"
+    "agents/glba-compliance-officer.md",
+    "agents/hitech-breach-coordinator.md",
+    "agents/state-privacy-analyst.md",
+    "agents/gdpr-dpo-advisor.md"
   ],
   "core_scripts": [
     "scripts/install_toolkit.py",

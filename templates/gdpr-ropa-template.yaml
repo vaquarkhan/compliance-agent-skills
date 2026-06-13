@@ -1,0 +1,39 @@
+# GDPR Article 30 Record of Processing Activities (RoPA)
+# Controller record — extend rows per processing activity.
+
+controller:
+  name: ""
+  contact: ""
+  dpo_contact: ""
+  eu_representative: ""
+
+processing_activities:
+  - id: PA-001
+    name: ""
+    purposes: []
+    lawful_basis_art6: ""  # consent | contract | legal_obligation | vital_interests | public_task | legitimate_interest
+    special_category_art9: false
+    art9_basis: ""
+    data_subject_categories: []
+    personal_data_categories: []
+    recipients: []
+    subprocessors:
+      - name: ""
+        role: ""  # LLM API | MCP host | analytics
+        location: ""
+        transfer_mechanism: ""  # DPF | SCCs | adequacy | none
+    third_country_transfers: []
+    retention: ""
+    security_measures_art32:
+      - "Presidio redaction before LLM"
+      - "MCP OAuth scoped tools"
+    dpia_required: false
+    dpia_reference: ""
+
+international_transfers:
+  - destination: US
+    mechanism: ""
+    tia_date: ""
+    supplementary_measures: []
+
+last_reviewed: ""

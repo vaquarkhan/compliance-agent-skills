@@ -1,5 +1,5 @@
 ---
-description: Route tasks to HIPAA, PCI-DSS, SOC 2, ISO 27001, NIST CSF, CCPA, FedRAMP, SOX, CMMC, and GLBA skills based on user intent and presets.
+description: Route tasks to HIPAA, HITECH, PCI-DSS, SOC 2, ISO 27001, NIST CSF, CCPA, US state privacy, GDPR, FedRAMP, SOX, CMMC, and GLBA skills based on user intent and presets.
 globs:
 alwaysApply: true
 ---
@@ -31,6 +31,9 @@ Load **`using-compliance-agent-skills`** first.
 | SOX ITGC, SOX 404 | `sox-itgc-audit` | `financial-services-glba` |
 | CMMC, CUI, 800-171 | `cmmc-nist-800-171` | `enterprise-regulated` |
 | GLBA, FFIEC, NPI | `glba-ffiec-financial-privacy` | `financial-services-glba` |
+| HITECH, OCR breach, unsecured PHI | `hitech-breach-notification` | `healthcare-hipaa` |
+| US state privacy (VCDPA, CPA, TX) | `us-state-privacy-laws` | `multinational-privacy` |
+| GDPR, EU data subjects, SCCs | `gdpr-us-multinational` | `multinational-privacy` |
 | IAM, MFA, RBAC | `access-control-identity-audit` | any |
 | Logs, SIEM, Req 10 | `audit-logging-integrity` | any |
 | Breach, incident | `breach-incident-response` | `healthcare-hipaa` |
@@ -45,6 +48,8 @@ AWS / Azure / GCP presets add cloud-specific control mappings — combine with f
 ## Enterprise starter pack
 
 For FedRAMP + SOX + CMMC + GLBA engagements, use `starter-packs/enterprise-regulated-starter.yaml`.
+
+For HITECH + US state privacy + GDPR, use `starter-packs/multinational-privacy-starter.yaml`.
 
 ## One primary skill per thread
 

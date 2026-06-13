@@ -5,6 +5,18 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0] - 2026-06-13
+
+### Added
+
+- **Phase 4 skills** — multinational privacy coverage:
+  - `hitech-breach-notification` — HITECH Act depth, OCR portal, unsecured PHI, BA liability
+  - `us-state-privacy-laws` — VCDPA, CPA, TDPSA, and multi-state harmonized programs
+  - `gdpr-us-multinational` — GDPR for US multinationals (RoPA, SCCs/DPF, 72-hour breach, DPIA)
+- Reference checklists and templates (HITECH workbook, state assessment, GDPR RoPA)
+- Preset `multinational-privacy` and starter pack `multinational-privacy-starter.yaml`
+- Agent personas: HITECH breach coordinator, state privacy analyst, GDPR DPO advisor
+
 ## [1.3.0] - 2026-06-13
 
 ### Fixed
@@ -70,6 +82,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - PHI redaction runs upstream of all LLM reasoning; reversible tokens require explicit deanonymization tool call
 
+[1.4.0]: https://github.com/vaquarkhan/compliance-agent-skills/releases/tag/v1.4.0
 [1.3.0]: https://github.com/vaquarkhan/compliance-agent-skills/releases/tag/v1.3.0
 [1.2.0]: https://github.com/vaquarkhan/compliance-agent-skills/releases/tag/v1.2.0
 [1.1.0]: https://github.com/vaquarkhan/compliance-agent-skills/releases/tag/v1.1.0

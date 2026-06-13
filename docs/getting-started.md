@@ -21,6 +21,7 @@ This installs Python dependencies, detects your IDE, and validates the asset reg
 | SaaS | `starter-packs/soc2-saas-starter.yaml` |
 | AI agents (multi-framework) | `starter-packs/regulated-ai-agents-starter.yaml` |
 | Enterprise regulated (FedRAMP, SOX, CMMC, GLBA) | `starter-packs/enterprise-regulated-starter.yaml` |
+| Multinational privacy (HITECH, state, GDPR) | `starter-packs/multinational-privacy-starter.yaml` |
 
 Apply the matching **preset** from `presets/*/PRESET.md`.
 

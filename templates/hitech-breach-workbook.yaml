@@ -1,0 +1,56 @@
+# HITECH breach workbook — populate per incident
+# Use after breach-incident-response containment and classification.
+
+workbook_id: ""
+incident_id: ""
+covered_entity: ""
+business_associates: []
+discovery_date_utc: ""
+occurrence_date_utc: ""
+privacy_officer: ""
+
+unsecured_phi_analysis:
+  phi_elements: []
+  volume_individuals: 0
+  encryption_at_rest: false
+  encryption_in_transit: false
+  nist_800_111_aligned: false
+  key_compromised: false
+  secured_phi_determination: ""  # secured | unsecured | pending
+
+four_factor_assessment:
+  nature_extent: ""
+  unauthorized_person: ""
+  acquired_or_viewed: ""
+  mitigation_extent: ""
+  breach_determination: ""  # breach | security_incident
+  signed_by: ""
+  signed_date: ""
+
+notifications:
+  individuals:
+    required: false
+    deadline: ""
+    method: ""  # mail | email_substitute | substitute_notice
+    sent_date: ""
+  hhs_ocr:
+    required: false
+    count_threshold: ""  # immediate_500_plus | annual_log
+    portal_submission_id: ""
+    submitted_date: ""
+  media:
+    required: false
+    outlets: []
+    published_date: ""
+  business_associate_to_ce:
+    ba_name: ""
+    notified_date: ""
+
+penalty_tier_analysis:
+  tier: 0  # 1-4 per 42 U.S.C. 1320d-5
+  rationale: ""
+  corrective_actions: []
+
+evidence:
+  manifest_path: ""
+  bundle_hash: ""

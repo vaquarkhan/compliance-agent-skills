@@ -5,9 +5,9 @@
 [![HIPAA](https://img.shields.io/badge/HIPAA-Security%20Rule-green.svg)](#hipaa)
 [![PCI-DSS](https://img.shields.io/badge/PCI--DSS-v4.0-red.svg)](#pci-dss)
 [![SOC 2](https://img.shields.io/badge/SOC%202-TSC-purple.svg)](#soc-2)
-[![Skills](https://img.shields.io/badge/skills-24-orange.svg)](skills-index.md)
+[![Skills](https://img.shields.io/badge/skills-27-orange.svg)](skills-index.md)
 
-**Deterministic USA compliance auditing for AI agents** — progressive-disclosure Agent Skills, a Presidio PHI redaction gate, MCP integrations, and IDE plugins for HIPAA, PCI-DSS v4.0, SOC 2, ISO 27001, NIST CSF 2.0, CCPA/CPRA, FedRAMP, SOX, CMMC, and GLBA/FFIEC workflows.
+**Deterministic USA compliance auditing for AI agents** — progressive-disclosure Agent Skills, a Presidio PHI redaction gate, MCP integrations, and IDE plugins for HIPAA, HITECH, PCI-DSS v4.0, SOC 2, ISO 27001, NIST CSF 2.0, CCPA/CPRA, US state privacy laws, GDPR, FedRAMP, SOX, CMMC, and GLBA/FFIEC workflows.
 
 > **Disclaimer:** This repository provides operational audit patterns and automation templates. It is **not legal advice** and does not replace a Qualified Security Assessor (QSA), HIPAA Privacy Officer, or licensed CPA for SOC 2 attestation.
 
@@ -23,7 +23,7 @@ LLM agents can accelerate compliance work, but they must not:
 
 compliance-agent-skills addresses this with:
 
-1. **24 specialized skills** with explicit triggers, anti-patterns, and output artifacts
+1. **27 specialized skills** with explicit triggers, anti-patterns, and output artifacts
 2. **Mandatory PHI redaction** (`redaction.py`) before any user text reaches the model
 3. **Audit lifecycle commands** — `/scope`, `/audit`, `/evidence`, `/remediate`, `/report`
 4. **MCP templates** for Playwright DOM audits, Postgres evidence queries, Presidio DLP, Slack notifications, GitHub change tracking, and Terraform drift
@@ -165,17 +165,20 @@ Example engagement flow:
 
 ## Skills catalog
 
-24 skills organized by framework. Full catalog: [skills-index.md](skills-index.md).
+27 skills organized by framework. Full catalog: [skills-index.md](skills-index.md).
 
 | Group | Skills |
 | --- | --- |
 | **Meta** | `using-compliance-agent-skills` |
 | **HIPAA** | `hipaa-technical-safeguards`, `hipaa-phi-redaction-pipeline`, `hipaa-baa-vendor-assessment`, `hipaa-privacy-minimum-necessary` |
+| **HITECH** | `hitech-breach-notification` |
 | **PCI-DSS v4.0** | `pci-dss-script-audit`, `pci-dss-network-segmentation`, `pci-dss-encryption-key-management` |
 | **SOC 2** | `soc2-trust-services-criteria`, `soc2-evidence-collection`, `soc2-ccm-continuous-monitoring` |
 | **ISO 27001** | `iso27001-annex-a-controls` |
 | **NIST CSF 2.0** | `nist-csf-2-assessment` |
 | **CCPA / CPRA** | `ccpa-cpra-privacy-rights` |
+| **US state privacy** | `us-state-privacy-laws` |
+| **GDPR** | `gdpr-us-multinational` |
 | **FedRAMP** | `fedramp-moderate-baseline` |
 | **SOX** | `sox-itgc-audit` |
 | **CMMC** | `cmmc-nist-800-171` |
@@ -257,7 +260,30 @@ GLBA Safeguards and Privacy Rules, FFIEC IT handbook alignment for financial ins
 
 **Related skill:** `glba-ffiec-financial-privacy`  
 **Preset:** [presets/financial-services-glba/PRESET.md](presets/financial-services-glba/PRESET.md)  
-**Starter pack:** [starter-packs/enterprise-regulated-starter.yaml](starter-packs/enterprise-regulated-starter.yaml)
+**Starter pack:** `starter-packs/enterprise-regulated-starter.yaml`
+
+### HITECH
+
+HITECH Act breach notification depth—OCR portal, unsecured PHI, BA liability, penalty tiers. Use after `breach-incident-response` containment.
+
+**Related skill:** `hitech-breach-notification`  
+**Template:** [templates/hitech-breach-workbook.yaml](templates/hitech-breach-workbook.yaml)
+
+### US state privacy
+
+Comprehensive state laws: VCDPA, CPA, TDPSA, CTDPA, OCPA, and harmonized multi-state programs.
+
+**Related skill:** `us-state-privacy-laws`  
+**Reference:** [references/us-state-privacy-matrix.md](references/us-state-privacy-matrix.md)
+
+### GDPR (US multinationals)
+
+EU/EEA processing, RoPA, SCCs/DPF, 72-hour breach, DPIA for agent/LLM cross-border transfers.
+
+**Related skill:** `gdpr-us-multinational`  
+**Template:** [templates/gdpr-ropa-template.yaml](templates/gdpr-ropa-template.yaml)  
+**Preset:** [presets/multinational-privacy/PRESET.md](presets/multinational-privacy/PRESET.md)  
+**Starter pack:** [starter-packs/multinational-privacy-starter.yaml](starter-packs/multinational-privacy-starter.yaml)
 
 ---
 
@@ -268,7 +294,7 @@ compliance-agent-skills/
 ├── agent.py                 # Pydantic AI entry + SkillsCapability
 ├── redaction.py             # Presidio PHI redaction gate
 ├── requirements.txt
-├── skills/                  # 24 Agent Skills (SKILL.md each)
+├── skills/                  # 27 Agent Skills (SKILL.md each)
 ├── presets/                 # Framework + cloud presets
 ├── starter-packs/           # Curated skill + template bundles
 ├── templates/               # YAML/MD audit artifacts

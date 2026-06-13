@@ -1,6 +1,6 @@
 ---
 name: using-compliance-agent-skills
-description: Meta entry skill for the USA compliance agent repository. Routes tasks to HIPAA, PCI-DSS, SOC 2, ISO 27001, NIST CSF 2.0, CCPA/CPRA, FedRAMP, SOX, CMMC, and GLBA skills; configures presets, MCP servers, and the audit lifecycle (/scope, /audit, /evidence, /remediate, /report). Trigger when starting any compliance engagement, choosing which skill to load, onboarding a new auditor, or orchestrating multi-framework workflows. Do not use when a specific framework skill already matches the task (load that skill directly instead).
+description: Meta entry skill for the USA compliance agent repository. Routes tasks to HIPAA, HITECH, PCI-DSS, SOC 2, ISO 27001, NIST CSF 2.0, CCPA/CPRA, US state privacy, GDPR, FedRAMP, SOX, CMMC, and GLBA skills; configures presets, MCP servers, and the audit lifecycle (/scope, /audit, /evidence, /remediate, /report). Trigger when starting any compliance engagement, choosing which skill to load, onboarding a new auditor, or orchestrating multi-framework workflows. Do not use when a specific framework skill already matches the task (load that skill directly instead).
 ---
 
 # Using Compliance Agent Skills
@@ -85,6 +85,9 @@ Load **exactly one primary skill** per audit thread; add secondary skills only w
 | SOX ITGC / SOX 404 | `sox-itgc-audit` | `access-control-identity-audit` |
 | CMMC / CUI / defense | `cmmc-nist-800-171` | `fedramp-moderate-baseline` |
 | GLBA / banking / fintech | `glba-ffiec-financial-privacy` | `vendor-third-party-risk` |
+| HITECH breach / OCR portal | `hitech-breach-notification` | `breach-incident-response` |
+| US state privacy (VCDPA, CPA, TX) | `us-state-privacy-laws` | `ccpa-cpra-privacy-rights` |
+| GDPR / EU transfers | `gdpr-us-multinational` | `us-state-privacy-laws` |
 | Breach / incident | `breach-incident-response` | `audit-logging-integrity` |
 | Policy-as-code / IaC | `compliance-as-code-governance` | `soc2-evidence-collection` |
 
