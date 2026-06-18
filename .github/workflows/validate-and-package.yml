@@ -110,7 +110,7 @@ jobs:
         run: python -m pytest compliance_tests/ -v --cov-report=term
 
       - name: Upload coverage report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: coverage-xml
           path: coverage.xml
@@ -137,7 +137,7 @@ jobs:
         run: vsce package --no-dependencies
 
       - name: Upload VSIX artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: compliance-agent-skills-vsix
           path: vscode-extension/*.vsix
