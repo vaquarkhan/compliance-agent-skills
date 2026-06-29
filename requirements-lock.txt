@@ -4,16 +4,8 @@
 #
 #    pip-compile --allow-unsafe --output-file=requirements-lock.txt --strip-extras requirements.in
 #
-ag-ui-protocol==0.1.19
-    # via pydantic-ai-slim
 aiofile==3.11.1
     # via py-key-value-aio
-aiohappyeyeballs==2.6.2
-    # via aiohttp
-aiohttp==3.14.1
-    # via xai-sdk
-aiosignal==1.4.0
-    # via aiohttp
 annotated-doc==0.0.4
     # via typer
 annotated-types==0.7.0
@@ -24,7 +16,6 @@ anyio==4.13.0
     # via
     #   anthropic
     #   google-genai
-    #   groq
     #   httpx
     #   httpx2
     #   mcp
@@ -34,15 +25,11 @@ anyio==4.13.0
     #   pydantic-evals
     #   sse-starlette
     #   starlette
-    #   watchfiles
 argcomplete==3.6.3
     # via pydantic-ai-slim
 attrs==26.1.0
     # via
-    #   aiohttp
-    #   cyclopts
     #   jsonschema
-    #   jsonschema-path
     #   referencing
 authlib==1.7.2
     # via fastmcp-slim
@@ -52,12 +39,6 @@ beartype==0.22.9
     # via py-key-value-aio
 blis==1.3.3
     # via thinc
-boto3==1.43.29
-    # via pydantic-ai-slim
-botocore==1.43.29
-    # via
-    #   boto3
-    #   s3transfer
 cachetools==7.1.4
     # via py-key-value-aio
 caio==0.9.25
@@ -78,32 +59,24 @@ charset-normalizer==3.4.7
     # via requests
 click==8.4.1
     # via
-    #   huggingface-hub
+    #   presidio-analyzer
     #   typer
     #   uvicorn
 cloudpathlib==0.24.0
     # via weasel
-cohere==7.0.4
-    # via pydantic-ai-slim
-colorama==0.4.6
-    # via
-    #   click
-    #   tqdm
-    #   wasabi
 confection==1.3.3
     # via
     #   spacy
     #   thinc
     #   weasel
-cryptography==49.0.0
+cryptography==46.0.7
     # via
     #   authlib
     #   google-auth
     #   joserfc
     #   presidio-anonymizer
     #   pyjwt
-cyclopts==4.18.0
-    # via fastmcp-slim
+    #   secretstorage
 cymem==2.0.13
     # via
     #   preshed
@@ -113,71 +86,38 @@ distro==1.9.0
     # via
     #   anthropic
     #   google-genai
-    #   groq
     #   openai
 dnspython==2.8.0
     # via email-validator
 docstring-parser==0.18.0
-    # via
-    #   anthropic
-    #   cyclopts
+    # via anthropic
 email-validator==2.3.0
     # via pydantic
 en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
     # via -r requirements.in
-eval-type-backport==0.4.0
-    # via mistralai
 exceptiongroup==1.3.1
     # via fastmcp-slim
 executing==2.2.1
     # via logfire
-fastavro==1.12.2
-    # via cohere
-fastmcp==3.4.2
-    # via pydantic-ai-slim
 fastmcp-slim==3.4.2
-    # via
-    #   fastmcp
-    #   pydantic-ai-slim
+    # via pydantic-ai-slim
 filelock==3.29.3
-    # via
-    #   huggingface-hub
-    #   tldextract
-frozenlist==1.8.0
-    # via
-    #   aiohttp
-    #   aiosignal
-fsspec==2026.4.0
-    # via huggingface-hub
+    # via tldextract
 genai-prices==0.0.66
     # via pydantic-ai-slim
 google-auth==2.54.0
-    # via
-    #   google-genai
-    #   pydantic-ai-slim
+    # via google-genai
 google-genai==2.8.0
     # via pydantic-ai-slim
 googleapis-common-protos==1.75.0
-    # via
-    #   opentelemetry-exporter-otlp-proto-http
-    #   xai-sdk
+    # via opentelemetry-exporter-otlp-proto-http
 griffelib==2.0.2
-    # via
-    #   fastmcp-slim
-    #   pydantic-ai-slim
-groq==1.4.0
     # via pydantic-ai-slim
-grpcio==1.81.1
-    # via xai-sdk
 h11==0.16.0
     # via
     #   httpcore
     #   httpcore2
     #   uvicorn
-hf-xet==1.4.3
-    # via
-    #   huggingface-hub
-    #   pydantic-ai-slim
 httpcore==1.0.9
     # via httpx
 httpcore2==2.4.0
@@ -185,13 +125,9 @@ httpcore2==2.4.0
 httpx==0.28.1
     # via
     #   anthropic
-    #   cohere
     #   fastmcp-slim
     #   google-genai
-    #   groq
-    #   huggingface-hub
     #   mcp
-    #   mistralai
     #   openai
     #   pydantic-ai-slim
     #   pydantic-graph
@@ -200,10 +136,6 @@ httpx-sse==0.4.3
     # via mcp
 httpx2==2.4.0
     # via genai-prices
-huggingface-hub==1.18.0
-    # via
-    #   pydantic-ai-slim
-    #   tokenizers
 idna==3.18
     # via
     #   anyio
@@ -212,7 +144,6 @@ idna==3.18
     #   httpx2
     #   requests
     #   tldextract
-    #   yarl
 importlib-metadata==8.7.1
     # via
     #   keyring
@@ -223,28 +154,20 @@ jaraco-context==6.1.2
     # via keyring
 jaraco-functools==4.5.0
     # via keyring
+jeepney==0.9.0
+    # via
+    #   keyring
+    #   secretstorage
 jinja2==3.1.6
     # via spacy
 jiter==0.15.0
     # via
     #   anthropic
     #   openai
-jmespath==1.1.0
-    # via
-    #   boto3
-    #   botocore
 joserfc==1.7.1
-    # via
-    #   authlib
-    #   fastmcp-slim
-jsonpath-python==1.1.6
-    # via mistralai
-jsonref==1.1.0
-    # via fastmcp-slim
+    # via authlib
 jsonschema==4.26.0
     # via mcp
-jsonschema-path==0.5.0
-    # via fastmcp-slim
 jsonschema-specifications==2025.9.1
     # via jsonschema
 keyring==25.7.0
@@ -263,36 +186,26 @@ mcp==1.27.2
     # via fastmcp-slim
 mdurl==0.1.2
     # via markdown-it-py
-mistralai==2.4.8
-    # via pydantic-ai-slim
 more-itertools==11.1.0
     # via
     #   jaraco-classes
     #   jaraco-functools
-multidict==6.7.1
-    # via
-    #   aiohttp
-    #   yarl
 murmurhash==1.0.15
     # via
     #   preshed
     #   spacy
     #   thinc
-nexus-rpc==1.4.0
-    # via temporalio
 numpy==2.4.6
     # via
     #   blis
+    #   presidio-analyzer
     #   spacy
     #   thinc
 openai==2.41.1
     # via pydantic-ai-slim
-openapi-pydantic==0.5.1
-    # via fastmcp-slim
 opentelemetry-api==1.39.1
     # via
     #   fastmcp-slim
-    #   mistralai
     #   opentelemetry-exporter-otlp-proto-http
     #   opentelemetry-instrumentation
     #   opentelemetry-instrumentation-httpx
@@ -317,10 +230,8 @@ opentelemetry-sdk==1.39.1
     # via
     #   logfire
     #   opentelemetry-exporter-otlp-proto-http
-    #   xai-sdk
 opentelemetry-semantic-conventions==0.60b1
     # via
-    #   mistralai
     #   opentelemetry-instrumentation
     #   opentelemetry-instrumentation-httpx
     #   opentelemetry-sdk
@@ -328,15 +239,10 @@ opentelemetry-util-http==0.60b1
     # via opentelemetry-instrumentation-httpx
 packaging==25.0
     # via
-    #   fastmcp-slim
-    #   huggingface-hub
     #   opentelemetry-instrumentation
     #   spacy
     #   thinc
     #   weasel
-    #   xai-sdk
-pathable==0.6.0
-    # via jsonschema-path
 phonenumbers==9.0.32
     # via presidio-analyzer
 platformdirs==4.10.0
@@ -345,23 +251,17 @@ preshed==3.0.13
     # via
     #   spacy
     #   thinc
-presidio-analyzer==2.2.362
+presidio-analyzer==2.2.363
     # via -r requirements.in
-presidio-anonymizer==2.2.362
+presidio-anonymizer==2.2.363
     # via -r requirements.in
 prompt-toolkit==3.0.52
     # via pydantic-ai-slim
-propcache==0.5.2
-    # via
-    #   aiohttp
-    #   yarl
 protobuf==6.33.6
     # via
     #   googleapis-common-protos
     #   logfire
     #   opentelemetry-proto
-    #   temporalio
-    #   xai-sdk
 py-key-value-aio==0.4.5
     # via fastmcp-slim
 pyasn1==0.6.3
@@ -372,81 +272,53 @@ pycparser==3.0
     # via cffi
 pydantic==2.13.4
     # via
-    #   ag-ui-protocol
     #   anthropic
-    #   cohere
     #   fastmcp-slim
     #   genai-prices
     #   google-genai
-    #   groq
     #   mcp
-    #   mistralai
     #   openai
-    #   openapi-pydantic
     #   presidio-analyzer
     #   pydantic-ai-slim
     #   pydantic-evals
     #   pydantic-graph
-    #   pydantic-handlebars
     #   pydantic-settings
     #   spacy
     #   thinc
     #   weasel
-    #   xai-sdk
-pydantic-ai==1.107.0
+pydantic-ai==2.1.0
     # via -r requirements.in
-pydantic-ai-skills==0.11.0
+pydantic-ai-skills==1.1.0
     # via -r requirements.in
-pydantic-ai-slim==1.107.0
+pydantic-ai-slim==2.1.0
     # via
     #   pydantic-ai
     #   pydantic-ai-skills
     #   pydantic-evals
 pydantic-core==2.46.4
-    # via
-    #   cohere
-    #   pydantic
-pydantic-evals==1.107.0
+    # via pydantic
+pydantic-evals==2.1.0
     # via pydantic-ai-slim
-pydantic-graph==1.107.0
-    # via pydantic-ai-slim
-pydantic-handlebars==0.2.1
+pydantic-graph==2.1.0
     # via pydantic-ai-slim
 pydantic-settings==2.14.1
     # via
     #   fastmcp-slim
     #   mcp
 pygments==2.20.0
-    # via
-    #   rich
-    #   rich-rst
+    # via rich
 pyjwt==2.13.0
     # via mcp
 pyperclip==1.11.0
-    # via
-    #   fastmcp-slim
-    #   pydantic-ai-slim
-python-dateutil==2.9.0.post0
-    # via
-    #   botocore
-    #   mistralai
+    # via pydantic-ai-slim
 python-dotenv==1.2.2
     # via
     #   fastmcp-slim
     #   pydantic-settings
 python-multipart==0.0.32
-    # via
-    #   fastmcp-slim
-    #   mcp
-pywin32==312 ; sys_platform == 'win32'
     # via mcp
-pywin32-ctypes==0.2.3 ; sys_platform == 'win32'
-    # via keyring
 pyyaml==6.0.3
     # via
-    #   fastmcp-slim
-    #   huggingface-hub
-    #   jsonschema-path
     #   presidio-analyzer
     #   pydantic-ai-skills
     #   pydantic-ai-slim
@@ -454,7 +326,6 @@ pyyaml==6.0.3
 referencing==0.37.0
     # via
     #   jsonschema
-    #   jsonschema-path
     #   jsonschema-specifications
 regex==2026.5.9
     # via
@@ -462,48 +333,38 @@ regex==2026.5.9
     #   tiktoken
 requests==2.34.2
     # via
-    #   cohere
     #   google-auth
     #   google-genai
     #   opentelemetry-exporter-otlp-proto-http
-    #   pydantic-ai-slim
     #   requests-file
     #   spacy
     #   tiktoken
     #   tldextract
-    #   xai-sdk
 requests-file==3.0.1
     # via tldextract
 rich==15.0.0
     # via
-    #   cyclopts
     #   fastmcp-slim
     #   logfire
     #   pydantic-ai-slim
     #   pydantic-evals
-    #   rich-rst
     #   typer
-rich-rst==2.0.1
-    # via cyclopts
 rpds-py==2026.5.1
     # via
     #   jsonschema
     #   referencing
-s3transfer==0.18.0
-    # via boto3
+secretstorage==3.5.0
+    # via keyring
 shellingham==1.5.4
     # via typer
-six==1.17.0
-    # via python-dateutil
 smart-open==7.6.1
     # via weasel
 sniffio==1.3.1
     # via
     #   anthropic
     #   google-genai
-    #   groq
     #   openai
-spacy==3.8.14
+spacy==3.8.13
     # via
     #   -r requirements.in
     #   presidio-analyzer
@@ -524,8 +385,6 @@ starlette==1.3.1
     #   mcp
     #   pydantic-ai-slim
     #   sse-starlette
-temporalio==1.28.0
-    # via pydantic-ai-slim
 tenacity==9.1.4
     # via
     #   google-genai
@@ -536,11 +395,8 @@ tiktoken==0.13.0
     # via pydantic-ai-slim
 tldextract==5.3.1
     # via presidio-analyzer
-tokenizers==0.23.1
-    # via cohere
 tqdm==4.68.2
     # via
-    #   huggingface-hub
     #   openai
     #   spacy
 truststore==0.10.4
@@ -549,30 +405,18 @@ truststore==0.10.4
     #   httpx2
 typer==0.25.1
     # via
-    #   huggingface-hub
     #   spacy
     #   weasel
-types-protobuf==6.32.1.20260221
-    # via temporalio
-types-requests==2.33.0.20260518
-    # via cohere
 typing-extensions==4.15.0
     # via
-    #   aiohttp
-    #   aiosignal
     #   anthropic
     #   anyio
-    #   cohere
     #   exceptiongroup
     #   fastmcp-slim
     #   google-genai
-    #   groq
-    #   grpcio
     #   httpx2
-    #   huggingface-hub
     #   logfire
     #   mcp
-    #   nexus-rpc
     #   openai
     #   opentelemetry-api
     #   opentelemetry-exporter-otlp-proto-http
@@ -583,51 +427,36 @@ typing-extensions==4.15.0
     #   pydantic-core
     #   referencing
     #   starlette
-    #   temporalio
     #   typing-inspection
 typing-inspection==0.4.2
     # via
     #   mcp
-    #   mistralai
     #   pydantic
     #   pydantic-ai-slim
     #   pydantic-graph
     #   pydantic-settings
-uncalled-for==0.3.2
-    # via fastmcp-slim
 urllib3==2.7.0
-    # via
-    #   botocore
-    #   requests
-    #   types-requests
+    # via requests
 uvicorn==0.49.0
     # via
-    #   fastmcp-slim
     #   mcp
+    #   pydantic-ai-slim
 wasabi==1.1.3
     # via
     #   spacy
     #   thinc
     #   weasel
-watchfiles==1.2.0
-    # via fastmcp-slim
 wcwidth==0.8.1
     # via prompt-toolkit
 weasel==1.0.0
     # via spacy
 websockets==16.0
-    # via
-    #   fastmcp-slim
-    #   google-genai
+    # via google-genai
 wrapt==1.17.3
     # via
     #   opentelemetry-instrumentation
     #   opentelemetry-instrumentation-httpx
     #   smart-open
-xai-sdk==1.17.0
-    # via pydantic-ai-slim
-yarl==1.24.2
-    # via aiohttp
 zipp==4.1.0
     # via importlib-metadata
 
